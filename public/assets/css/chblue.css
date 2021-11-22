@@ -36,13 +36,13 @@ p.lead .line,
 .filter-header,
 .profilebackground,
 .filter-header input[type="button"]{
-	background:#1597e5 !important; 
-	background-color:#1597e5 !important; 
+	background: #0a3d62 !important; 
+	background-color: #0a3d62 !important; 
 }
 .opacy_bg_03,
 .item-team-01 .info-team,
 .header-detailed{
-	background: #1597e52;  
+	background: #0a3d62;  
 	background: rgba(136, 196, 37, 0.6);
 }
 
@@ -87,7 +87,7 @@ blockquote > a,
 .pagination > li > a, .pagination > li > span,
 address i,
 address a{
-	color: #1597e52;
+	color: #0a3d62;
 }
 
 /* Borders ----------------------------------------------------------*/
@@ -101,20 +101,20 @@ address a{
 .post-format-icon > i,
 .section-title-03 h1,
 .title-widget{
-	border-color: #1597e52 !important;
+	border-color: #0a3d62 !important;
 }
 .crumbs:before{
-	border-bottom: 20px solid #1597e52;
+	border-bottom: 20px solid #0a3d62;
 }
 .tooltip.top .tooltip-arrow {
-  border-top-color: #1597e52;
+  border-top-color: #0a3d62;
 }
 .flat-mega-menu .drop-down,
 .flat-mega-menu .social-bar ul {
-	border-bottom-color: #1597e52;
+	border-bottom-color: #0a3d62;
 }
 .nav-tabs li.active:after {
-	border: 16px solid #1597e52;
+	border: 16px solid #0a3d62;
 	border-left-color: transparent;
 	border-right-color: transparent;
 	border-bottom-color: transparent;
@@ -125,21 +125,21 @@ address a{
 	z-index: 101;
 }
 .title-widget:after {
-  border-top: 15px solid  #1597e52;
+  border-top: 15px solid  #0a3d62;
 }
 
 hr.separator::before {
-	background: #1597e52;	
+	background: #0a3d62;	
 }
 #footer .fa{
 	color:#fff;
 }
 .footer-m {	
-	border-top: 2px solid #1597e52;	
+	border-top: 2px solid #0a3d62;	
 }
 
 .footer-m ul li a .fa {
-	color: #1597e52 !important;
+	color: #0a3d62 !important;
 }
 
  .crumbs ul{

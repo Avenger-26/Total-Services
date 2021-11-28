@@ -49,14 +49,16 @@
                 </div>
             </div>
         </div>
-        <header id="header" class="header-v3">
-            <nav class="flat-mega-menu">
+        <header id="header" class="header-v3 ">
+            <nav class="flat-mega-menu ">
                 <label for="mobile-button"> <i class="fa fa-bars"></i></label>
                 <input id="mobile-button" type="checkbox">
 
                 <ul class="collapse">
                     <li class="title">
-                        <a href="/">On~Demand Services</a>       </li>
+                        <a href=""><img style="width:146px" src="{{asset('assets\img\Total Services-1.png')}}" alt="logo"></a>
+                        {{-- <a href="/">On~Demand Services</a>        --}}
+                    </li>
                     <li> <a href="{{route('home.service_categories')}}">Service Category</a> </li>
                     <li> <a href="javascript:void(0);">Air Conditioners</a>
                         <ul class="drop-down one-column hover-fade">
@@ -114,8 +116,45 @@
                         </ul>
                     </li>
 
-                    <li class="login-form"> <a href="index.php/register.html" title="Register">Register</a></li>
-                    <li class="login-form"> <a href="login.html" title="Login">Login</a></li>
+                    @if (Route::has('login'))
+                        @auth
+                            @if (Auth::user()->u_type === 'ADM')
+                                <li class="login-form"><a href="#" title="Register">My Account( Admin )</a>
+                                    <ul class="drop-down one-column hover-fade">
+                                        <li><a href="{{ route('admin.dashboard') }}">Dasboard</a></li>
+                                        <li><a href="{{ route('logout') }}"
+                                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            @elseif(Auth::user()->u_type==='SPV')
+                                <li class="login-form"><a href="#" title="Register">My Account(S Provider)</a>
+                                    <ul class="drop-down one-column hover-fade">
+                                        <li><a href="{{ route('sprovider.dashboard') }}">Dasboard</a></li>
+                                        <li><a href="{{ route('logout') }}"
+                                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            @else
+                                <li class="login-form"><a href="" title="Register">My Account( Costumer )</a>
+                                    <ul class="drop-down one-column hover-fade">
+                                        <li><a href="{{ route('costumer.dashboard') }}">Dasboard</a></li>
+                                        <li><a href="{{ route('logout') }}"
+                                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            @endif
+                            <form action="{{ route('logout') }}" method="POST" id="logout-form" style="display: none">
+                                @csrf
+                            </form>
+                        @else
+                            <li class="login-form"> <a href="{{ route('register') }}" title="Register">Register</a>
+                            </li>
+                            <li class="login-form"> <a href="{{ route('login') }}" title="Login">Login</a></li>
+                        @endif
+                        @endif
                     <li class="search-bar">
                     </li>
                 </ul>

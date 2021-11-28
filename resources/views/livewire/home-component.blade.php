@@ -1,22 +1,22 @@
 <div>
-    <section class="tp-banner-container ">
+    <section class="tp-banner-container">
         <div class="tp-banner">
             <ul>
                 <li data-transition="slidevertical" data-slotamount="1" data-masterspeed="1000"
                     data-saveperformance="off" data-title="Slide">
-                    <img src="assets/img/slide/1.jpg" alt="fullslide1" data-bgposition="center center"
+                    <img  src="{{asset('assets\img\slide\1-1.png')}}" alt="fullslide1" data-bgposition="center center"
                         data-kenburns="on" data-duration="6000" data-ease="Linear.easeNone" data-bgfit="130"
                         data-bgfitend="100" data-bgpositionend="right center">
                 </li>
                 <li data-transition="slidehorizontal" data-slotamount="1" data-masterspeed="1000"
                     data-saveperformance="off" data-title="Slide">
-                    <img src="assets/img/slide/2.jpg" alt="fullslide1" data-bgposition="top center"
+                    <img  src="{{asset('assets/img/slide/2-1.png')}}" alt="fullslide1" data-bgposition="top center"
                         data-kenburns="on" data-duration="6000" data-ease="Linear.easeNone" data-bgfit="130"
                         data-bgfitend="100" data-bgpositionend="right center">
                 </li>
                 <li data-transition="slidehorizontal" data-slotamount="1" data-masterspeed="1000"
-                    data-saveperformance="off" data-title="Slide">
-                    <img src="assets/img/slide/1.jpg" alt="fullslide1" data-bgposition="top center"
+                    data-saveperformance="off" data-title="Slide" >
+                    <img  src="{{asset('assets/img/slide/3-1.png')}}" alt="fullslide1" data-bgposition="top center"
                         data-kenburns="on" data-duration="6000" data-ease="Linear.easeNone" data-bgfit="130"
                         data-bgfitend="100" data-bgpositionend="right center">
                 </li>

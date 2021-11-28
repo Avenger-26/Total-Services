@@ -11,7 +11,6 @@
     <link rel="shortcut icon" href="assets/img/favicon.png">
     <link href="{{url('assets/css/style.css')}}" rel="stylesheet" media="screen">
     <link href="{{url('assets/css/chblue.css')}}" rel="stylesheet" media="screen">
-
     <link href="{{url('assets/css/theme-responsive.css')}}" rel="stylesheet" media="screen">
     <link href="{{url('assets/css/dtb/jquery.dataTables.min.css')}}" rel="stylesheet" media="screen">
     <link href="{{url('assets/css/select2.min.css')}}" rel="stylesheet" media="screen">

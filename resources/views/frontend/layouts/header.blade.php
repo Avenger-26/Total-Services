@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>Total Service - Online Service Provider for your House Needs</title>
+    <link rel="manifest" href="/manifest.json">
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">

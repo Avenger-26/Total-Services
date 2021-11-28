@@ -38,10 +38,11 @@
 .owl-carousel .owl-wrapper-outer {
     padding: 50px 10px 0 0 !important;
 }
-.best-offer {
+.best-offer,
+.service-banner {
     margin-top: 60px;
 }
-.best-offer img {
+.service-banner img {
     width: 100%;
     height: auto;
     border: 10px solid whitesmoke;

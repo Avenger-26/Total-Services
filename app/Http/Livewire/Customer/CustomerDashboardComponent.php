@@ -8,6 +8,6 @@ class CustomerDashboardComponent extends Component
 {
     public function render()
     {
-        return view('livewire.customer.customer-dashboard-component')->layout('FrontEnd.layouts.base');
+        return view('livewire.customer.customer-dashboard-component')->layout('FrontEnd.layouts.guest');
     }
 }

@@ -127,6 +127,18 @@
                                 autocomplete="new-password" class="input">
                         </div>
                     </div>
+                    <div class="input-div">
+                        <div class="i-lp">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="select">
+                            <select name="registeras" id="registeras">
+                                <option value=" " selected disabled>Register As</option>
+                                <option value="CST">Customer</option>
+                                <option value="SPV">Service Provider</option>
+                            </select>
+                        </div>
+                    </div>
                     <div>
                         <button type="submit" class="btn-lp">Register</button>
                     </div>

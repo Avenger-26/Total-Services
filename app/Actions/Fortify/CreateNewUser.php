@@ -2,6 +2,8 @@
 
 namespace App\Actions\Fortify;
 
+use App\Models\CustomersTotalService;
+use App\Models\ServiceProvider;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -26,11 +28,26 @@ class CreateNewUser implements CreatesNewUsers
             'password' => $this->passwordRules(),
             'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['required', 'accepted'] : '',
         ])->validate();
-
-        return User::create([
+         
+        $registeras = $input['registeras'] === 'SPV' ? 'SPV' : 'CST';
+        $user = User::create([
             'name' => $input['name'],
             'email' => $input['email'],
             'password' => Hash::make($input['password']),
+            'u_type' => $registeras
         ]);
+        if( $registeras === 'SPV')
+        {
+            ServiceProvider::create([
+                'user_id'=> $user->id
+            ]);
+        }
+        if( $registeras === 'CST')
+        {
+            CustomersTotalService::create([
+                'user_id'=> $user->id
+            ]);
+        }
+        return $user;
     }
 }

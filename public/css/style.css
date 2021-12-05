@@ -87,7 +87,7 @@ form {
 
 .login-content-rp img {
 	height: 100px;
-	margin-top: 10px;
+	margin-top: 6px;
 	display: inline !important;
 }
 
@@ -95,7 +95,7 @@ form {
 	margin: 6px 0;
 	color: #333 !important;
 	text-transform: uppercase;
-	font-size: 2.9rem ;
+	font-size: 1.4rem ;
 	font-weight: bolder !important;
 }
 
@@ -111,7 +111,7 @@ form {
 	position: relative;
 	display: grid;
 	grid-template-columns: 7% 93%;
-	margin: 25px 0;
+	margin: 20px 0;
 	padding: 5px 0;
 	border-bottom: 2px solid #d9d9d9;
 }
@@ -316,6 +316,31 @@ form {
 
 .span-r a:hover {
 	color: var(--main-color);
+}
+/* for select fields  */
+select {
+	border: none;
+	padding: 0 1em 0 0;
+	width: 100%;
+	font-size: 1.1rem;
+	cursor: inherit;
+	appearance: none;
+	font-weight: bolder;
+	color: #999;
+
+}
+
+.select {
+	width: 100%;
+	margin-top: 0.4rem;
+	min-width: 15ch;
+	max-width: 30ch;
+	border: 1px solid var(--select-border);
+	border-radius: 0.25em;
+	padding: 0.25em 0.5em;
+	font-size: 18px;
+	cursor: pointer;
+	line-height: 1.1;
 }
 
 /*====================================== 

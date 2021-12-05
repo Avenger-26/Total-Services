@@ -44,11 +44,11 @@
                 <h3>CONTACT US</h3>
                 <ul class="contact_footer">
                     <li class="location">
-                        <i class="fa fa-map-marker"></i> <a href="#"> Faridabad, Haryana, India</a>
+                        <i class="fa fa-map-marker"></i> <a href="#"> Uttar Pradesh, Lucknow</a>
                     </li>
                     <li>
                         <i class="fa fa-envelope"></i> <a
-                            href="mailto:contact@surfsidemedia.in">contact@surfsidemedia.in</a>
+                            href="mailto:contact@surfsidemedia.in">contact@totalservices.in</a>
                     </li>
                     <li>
                         <i class="fa fa-headphones"></i> <a href="tel:+911234567890">+91-1234567890</a>
@@ -142,6 +142,7 @@ jQuery(document).ready(function () {
     });
 });
 </script>
+@stack('scripts')
 @livewireScripts
 </body>
 </html>

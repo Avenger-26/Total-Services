@@ -70,12 +70,12 @@
             <!-- ============================== Login Content ===================================== -->
             <div class="login-content-lp">
 
-                
+
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
                     <img src="{{ asset('assets\img\loginpage\img\avatar-2.svg') }}">
                     <h2 class="title">Welcome</h2>
-                    <x-jet-validation-errors/>
+                    <x-jet-validation-errors />
                     @if (session('status'))
                         <div class="font-medium text-md text-green-600">
                             <h6 style="color: #1597e5; text-align:center">{{ session('status') }}</h6>
@@ -103,8 +103,7 @@
                     <div class="flex-sb-m">
                         <!-- ============================Remember Me =========================  -->
                         <div class="contact100-form-checkbox">
-                            <input class="input-checkbox100" type="checkbox" id="remember_me"
-                                name="remember-me">
+                            <input class="input-checkbox100" type="checkbox" id="remember_me" name="remember-me">
                             <label class="label-checkbox100" for="remember_me">
                                 Remember me
                             </label>

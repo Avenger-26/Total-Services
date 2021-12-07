@@ -54,3 +54,34 @@
     height: 80px !important;
     width: 80px !important;
 }
+
+.card-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #1597e5 !important ;
+    text-align: center;
+}
+.card-text {
+    font-size: 14px;
+    font-weight: bold;
+    color: #1597e5 !important ;
+    margin-top: -10px;
+    text-align: center;
+}
+
+.best-offer .card-body {
+    padding: 10px;
+}
+.best-offer .card:hover {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+.best-offer .card {
+    border: 1px solid #dedede;
+    border-radius: 10px;
+}
+.best-offer .card-img-top {
+    height: 200px;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+/* Service Details */

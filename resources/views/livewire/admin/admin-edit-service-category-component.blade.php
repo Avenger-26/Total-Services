@@ -37,7 +37,12 @@
                         ft-briefcase mr-2"></i><span data-i18n=""
                                 class="menu-title">Service Categories</span></a>
                     </li>
-                    <li class=" nav-item"><a href="#"><i
+                    <li class=" nav-item"><a href="{{ route('admin.all_services') }}"><i
+                                class="
+                                ft-grid mr-2"></i><span data-i18n=""
+                                class="menu-title"> All Service </span></a>
+                    </li>
+                    <li class=" nav-item"><a href="{{ route('admin.contacts') }}"><i
                                 class="
                         ft-user-plus mr-2"></i><span data-i18n=""
                                 class="menu-title">All Contact</span></a>
@@ -193,11 +198,11 @@
                                                     </div>
                                                     <div class="form-group">
                                                         <div class="col-md-12">
-                                                        <label for="image" class=" label-control ">Category Image:
-                                                        </label>
-                                                        
+                                                            <label for="image" class=" label-control ">Category Image:
+                                                            </label>
+
                                                             <input id="image" type="file"
-                                                                class="form-control border-primary" name="newimage"
+                                                                class="" name="newimage"
                                                                 wire:model="newimage" />
                                                             @error('newimage')<p class="text-danger">
                                                                     {{ $message }}</p>

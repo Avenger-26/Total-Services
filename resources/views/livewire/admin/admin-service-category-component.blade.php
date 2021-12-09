@@ -38,7 +38,12 @@
                         ft-briefcase mr-2"></i><span data-i18n=""
                                 class="menu-title">Service Categories</span></a>
                     </li>
-                    <li class=" nav-item"><a href="#"><i
+                    <li class=" nav-item"><a href="{{ route('admin.all_services') }}"><i
+                                class="
+                                ft-grid mr-2"></i><span data-i18n=""
+                                class="menu-title"> All Service </span></a>
+                    </li>
+                    <li class=" nav-item"><a href="{{ route('admin.contacts') }}"><i
                                 class="
                         ft-user-plus mr-2"></i><span data-i18n=""
                                 class="menu-title">All Contact</span></a>
@@ -147,7 +152,7 @@
                 <div class="content-wrapper">
                     <section id="extended">
                         <div class="row justify-content-md-center">
-                            <div class="col-md-10">
+                            <div class="col-md-12">
                                 <div class="card">
                                     <div class="card-header">
                                         <div class="row">
@@ -188,15 +193,18 @@
                                                             <td>{{ $scategory->name }}</td>
                                                             <td>{{ $scategory->slug }}</td>
                                                             <td>
+                                                                <a href="{{ route('admin.services_by_category', ['category_slug' => $scategory->slug]) }}"
+                                                                    style="margin-left:15px"><i
+                                                                        class="ft-list font-medium-3 mr-2 text-light"></i></a>
 
                                                                 <a
                                                                     href="{{ route('admin.edit_service_categories', ['category_id' => $scategory->id]) }}"><i
-                                                                        class="ft-edit font-medium-5 mr-2"></i></a>
+                                                                        class="ft-edit-2 font-medium-3  mr-2"></i></a>
                                                                 <a href="#"
                                                                     onclick="confirm('Are you sure, you want to delete this service category!')||event.stopImmediatePropagation()"
                                                                     wire:click.prevent="deleteServiceCategory({{ $scategory->id }})"
-                                                                    style="margin-left:10px"><i
-                                                                        class="ft-x  text-danger font-medium-5 mr-2"></i></a>
+                                                                ><i
+                                                                        class="ft-x  text-danger font-medium-3  mr-2"></i></a>
                                                             </td>
                                                         </tr>
                                                     @endforeach

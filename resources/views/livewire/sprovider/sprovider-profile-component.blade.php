@@ -156,7 +156,7 @@
                                             <div class="align-self-center halfway-fab text-center">
                                                 <a class="profile-image">
                                                     @if ($sprovider->image)
-                                                        <img src="{{ asset('storage/images/sprovider') }}/{{ $sprovider->image }}"
+                                                        <img src="{{ asset('images/sproviders') }}/{{ $sprovider->image }}"
                                                             width="100" height="100" alt=""
                                                             class="rounded-circle img-border gradient-summer">
 

@@ -187,7 +187,7 @@
                                                 <tbody>
                                                     @foreach ($scategories as $scategory)
                                                         <tr>
-                                                            <td>{{ $scategory->id }}</td>
+                                                            <td>{{ $no++ }}</td>
                                                             <td><img src="{{ asset('images/services-categories') }}/{{ $scategory->image }}"
                                                                     width="60" alt=""></td>
                                                             <td>{{ $scategory->name }}</td>

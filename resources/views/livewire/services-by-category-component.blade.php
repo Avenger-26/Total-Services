@@ -43,7 +43,7 @@
                                     <p>{{$service->tagline}}</p>
                                     <div class="content-btn"><a href="{{route('home.service_details',['service_slug'=>$service->slug])}}"
                                             class="btn btn-primary">Book Now</a></div>
-                                    <div class="price"><span>&#36;</span><b>From</b>{{$service->price}}</div>
+                                    <div class="price"><span></span><b>From</b>&#8377;{{$service->price}}</div>
                                 </div>
                             </a>
                         </div>

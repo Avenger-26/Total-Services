@@ -165,7 +165,7 @@
                                                                 height="150"
                                                                 class="rounded-circle img-border gradient-summer my-3">
                                                         @elseif($image)
-                                                            <img src="{{ asset('storage/images/customer') }}/{{ $image }}"
+                                                            <img src="{{ asset(images/customer') }}/{{ $image }}"
                                                                 alt="" width="150" height="150"
                                                                 class="rounded-circle img-border gradient-summer my-3">
                                                         @else

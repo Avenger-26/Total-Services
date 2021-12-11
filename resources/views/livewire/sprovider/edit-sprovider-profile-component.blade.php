@@ -161,7 +161,7 @@
                                                         @if ($newimage)
                                                             <img src="{{ $newimage->temporaryUrl() }}" alt="" width="150" height="150" class="rounded-circle img-border gradient-summer my-3">
                                                         @elseif($image)
-                                                            <img src="{{asset('storage/images/sprovider')}}/{{ $image }}"
+                                                            <img src="{{asset('images/sproviders')}}/{{ $image }}"
                                                                 alt="" width="150" height="150"  class="rounded-circle img-border gradient-summer my-3">
                                                         @else
                                                             <img src="{{ asset('images/sproviders/default.png') }}" alt=""

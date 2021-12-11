@@ -39,7 +39,7 @@ class EditSproviderProfileComponent extends Component
         if ($this->newimage) 
         { 
             $imageName = Carbon::now()->timestamp . '.' . $this->newimage->getClientOriginalName();
-            $this->newimage->storeAs('public/images/sprovider', $imageName);
+            $this->newimage->storeAs('sproviders', $imageName);
             $sprovider->image = $imageName;
         }
 

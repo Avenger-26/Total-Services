@@ -35,15 +35,17 @@ Route::post('/search',[SearchController::class,'searchService'])->name('searchSe
 Route::get('/contact-us',ContactComponenet::class)->name('home.contact');
 
 
-Route::middleware(['auth:sanctum', 'verified'])->group(function(){
+Route::middleware(['auth:sanctum' ])->group(function(){
 	Route::get('/costumer/dashboard',CustomerDashboardComponent::class)->name('costumer.dashboard');
 	Route::get('/costumer/profile',CustomerProfileComponent::class)->name('costumer.profile');
 	Route::get('/costumer/profile/edit',EditCustomerProfileComponent::class)->name('costumer.edit_profile');
+    Route::get('/service/{service_slug}',ServiceDetailsComponent::class)->name('home.service_details');
+
 	
 });
 
 //For S Provider
-Route::middleware(['auth:sanctum', 'verified','authsprovider'])->group(function(){
+Route::middleware(['auth:sanctum','authsprovider'])->group(function(){
 	Route::get('/sprovider/dashboard',SproviderDashboardComponent::class)->name('sprovider.dashboard');
 	Route::get('/sprovider/profile',SproviderProfileComponent::class)->name('sprovider.profile');
 	Route::get('/sprovider/profile/edit',EditSproviderProfileComponent::class)->name('sprovider.edit_profile');

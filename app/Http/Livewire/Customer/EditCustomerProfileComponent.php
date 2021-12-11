@@ -32,7 +32,7 @@ class EditCustomerProfileComponent extends Component
         if ($this->newimage) 
         { 
             $imageName = Carbon::now()->timestamp . '.' . $this->newimage->getClientOriginalName();
-            $this->newimage->storeAs('public/images/customer', $imageName);
+            $this->newimage->storeAs('customer', $imageName);
             $scustomer->image = $imageName;
         }
         $scustomer->phone = $this->phone;

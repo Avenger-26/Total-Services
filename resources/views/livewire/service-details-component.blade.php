@@ -33,9 +33,10 @@
                                             </div>
                                             <div class="post-info-wrap">
                                                 <h2 class="post-title"><a href="" title="Post Format: Standard"
-                                                        rel="bookmark">{{ $service->name }}:{{$service->category->name}}</a></h2>
-                                                        
-                                                
+                                                        rel="bookmark">{{ $service->name }}:{{ $service->category->name }}</a>
+                                                </h2>
+
+
                                                 <div class="post-meta" style="height: 10px;">
                                                 </div>
                                             </div>
@@ -110,16 +111,51 @@
                                                 <td>Total</td>
                                                 <td><span>&#8377;</span>{{ $total }}</td>
                                             </tr>
+                                            
                                         </table>
                                     </div>
+
                                     <div class="panel-footer">
                                         <form>
-                                            <input type="submit" class="btn btn-primary" name="submit"
-                                                value=" Book Now">
+                                            {{-- <input type="submit" class="btn btn-primary" name="submit"
+                                                value=" Book Now"> --}}
+                                            <button type="submit" name="submit" class="btn btn-primary"><a href="#"
+                                                    style="color: white; text-decoration:none">Book Now</a></button>
                                         </form>
                                     </div>
                                 </div>
                             </aside>
+                            
+                            {{-- <aside class="widget" style="margin-top: 18px;">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">Service Provider Details</div>
+                                    <div class="panel-body">
+                                        <table class="table">
+                                            <tr>
+                                                <td colspan="2" style="text-align: center"><img src="{{asset('images/sproviders/1639113093.Shah.png')}}" width=100 alt=""></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Servies Provider Name</td>
+                                                <td>Mr. Shah Hussain</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Contact Number</td>
+                                                <td>+91 7879790965</td>
+                                            </tr>
+                                            
+                                        </table>
+                                    </div>
+
+                                    <div class="panel-footer">
+                                        <form>
+                                           
+                                            <button type="submit" name="submit" class="btn btn-primary"><a href="#"
+                                                    style="color: white; text-decoration:none">Contact Now</a></button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </aside> --}}
+
                             <aside>
                                 @if ($r_service)
                                     <h3>Related Service</h3>
@@ -128,7 +164,7 @@
                                         <a
                                             href="{{ route('home.service_details', ['service_slug' => $r_service->slug]) }}">
                                             <div class="img-hover">
-                                                <img src="{{ asset('images/services/thumbnails') }}/{{$r_service->thumbnail}}"
+                                                <img src="{{ asset('images/services/thumbnails') }}/{{ $r_service->thumbnail }}"
                                                     alt="{{ $r_service->name }}" class="img-responsive">
                                             </div>
                                             <div class="info-gallery">

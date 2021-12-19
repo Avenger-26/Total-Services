@@ -33,7 +33,7 @@
                                 class="ft-edit mr-2"></i><span data-i18n="" class="menu-title">Edit
                                 Profile</span></a>
                     </li>
-            
+
                     <li class=" nav-item"><a href="{{ route('logout') }}"
                             onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i
                                 class="ft-power mr-2"></i><span data-i18n="" class="menu-title">Logout</span></a>
@@ -110,7 +110,7 @@
                                         class="ft-maximize font-medium-3 blue-grey darken-4"></i>
                                     <p class="d-none">fullscreen</p>
                                 </a></li>
-                            
+
                             <li class="dropdown nav-item"><a id="dropdownBasic3" href="#" data-toggle="dropdown"
                                     class="nav-link position-relative dropdown-toggle"><i
                                         class="ft-user font-medium-3 blue-grey darken-4"></i>
@@ -161,7 +161,7 @@
                                                         @if ($newimage)
                                                             <img src="{{ $newimage->temporaryUrl() }}" alt="" width="150" height="150" class="rounded-circle img-border gradient-summer my-3">
                                                         @elseif($image)
-                                                            <img src="{{asset('storage/images/sprovider')}}/{{ $image }}"
+                                                            <img src="{{asset('images/sproviders')}}/{{ $image }}"
                                                                 alt="" width="150" height="150"  class="rounded-circle img-border gradient-summer my-3">
                                                         @else
                                                             <img src="{{ asset('images/sproviders/default.png') }}" alt=""
@@ -185,9 +185,9 @@
                                                             name="phone" placeholder="+91-7689XXXXXX" wire:model="phone">
                                                     </div>
                                                 </div>
-        
-        
-        
+
+
+
                                                 <div class="form-group row">
                                                     <label class="col-md-3 label-control" for="city">Address </label>
                                                     <div class="col-md-9">
@@ -195,7 +195,7 @@
                                                             name="city" placeholder="Your City" wire:model="city">
                                                     </div>
                                                 </div>
-        
+
                                                 <div class="form-group row">
                                                     <label class="col-md-3 label-control" for="service_category_id">Provider Profession:
                                                     </label>
@@ -209,7 +209,7 @@
                                                         </select>
                                                     </div>
                                                 </div>
-        
+
                                                 <div class="form-group row">
                                                     <label class="col-md-3 label-control" for="service_locations">Service
                                                         Location: </label>
@@ -223,7 +223,7 @@
                                             <button type="submit" class="btn btn-raised btn-primary mx-auto d-flex">
                                                 Update Profile
                                             </button>
-        
+
                                         </form>
                                     </div>
                                 </div>
@@ -245,5 +245,5 @@
 
         </div>
     </div>
-    
+
 </div>

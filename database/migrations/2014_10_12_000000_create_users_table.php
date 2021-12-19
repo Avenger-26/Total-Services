@@ -20,10 +20,16 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
-            $table->foreignId('current_team_id')->nullable();
-            $table->string('profile_photo_path', 2048)->nullable();
+            $table->string('image')->nullable();
+            $table->string('phone')->nullable(); 
+            $table->string('gender')->nullable();
+            $table->string('address')->nullable();
+            $table->bigInteger('service_category_id')->unsigned()->nullable();
+            $table->bigInteger('slug_id')->unsigned()->nullable();
             $table->string('u_type')->default('CST');
             $table->timestamps();
+            $table->foreign('service_category_id')->references('id')->on('service_categories')->onDelete('cascade');
+            $table->foreign('slug_id')->references('id')->on('services')->onDelete('cascade');
         });
     }
 

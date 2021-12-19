@@ -15,15 +15,16 @@ class CreateServiceProvidersTable extends Migration
     {
         Schema::create('service_providers', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('user_id')->unsigned();
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('password');
+            $table->rememberToken()->nullable();
             $table->string('image')->nullable();
-            $table->string('about')->nullable(); 
-            $table->string('phone')->nullable(); 
-            $table->string('city')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('address')->nullable();
             $table->bigInteger('service_category_id')->unsigned()->nullable();
-            $table->string('service_locations')->nullable();
             $table->timestamps();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('service_category_id')->references('id')->on('service_categories')->onDelete('cascade');
         });
     }

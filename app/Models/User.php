@@ -29,7 +29,15 @@ class User extends Authenticatable implements MustVerifyEmail
         'password',
         'u_type',
     ];
+    public function category()
+    {
+        return $this->belongsTo(ServiceCategory::class,'service_category_id');
+    }
 
+    public function slug()
+    {
+        return $this->belongsTo(Service::class,'slug_id');
+    }
     /**
      * The attributes that should be hidden for serialization.
      *

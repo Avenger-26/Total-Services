@@ -53,7 +53,7 @@
                                     <div class="col-md-12">
                                         <div class="post-content">
                                             <h3>{{ $service->name }}</h3>
-                                            <p>{{ $service->description }}</p>
+                                            {{-- <p>{{ $service->description }}</p> --}}
                                             <h4>Inclusion</h4>
                                             <ul class="list-styles">
                                                 @foreach (explode('|', $service->inclusion) as $inclusion)
@@ -72,6 +72,54 @@
                             </div>
                         </div>
                         <div class="col-md-4">
+                            <aside class="widget" style="margin-top: 18px;">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">Service Provider Details</div>
+                                    <div class="panel-body">
+                                        <table class="table">
+                                            <tr>
+                                                <td colspan="2" style="text-align: center">
+                                                    @if ($sprovider->image)
+                                                        <img src="{{ asset('images/sproviders') }}/{{ $sprovider->image }}"
+                                                            width="100" height="100" alt=""
+                                                            class="rounded-circle img-border gradient-summer">
+
+                                                    @else
+                                                        <img src="{{ asset('images/sproviders/default.png') }}"
+                                                            alt="" width="100" height="100"
+                                                             class="rounded-circle img-border gradient-summer">
+                                                    @endif
+                                                </td>
+                                               
+                                            </tr>
+                                            <tr>
+                                                <td>Servies Provider Name</td>
+                                                <td>{{ $sprovider->name }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Contact Number</td>
+                                                <td>{{ $sprovider->phone }}</td>
+                                            </tr>
+
+                                        </table>
+                                    </div>
+
+                                    <div class="panel-footer">
+                                        <form>
+                                            {{-- <button type="submit" name="submit" class="btn btn-primary"><a href="#"
+                                                    style="color: white; text-decoration:none">Contact Now</a>
+                                                </button> --}}
+                                            <button type="submit" name="submit" class="btn btn-primary mx-4"><a
+                                                    href="tel:{{ $sprovider->phone }}"
+                                                    onclick="ga('send', 'event', { eventCategory: 'Contact', eventAction: 'Call', eventLabel: 'Mobile Button'});"
+                                                    style="color: white; text-decoration:none">Click to
+                                                    Call</a></button>
+
+                                        </form>
+                                    </div>
+                                </div>
+                            </aside> 
+
                             <aside class="widget" style="margin-top: 18px;">
                                 <div class="panel panel-default">
                                     <div class="panel-heading">Booking Details</div>
@@ -125,38 +173,8 @@
                                     </div>
                                 </div>
                             </aside>
-                            
-                            {{-- <aside class="widget" style="margin-top: 18px;">
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">Service Provider Details</div>
-                                    <div class="panel-body">
-                                        <table class="table">
-                                            <tr>
-                                                <td colspan="2" style="text-align: center"><img src="{{asset('images/sproviders/1639113093.Shah.png')}}" width=100 alt=""></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Servies Provider Name</td>
-                                                <td>Mr. Shah Hussain</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Contact Number</td>
-                                                <td>+91 7879790965</td>
-                                            </tr>
-                                            
-                                        </table>
-                                    </div>
 
-                                    <div class="panel-footer">
-                                        <form>
-                                           
-                                            <button type="submit" name="submit" class="btn btn-primary"><a href="#"
-                                                    style="color: white; text-decoration:none">Contact Now</a></button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </aside> --}}
-
-                            <aside>
+                            {{-- <aside>
                                 @if ($r_service)
                                     <h3>Related Service</h3>
                                     <div class="col-md-12 col-sm-6 col-xs-12 bg-dark color-white padding-top-mini"
@@ -183,7 +201,7 @@
                                         </a>
                                     </div>
                                 @endif
-                            </aside>
+                            </aside> --}}
                         </div>
                     </div>
                 </div>

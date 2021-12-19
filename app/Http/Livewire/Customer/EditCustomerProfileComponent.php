@@ -7,7 +7,7 @@ use Livewire\Component;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Auth;
 use App\Models\CustomersTotalService;
-
+use App\Models\User;
 
 class EditCustomerProfileComponent extends Component
 {
@@ -15,20 +15,20 @@ class EditCustomerProfileComponent extends Component
     public $customer_id;
     public $image;
     public $phone;
-    public $city;
+    public $address;
     public $newimage;
 
     public function mount()
     {
-        $scustomer = CustomersTotalService::where('user_id',Auth::user()->id)->first();
+        $scustomer = User::where('id',Auth::user()->id)->first();
         $this->customer_id = $scustomer->id;
         $this->image = $scustomer->image;
         $this->phone = $scustomer->phone;
-        $this->city = $scustomer->city;
+        $this->address = $scustomer->address;
     }
     public function updateProfile()
     {
-        $scustomer = CustomersTotalService::where('user_id', Auth::user()->id)->first();
+        $scustomer = User::where('id', Auth::user()->id)->first();
         if ($this->newimage) 
         { 
             $imageName = Carbon::now()->timestamp . '.' . $this->newimage->getClientOriginalName();
@@ -36,7 +36,7 @@ class EditCustomerProfileComponent extends Component
             $scustomer->image = $imageName;
         }
         $scustomer->phone = $this->phone;
-        $scustomer->city = $this->city;
+        $scustomer->address = $this->address;
         $scustomer ->save();
         session()->flash('message', 'Profile has been updated successfully !'); 
     }

@@ -170,11 +170,11 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-md-3 label-control" for="about">About:
+                                                    <label class="col-md-3 label-control" for="gender">Gender:
                                                     </label>
                                                     <div class="col-md-9">
-                                                        <textarea id="about" class="form-control border-primary" name="about"
-                                                            placeholder="Write about yourself"wire:model="about"></textarea>
+                                                        <input type="radio" name="gender" value="Male" wire:model="gender"> Male
+                                                        <input type="radio" name="gender" value="Female" wire:model="gender"> Female              
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -189,10 +189,10 @@
         
         
                                                 <div class="form-group row">
-                                                    <label class="col-md-3 label-control" for="city">Address </label>
+                                                    <label class="col-md-3 label-control" for="address">Address </label>
                                                     <div class="col-md-9">
-                                                        <input type="text" id="city" class="form-control border-primary"
-                                                            name="city" placeholder="Your City" wire:model="city">
+                                                        <input type="text" id="address" class="form-control border-primary"
+                                                            name="address" placeholder="Your address" wire:model="address">
                                                     </div>
                                                 </div>
         
@@ -211,12 +211,15 @@
                                                 </div>
         
                                                 <div class="form-group row">
-                                                    <label class="col-md-3 label-control" for="service_locations">Service
-                                                        Location: </label>
+                                                    <label class="col-md-3 label-control" for="service_locations">Provider Service: </label>
                                                     <div class="col-md-9">
-                                                        <input type="text" id="service_locations"
-                                                            class="form-control border-primary" name="service_locations"
-                                                            placeholder="Zipcode/Pincode"wire:model="service_locations">
+                                                        <select id="slug_id" name="slug_id"
+                                                            class="form-control border-primary" wire:model="slug_id">
+                                                            @foreach ($services as $service)
+                                                                <option value="{{ $service->id }}">{{ $service->name }}
+                                                                </option>
+                                                            @endforeach
+                                                        </select>
                                                     </div>
                                                 </div>
                                             </div>

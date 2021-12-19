@@ -256,7 +256,7 @@
                                                                         class="ft-globe font-small-3"></i> Lives
                                                                     in:</a></span>
                                                             <span
-                                                                class="d-block overflow-hidden">{{ $scustomer->city }}</span>
+                                                                class="d-block overflow-hidden">{{ $scustomer->address}}</span>
                                                         </li>
 
                                                     </ul>

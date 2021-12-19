@@ -36,18 +36,18 @@ class CreateNewUser implements CreatesNewUsers
             'password' => Hash::make($input['password']),
             'u_type' => $registeras
         ]);
-        if( $registeras === 'SPV')
-        {
-            ServiceProvider::create([
-                'user_id'=> $user->id
-            ]);
-        }
-        if( $registeras === 'CST')
-        {
-            CustomersTotalService::create([
-                'user_id'=> $user->id
-            ]);
-        }
+        // if( $registeras === 'SPV')
+        // {
+        //     ServiceProvider::create([
+        //         'user_id'=> $user->id
+        //     ]);
+        // }
+        // if( $registeras === 'CST')
+        // {
+        //     CustomersTotalService::create([
+        //         'user_id'=> $user->id
+        //     ]);
+        // }
         return $user;
     }
 }

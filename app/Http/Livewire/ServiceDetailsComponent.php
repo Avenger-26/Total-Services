@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\User;
 use App\Models\Service;
 use Livewire\Component;
 use App\Models\ServiceCategory;
@@ -17,8 +18,9 @@ class ServiceDetailsComponent extends Component
     public function render()
     {   
         $service = Service::where('slug',$this->service_slug)->first(); 
+        $sprovider= User::where('slug_id',$service->id)->inRandomOrder()->first();
         $r_service = Service::where('service_category_id',$service->service_category_id)->where('slug','!=',$this->service_slug)->inRandomOrder()->first(); 
-        return view('livewire.service-details-component',['service'=>$service,'r_service'=>$r_service ])->layout('frontend.layouts.base');
+        return view('livewire.service-details-component',['service'=>$service,'r_service'=>$r_service, 'sprovider'=>$sprovider ])->layout('frontend.layouts.base');
     }
 }
  

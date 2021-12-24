@@ -33,7 +33,7 @@
                                 class="ft-edit mr-2"></i><span data-i18n="" class="menu-title">Edit
                                 Profile</span></a>
                     </li>
-                    
+
                     <li class=" nav-item"><a href="{{ route('logout') }}"
                             onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i
                                 class="ft-power mr-2"></i><span data-i18n="" class="menu-title">Logout</span></a>
@@ -110,7 +110,7 @@
                                         class="ft-maximize font-medium-3 blue-grey darken-4"></i>
                                     <p class="d-none">fullscreen</p>
                                 </a></li>
-                          
+
                             <li class="dropdown nav-item"><a id="dropdownBasic3" href="#" data-toggle="dropdown"
                                     class="nav-link position-relative dropdown-toggle"><i
                                         class="ft-user font-medium-3 blue-grey darken-4"></i>
@@ -189,7 +189,7 @@
                                                         <a href="#about"
                                                             class="primary font-medium-2 font-weight-600">About</a>
                                                     </li>
-                                                   
+
                                                 </ul>
                                             </div>
                                             <div class="col-lg-2 col-md-2 text-center">
@@ -203,7 +203,7 @@
                                             </div>
                                             <div class="col-lg-5 col-md-5">
                                                 <ul class="profile-menu no-list-style">
-                                                    
+
                                                     <li>
                                                         <a href="{{ route('sprovider.edit_profile') }}"
                                                             class="primary font-medium-2 font-weight-600">Edit Profile</a>
@@ -437,12 +437,12 @@
                                             @if ($sprovider->image)
                                                 <img src="{{ asset('storage\app\sproviders\1638529582.png') }}" alt=""
                                                     width="150" height="150" class="rounded-circle mx-auto d-flex my-2">
-        
+
                                             @else
                                                 <img src="{{ asset('images/sproviders/default.png') }}" alt="" width="150"
                                                     height="150" class="rounded-circle mx-auto d-flex my-2">
                                             @endif
-        
+
                                             <h3>{{ Auth::user()->name }}</h3>
                                             <h4><b>About: </b>{{ $sprovider->about }}</h4>
                                             <h4><b>Email: </b>{{ Auth::user()->email }}</h4>
@@ -454,7 +454,7 @@
                                                 @endif
                                             </h4>
                                             <h4><b>Service Location: </b>{{ $sprovider->service_locations }}</h4>
-                                            
+
                                             <button type="submit" class="btn btn-raised btn-primary mx-auto d-flex">
                                                 <a href="{{ route('sprovider.edit_profile') }}"
                                                 class="  btn-primary">Edit Profile</a>

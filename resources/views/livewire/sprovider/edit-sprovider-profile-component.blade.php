@@ -33,7 +33,7 @@
                                 class="ft-edit mr-2"></i><span data-i18n="" class="menu-title">Edit
                                 Profile</span></a>
                     </li>
-            
+
                     <li class=" nav-item"><a href="{{ route('logout') }}"
                             onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i
                                 class="ft-power mr-2"></i><span data-i18n="" class="menu-title">Logout</span></a>
@@ -110,7 +110,7 @@
                                         class="ft-maximize font-medium-3 blue-grey darken-4"></i>
                                     <p class="d-none">fullscreen</p>
                                 </a></li>
-                            
+
                             <li class="dropdown nav-item"><a id="dropdownBasic3" href="#" data-toggle="dropdown"
                                     class="nav-link position-relative dropdown-toggle"><i
                                         class="ft-user font-medium-3 blue-grey darken-4"></i>
@@ -148,7 +148,12 @@
                                 <div class="card-content">
                                     <div class="px-3">
                                         @if (Session::has('message'))
-                                            <div class="alert alert-success" role="alert">{{Session::get('message')}}</div>
+                                        <div class="alert alert-success alert-dismissible " role="alert">
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                              <span aria-hidden="true">&times;</span>
+                                            </button>
+                                            <a>{{ Session::get('message') }}</a>
+                                          </div>
                                         @endif
                                         <form class="form form-horizontal" wire:submit.prevent="updateProfile" enctype="multipart/form-data">
                                             <div class="form-body">
@@ -174,7 +179,9 @@
                                                     </label>
                                                     <div class="col-md-9">
                                                         <input type="radio" name="gender" value="Male" wire:model="gender"> Male
-                                                        <input type="radio" name="gender" value="Female" wire:model="gender"> Female              
+
+                                                        <input type="radio" name="gender" value="Female" wire:model="gender"> Female
+
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -185,9 +192,9 @@
                                                             name="phone" placeholder="+91-7689XXXXXX" wire:model="phone">
                                                     </div>
                                                 </div>
-        
-        
-        
+
+
+
                                                 <div class="form-group row">
                                                     <label class="col-md-3 label-control" for="address">Address </label>
                                                     <div class="col-md-9">
@@ -195,7 +202,7 @@
                                                             name="address" placeholder="Your address" wire:model="address">
                                                     </div>
                                                 </div>
-        
+
                                                 <div class="form-group row">
                                                     <label class="col-md-3 label-control" for="service_category_id">Provider Profession:
                                                     </label>
@@ -209,7 +216,7 @@
                                                         </select>
                                                     </div>
                                                 </div>
-        
+
                                                 <div class="form-group row">
                                                     <label class="col-md-3 label-control" for="service_locations">Provider Service: </label>
                                                     <div class="col-md-9">
@@ -226,7 +233,7 @@
                                             <button type="submit" class="btn btn-raised btn-primary mx-auto d-flex">
                                                 Update Profile
                                             </button>
-        
+
                                         </form>
                                     </div>
                                 </div>
@@ -248,5 +255,5 @@
 
         </div>
     </div>
-    
+
 </div>

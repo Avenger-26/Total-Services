@@ -1,23 +1,32 @@
+<style>
+    table td{
+        line-height:80px;
+    }
+    table td a{
+        line-height:80px;
+    }
+
+</style>
+
 <div>
     <!--.main-menu(class="#{menuColor} #{menuOpenType}", class=(menuShadow == true ? 'menu-shadow' : ''))-->
     @include('../../layouts/admin/header')
-
         <div class="main-panel">
             <!-- BEGIN : Main Content-->
             <div class="main-content">
                 <div class="content-wrapper">
                     <section id="extended">
                         <div class="row justify-content-md-center">
-                            <div class="col-md-12">
+                            <div class="col-md-11 col-sm-11">
                                 <div class="card">
                                     <div class="card-header">
                                         <div class="row">
                                             <div class="col-md-6 ">
-                                                <h4 class="">All Service</h4>
+                                                <h4 class="">All Service Providers</h4>
                                             </div>
                                             <div class="col-md-6">
-                                                <a href="{{ route('admin.add_service_categories') }}"
-                                                    class="btn btn-info pull-right mx-3">Add New</a>
+                                                <a href="{{ route('admin.add_service_provider') }}"
+                                                    class="btn-hover color-hover pull-right mx-3">Add New</a>
                                             </div>
                                         </div>
                                     </div>
@@ -26,52 +35,47 @@
                                         <div class="card-body table-responsive">
 
                                             @if (Session::has('message'))
-                                            <div class="alert alert-primary alert-dismissible mb-2" role="alert">
-                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                                  <span aria-hidden="true">&times;</span>
-                                                </button>
-                                                <strong>{{ Session::get('message') }}</strong>
-                                              </div>
-
+                                                <div class="alert alert-success" role="alert">
+                                                    {{ Session::get('message') }}
                                                 </div>
                                             @endif
-                                            <table class="table text-center">
+                                            <table class="table text-center table-striped table-hover shadow ">
                                                 <thead>
                                                     <tr>
-                                                        <th>#</th>
+                                                        <th>ID</th>
                                                         <th>Image</th>
                                                         <th>Name</th>
-                                                        <th>Slug</th>
+                                                        <th>Profession</th>
+                                                        <th>Phone</th>
+                                                        <th>Location</th>
                                                         <th>Action</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    @foreach ($scategories as $scategory)
+                                                    @foreach ($sproviders as $sprovider)
                                                         <tr>
-                                                            <td>{{ $no++ }}</td>
-                                                            <td><img src="{{ asset('images/services-categories') }}/{{ $scategory->image }}"
-                                                                    width="60" alt=""></td>
-                                                            <td>{{ $scategory->name }}</td>
-                                                            <td>{{ $scategory->slug }}</td>
+                                                            <td ><span class="badge badge-success mt-3">{{ $sprovider->id }}</span></td>
+                                                            <td><img  class="rounded-circle img-border gradient-summer  " src="{{ asset('images/sproviders') }}/{{ $sprovider->image }}"
+                                                                    width="80" height="80" alt=""></td>
+                                                            <td>{{ $sprovider->name }}</td>
                                                             <td>
-                                                                <a href="{{ route('admin.services_by_category', ['category_slug' => $scategory->slug]) }}"
-                                                                    style="margin-left:15px"><i
-                                                                        class="ft-list font-medium-3 mr-2 text-light"></i></a>
+                                                                @if ($sprovider->service_category_id)
+                                                        {{ $sprovider->category->name }}
+                                                    @endif
 
-                                                                <a
-                                                                    href="{{ route('admin.edit_service_categories', ['category_id' => $scategory->id]) }}"><i
-                                                                        class="ft-edit-2 font-medium-3  mr-2"></i></a>
-                                                                <a href="#"
-                                                                    onclick="confirm('Are you sure, you want to delete this service category!')||event.stopImmediatePropagation()"
-                                                                    wire:click.prevent="deleteServiceCategory({{ $scategory->id }})"
-                                                                ><i
-                                                                        class="ft-x  text-danger font-medium-3  mr-2"></i></a>
+                                                            </td>
+                                                            <td>{{ $sprovider->phone }}</td>
+                                                            <td>{{ $sprovider->address }}</td>
+                                                            <td>
+
+                                                                                                        {{-- <a href="{{ route('admin.edit_service_categories', ['category_id' => $sprovider->id]) }}"><i class="ft-edit font-medium-5 mr-2"></i></a> --}}
+                                                                                                        <a href="#"  onclick="confirm('Are you sure, you want to delete this service Provider!')||event.stopImmediatePropagation()" wire:click.prevent="deleteServiceProvider({{  $sprovider->id }})" style="margin-left:10px"><i class="fa fa-trash  text-danger font-medium-5  mt-3 mr-2"></i></a>
                                                             </td>
                                                         </tr>
                                                     @endforeach
                                                 </tbody>
                                             </table>
-                                            {{ $scategories->links() }}
+                                            {{-- {{ $sprovider->links() }} --}}
 
 
                                         </div>

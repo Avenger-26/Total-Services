@@ -53,8 +53,7 @@
                     <div class="col-md-12 services-carousel py-3">
                         <ul id="sponsors" class="tooltip-hover">
                             @foreach ($scategories as $scategory)
-                                <li data-toggle="tooltip" title="" data-original-title="{{ $scategory->name }}"> <a
-                                        href="#"><img
+                                <li data-toggle="tooltip" title="" data-original-title="{{ $scategory->name }}"> <a href="{{route('home.services_by_category',['category_slug'=>$scategory->slug])}}"><img
                                             src="{{ asset('images/services-categories') }}/{{ $scategory->image }}"
                                             alt="{{ $scategory->name }}"></a>
 

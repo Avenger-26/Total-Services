@@ -22,7 +22,7 @@ class EditSproviderProfileComponent extends Component
     public $service_category_id;
     public $slug_id;
     public $newimage;
-    
+
     public function mount()
     {
         $sprovider = User::where('id',Auth::user()->id)->first();
@@ -34,12 +34,16 @@ class EditSproviderProfileComponent extends Component
         $this->service_category_id = $sprovider->service_category_id;
         $this->slug_id = $sprovider->slug_id;
     }
-    
+
     public function updateProfile()
     {
+
+      
+
         $sprovider = User::where('id', Auth::user()->id)->first();
         if ($this->newimage) 
         { 
+
             $imageName = Carbon::now()->timestamp . '.' . $this->newimage->getClientOriginalName();
             $this->newimage->storeAs('sproviders', $imageName);
             $sprovider->image = $imageName;
@@ -50,7 +54,7 @@ class EditSproviderProfileComponent extends Component
         $sprovider->service_category_id = $this->service_category_id;
         $sprovider->slug_id = $this->slug_id;
         $sprovider ->save();
-        session()->flash('message', 'Profile has been updated successfully !'); 
+        session()->flash('message', 'Profile has been updated successfully !');
     }
     public function render()
     {

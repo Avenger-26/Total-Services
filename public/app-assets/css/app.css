@@ -69,6 +69,51 @@ body {
   outline: 0 !important;
 }
 
+
+/* base buttons  */
+
+.btn-hover {
+    
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    margin: 20px;
+    padding:16px 20px;
+    text-align:center;
+    border: none;
+    background-size: 300% 100%;
+
+    border-radius: 50px;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+.btn-hover:hover {
+  background-position: 100% 0;
+  moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  color:white;
+}
+
+.btn-hover:focus {
+  outline: none;
+}
+.btn-hover.color-hover {
+  background-image: linear-gradient(
+      to right,
+      #25aae1,
+      #4481eb,
+      #04befe,
+      #3f86ed
+  );
+  box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+}
+
+
 hr {
   box-sizing: content-box;
   height: 0;
@@ -42778,8 +42823,8 @@ select.form-control {
   padding-bottom: 0 !important;
 }
 
-/* 
-TODO:M: To check with latest bootstrap version and remove it. 
+/*
+TODO:M: To check with latest bootstrap version and remove it.
 Bootstrap Enhance */
 .custom-control {
   display: block;
@@ -43680,7 +43725,7 @@ ngb-accordion .card {
 		position: fixed;
     	z-index: 999;
     	background: $white;
-    	width: 291px;    	
+    	width: 291px;
     	padding: 1rem;
     	fieldset{
     		border-bottom: 1px solid $sideber-border;
@@ -54679,7 +54724,7 @@ bootstrap table theme
 .lineChart1Shadow {
   -webkit-filter: drop-shadow(0px 20px 6px rgba(0, 0, 0, 0.3));
   filter: drop-shadow(0px 20px 6px rgba(0, 0, 0, 0.3));
-  /* Same syntax as box-shadow, except 
+  /* Same syntax as box-shadow, except
                                                        for the spread property */
 }
 
@@ -54704,7 +54749,7 @@ bootstrap table theme
 .shadow {
   -webkit-filter: drop-shadow(0px 25px 8px rgba(0, 0, 0, 0.3));
   filter: drop-shadow(0px 25px 8px rgba(0, 0, 0, 0.3));
-  /* Same syntax as box-shadow, except 
+  /* Same syntax as box-shadow, except
                                                        for the spread property */
 }
 
@@ -54801,7 +54846,7 @@ bootstrap table theme
 .lineChartShadow {
   -webkit-filter: drop-shadow(0px 25px 8px rgba(0, 0, 0, 0.3));
   filter: drop-shadow(0px 25px 8px rgba(0, 0, 0, 0.3));
-  /* Same syntax as box-shadow, except 
+  /* Same syntax as box-shadow, except
                                                        for the spread property */
 }
 
@@ -54851,7 +54896,7 @@ bootstrap table theme
 .BarChartShadow {
   -webkit-filter: drop-shadow(0px 20px 8px rgba(0, 0, 0, 0.3));
   filter: drop-shadow(0px 20px 8px rgba(0, 0, 0, 0.3));
-  /* Same syntax as box-shadow, except 
+  /* Same syntax as box-shadow, except
                                                        for the spread property */
 }
 
@@ -54871,7 +54916,7 @@ bootstrap table theme
 .WidgetlineChartshadow {
   -webkit-filter: drop-shadow(0px 15px 5px rgba(0, 0, 0, 0.8));
   filter: drop-shadow(0px 15px 5px rgba(0, 0, 0, 0.8));
-  /* Same syntax as box-shadow, except 
+  /* Same syntax as box-shadow, except
                                                        for the spread property */
 }
 
@@ -54909,7 +54954,7 @@ bootstrap table theme
 .WidgetlineChart1Shadow {
   -webkit-filter: drop-shadow(0px 20px 5px rgba(0, 0, 0, 0.3));
   filter: drop-shadow(0px 20px 5px rgba(0, 0, 0, 0.3));
-  /* Same syntax as box-shadow, except 
+  /* Same syntax as box-shadow, except
                                                        for the spread property */
 }
 
@@ -54929,7 +54974,7 @@ bootstrap table theme
 .WidgetlineChart2Shadow {
   -webkit-filter: drop-shadow(0px 20px 5px rgba(0, 0, 0, 0.3));
   filter: drop-shadow(0px 20px 5px rgba(0, 0, 0, 0.3));
-  /* Same syntax as box-shadow, except 
+  /* Same syntax as box-shadow, except
                                                        for the spread property */
 }
 
@@ -55026,7 +55071,7 @@ bootstrap table theme
 .lineChart2Shadow {
   -webkit-filter: drop-shadow(0px 25px 8px rgba(0, 0, 0, 0.3));
   filter: drop-shadow(0px 25px 8px rgba(0, 0, 0, 0.3));
-  /* Same syntax as box-shadow, except 
+  /* Same syntax as box-shadow, except
                                                        for the spread property */
 }
 
@@ -55042,7 +55087,7 @@ bootstrap table theme
 .lineChart1Shadow {
   -webkit-filter: drop-shadow(0px 20px 6px rgba(0, 0, 0, 0.3));
   filter: drop-shadow(0px 20px 6px rgba(0, 0, 0, 0.3));
-  /* Same syntax as box-shadow, except 
+  /* Same syntax as box-shadow, except
                                                        for the spread property */
 }
 
@@ -58437,3 +58482,4 @@ input[type="radio"].switch {
 .main-content .color-palette span.dark {
   color: rgba(0, 0, 0, 0.87);
 }
+

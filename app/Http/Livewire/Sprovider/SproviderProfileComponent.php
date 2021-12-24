@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Sprovider;
 
+use App\Models\User;
 use Livewire\Component;
 use App\Models\ServiceProvider;
 use Illuminate\Support\Facades\Auth;
@@ -10,7 +11,7 @@ class SproviderProfileComponent extends Component
 {
     public function render()
     {
-        $sprovider= ServiceProvider::where('user_id',Auth::user()->id)->first();
+        $sprovider= User::where('id',Auth::user()->id)->first();
         return view('livewire.sprovider.sprovider-profile-component',['sprovider'=>$sprovider])->layout('FrontEnd.layouts.guest');
     }
 }

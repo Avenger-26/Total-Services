@@ -28,7 +28,7 @@
           </div>
         </div>
         <div class="col-xl-4 col-lg-4 col-md-4 col-11 mx-auto">
-          <div class="card gradient-ibiza-sunset">
+          <div class="card gradient-ibiza-sunset" wire:click="location.href='/admin/service-provider'">
             <div class="card-content">
               <div class="card-body pt-2 pb-0">
                 <div class="media">
@@ -53,6 +53,7 @@
             <div class="card-content">
               <div class="card-body pt-2 pb-0">
                 <div class="media">
+
                   <div class="media-body white text-left">
                     <h3 class="font-large-1 mb-0">{{$totalServiceCategories}}</h3>
                     <span>Total Service Categories</span>
@@ -60,12 +61,14 @@
                   <div class="media-right white text-right">
                     <i class="fa ft-briefcase  fa-4x"></i>
                   </div>
+                </a>
                 </div>
               </div>
               <div id="Widget-line-chart2" class="height-75 WidgetlineChart WidgetlineChartshadow mb-2">
               </div>
             </div>
           </div>
+
         </div>
         {{-- <div class="col-xl-3 col-lg-6 col-md-6 col-12">
           <div class="card gradient-pomegranate">

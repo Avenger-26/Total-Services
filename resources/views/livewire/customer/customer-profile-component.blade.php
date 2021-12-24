@@ -156,7 +156,7 @@
                                             <div class="align-self-center halfway-fab text-center">
                                                 <a class="profile-image">
                                                     @if ($scustomer->image)
-                                                        <img src="{{ asset('storage/images/customer') }}/{{ $scustomer->image }}"
+                                                        <img src="{{ asset('images/customer') }}/{{ $scustomer->image }}"
                                                             alt="" width="150" height="150"
                                                             class="rounded-circle img-border gradient-summer">
                                                     @else
@@ -256,7 +256,7 @@
                                                                         class="ft-globe font-small-3"></i> Lives
                                                                     in:</a></span>
                                                             <span
-                                                                class="d-block overflow-hidden">{{ $scustomer->city }}</span>
+                                                                class="d-block overflow-hidden">{{ $scustomer->address}}</span>
                                                         </li>
 
                                                     </ul>

@@ -23,30 +23,30 @@
                                     <div class="card-content">
                                         <div class="card-body table-responsive">
                                             <table class="table text-center">
-                                        <thead>
-                                            <tr>
-                                                <th>#</th>
-                                                <th>Name</th>
-                                                <th>Email</th>
-                                                <th>Phone</th>
-                                                <th>Message</th>
-                                                <th>Created At</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @foreach ($contacts as $contact)
-                                                <tr>
-                                                    <td>{{ $contact->id }}</td>
-                                                    <td>{{ $contact->name}}</td>
-                                                    <td>{{ $contact->email }}</td>
-                                                    <td>{{ $contact->phone }}</td>
-                                                    <td>{{ $contact->message }}</td>
-                                                    <td>{{ $contact->created_at }}</td>
-                                                </tr>
-                                            @endforeach
-                                        </tbody>
-                                    </table>
-                                   {{ $contacts->links() }}
+                                                <thead>
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th>Name</th>
+                                                        <th>Email</th>
+                                                        <th>Phone</th>
+                                                        <th>Message</th>
+                                                        <th>Created At</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    @foreach ($contacts as $contact)
+                                                        <tr>
+                                                            <td>{{ $contact->id }}</td>
+                                                            <td>{{ $contact->name }}</td>
+                                                            <td>{{ $contact->email }}</td>
+                                                            <td>{{ $contact->phone }}</td>
+                                                            <td>{{ $contact->message }}</td>
+                                                            <td>{{ $contact->created_at }}</td>
+                                                        </tr>
+                                                    @endforeach
+                                                </tbody>
+                                            </table>
+                                            {{ $contacts->links() }}
 
 
                                         </div>
@@ -78,14 +78,14 @@
 
     </style>
     </div>
-<div>
-    <style>
-        nav svg {
-            height: 20px;
-        }
+    <div>
+        <style>
+            nav svg {
+                height: 20px;
+            }
 
-        nav .hidden {
-            display: block !important;
-        }
+            nav .hidden {
+                display: block !important;
+            }
 
     </style>

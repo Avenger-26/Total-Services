@@ -18,27 +18,39 @@
                                 <div class="card-content">
                                     <div class="px-3">
                                         @if (Session::has('message'))
-                                        <div class="alert alert-success" role="alert">{{ Session::get('message') }}
-                                        </div>
+                                        <div class="alert alert-success alert-dismissible " role="alert">
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                              <span aria-hidden="true">&times;</span>
+                                            </button>
+                                            <a>{{ Session::get('message') }}</a>
+                                          </div>
                                     @endif
-                                        <form enctype="multipart/form-data" method="post" wire:submit.prevent="createNewCategory">
+                                        <form enctype="multipart/form-data" method="post" wire:submit.prevent="updateProfile">
                                             @csrf
                                             <div class="form-group">
                                                 <label for="inputAddress">Name</label>
-                                                <input type="text" class="form-control" id="name" placeholder="Name" name="name" required wire:model="name">
+                                                <input type="text" class="form-control" id="name"
+                                                name="name" required wire:model="name"  value="{{$adminData->email}}" >
                                               </div>
+
                                             <div class="form-row">
                                               <div class="form-group col-md-6">
                                                 <label for="inputEmail4">Email</label>
-                                                <input type="email" class="form-control" id="inputEmail4" placeholder="Email" wire:model="email" name="email" required>
+                                                <input type="email" class="form-control" id="inputEmail4" value="{{$adminData->email}}" wire:model="email" name="email" required>
                                               </div>
                                               <div class="form-group col-md-6">
-                                                <label for="inputPassword4">Password</label>
-                                                <input type="password" class="form-control" id="inputPassword4" placeholder="Password" name="password" required wire:model="password">
-                                              </div>
+                                                <label for="gender">Gender</label>
+    <select class="form-control" id="gender" name="gender" required wire:model="gender">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Others">Others</option>
+    </select>
+                                              </div>                           {{-- < type=
+        "password" class="form-control" id="inputPassword4" placeholder="Password" name="password" required wire:model="password">
+                                              </div> --}}
                                             </div>
                                             <div class="form-group">
-                                              <label for="inputAddress">Phone</label>
+                                              <label for="phone">Phone</label>
                                               <input type="text" class="form-control" id="phone" placeholder="Phone Number" name="phone" required wire:model="phone">
                                             </div>
                                             <div class="form-group">
@@ -46,14 +58,31 @@
                                               <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" name="address" required wire:model="address">
                                             </div>
 
+                                            <div class="form-group">
+                                                <label for="newimage" class="col-md-3 label-control">Profile Image :
+                                                </label>
+                                                <div class="col-md-9">
+                                                    <input class="form-control-file border-primary" type="file"
+                                                        id="newimage" name="newimage" wire:model="newimage">
+                                                    @if ($newimage)
+                                                        <img src="{{ $newimage->temporaryUrl() }}" alt="" width="100" height="100" class="rounded-circle img-border gradient-summer my-3">
+                                                    @elseif($image)
+                                                        <img src="{{asset('images/sproviders')}}/{{ $image }}"
+                                                            alt="" width="100" height="100"  class="rounded-circle img-border gradient-summer my-3">
+                                                    @else
+                                                        <img src="{{ asset('images/sproviders/default.png') }}" alt=""
+                                                         class="rounded-circle img-border gradient-summer width-100 my-3">
+                                                    @endif
+                                                </div>
+                                            </div>
 
 
 
-
-                                            <div class="form-group ">
+                                            {{-- <div class="form-group ">
                                                 <label for="exampleFormControlFile1">Update Photo</label>
-                                                <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image" placeholder="Upload" required>
-                                              </div>
+                                                <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image" placeholder="Upload"
+                                                wire:model="image"required>
+                                              </div> --}}
                                            <div class=" mx-auto">
                                             <button type="submit" class="btn btn-primary px-4 mx-auto">Submit </button>
                                            </div>

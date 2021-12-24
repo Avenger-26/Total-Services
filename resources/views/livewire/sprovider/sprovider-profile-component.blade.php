@@ -148,7 +148,7 @@
                                         <div class="col-5">
                                             <div class="align-self-start halfway-fab pl-3 pt-2">
                                                 <div class="text-left">
-                                                    <h3 class="card-title white">{{ Auth::user()->name }}</h3>
+                                                    <h3 class="card-title white">{{ $sprovider->name }}</h3>
                                                 </div>
                                             </div>
                                         </div>
@@ -194,7 +194,7 @@
                                             </div>
                                             <div class="col-lg-2 col-md-2 text-center">
                                                 <span
-                                                    class="font-medium-2 text-uppercase">{{ Auth::user()->name }}</span>
+                                                    class="font-medium-2 text-uppercase">{{ $sprovider->name }}</span>
                                                 <p class="grey font-md-4">
                                                     @if ($sprovider->service_category_id)
                                                         {{ $sprovider->category->name }}
@@ -232,11 +232,11 @@
                                     </div>
                                     <div class="card-content">
                                         <div class="card-body">
-                                            <div class="mb-3">
+                                            {{-- <div class="mb-3">
                                                 <span class="text-bold-500 primary">About Me:</span>
                                                 <span class="d-block overflow-hidden">{{ $sprovider->about }}
                                                 </span>
-                                            </div>
+                                            </div> --}}
                                             <hr>
                                             <div class="row">
                                                 <div class="col-12 col-md-6 col-lg-4">
@@ -245,14 +245,14 @@
                                                             <span class="text-bold-500 primary"><a><i
                                                                         class="ft-mail font-small-3"></i> Email:</a></span>
                                                             <span
-                                                                class="d-block overflow-hidden">{{ Auth::user()->email }}</span>
+                                                                class="d-block overflow-hidden">{{ $sprovider->email }}</span>
                                                         </li>
                                                         <li class="mb-2">
                                                             <span class="text-bold-500 primary"><a><i
                                                                         class="ft-globe font-small-3"></i> Lives
                                                                     in:</a></span>
                                                             <span
-                                                                class="d-block overflow-hidden">{{ $sprovider->city }}</span>
+                                                                class="d-block overflow-hidden">{{ $sprovider->address }}</span>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -269,7 +269,7 @@
                                                             <span class="text-bold-500 primary"><a><i
                                                                         class="ft-user font-small-3"></i>
                                                                     Gender:</a></span>
-                                                            <span class="d-block overflow-hidden">Male</span>
+                                                            <span class="d-block overflow-hidden">{{ $sprovider->gender }}</span>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -277,7 +277,7 @@
                                                     <ul class="no-list-style">
                                                         <li class="mb-2">
                                                             <span class="text-bold-500 primary"><a><i
-                                                                        class="ft-book font-small-3"></i>Provider
+                                                                        class="ft-book font-small-3"></i> Provider
                                                                     Profession:</a></span>
                                                             <span class="d-block overflow-hidden">
                                                                 @if ($sprovider->service_category_id)
@@ -287,10 +287,13 @@
                                                         </li>
                                                         <li class="mb-2">
                                                             <span class="text-bold-500 primary"><a><i
-                                                                        class="ft-map-pin font-small-3"></i>
-                                                                    Service Location:</a></span>
-                                                            <span
-                                                                class="d-block overflow-hidden">{{ $sprovider->service_locations }}</span>
+                                                                        class="ft-codepen font-small-3"></i>
+                                                                    Provide Service</a></span>
+                                                            <span class="d-block overflow-hidden">
+                                                            @if ($sprovider->slug_id)
+                                                                {{ $sprovider->slug->name }}
+                                                            @endif
+                                                            </span>
                                                         </li>
 
                                                     </ul>
@@ -444,7 +447,7 @@
                                             <h4><b>About: </b>{{ $sprovider->about }}</h4>
                                             <h4><b>Email: </b>{{ Auth::user()->email }}</h4>
                                             <h4><b>Phone: </b>{{ $sprovider->phone }}</h4>
-                                            <h4><b>City: </b>{{ $sprovider->city }}</h4>
+                                            <h4><b>address: </b>{{ $sprovider->address }}</h4>
                                             <h4><b>Provider Profession: </b>
                                                 @if ($sprovider->service_category_id)
                                                     {{ $sprovider->category->name }}

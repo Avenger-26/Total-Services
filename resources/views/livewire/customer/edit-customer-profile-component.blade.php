@@ -165,7 +165,7 @@
                                                                 height="150"
                                                                 class="rounded-circle img-border gradient-summer my-3">
                                                         @elseif($image)
-                                                            <img src="{{ asset('storage/images/customer') }}/{{ $image }}"
+                                                            <img src="{{ asset('images/customer') }}/{{ $image }}"
                                                                 alt="" width="150" height="150"
                                                                 class="rounded-circle img-border gradient-summer my-3">
                                                         @else
@@ -184,10 +184,10 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-md-3 label-control" for="city">City </label>
+                                                    <label class="col-md-3 label-control" for="address">Address </label>
                                                     <div class="col-md-9">
-                                                        <input type="text" id="city" class="form-control border-primary"
-                                                            name="city" placeholder="Your City" wire:model="city">
+                                                        <input type="text" id="address" class="form-control border-primary"
+                                                            name="address" placeholder="Your address" wire:model="address">
                                                     </div>
                                                 </div>
                                             </div>

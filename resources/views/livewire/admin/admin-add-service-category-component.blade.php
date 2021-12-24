@@ -59,7 +59,7 @@
                                                             </label>
 
                                                             <input id="image" type="file"
-                                                                class="form-control border-primary" name="image"
+                                                                class="" name="image"
                                                                 wire:model="image" />
                                                             @error('image')<p class="text-danger">{{ $message }}
                                                                 </p>

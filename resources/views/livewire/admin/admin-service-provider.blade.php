@@ -1,3 +1,13 @@
+<style>
+    table td{
+        line-height:80px;
+    }
+    table td a{
+        line-height:80px;
+    }
+
+</style>
+
 <div>
     <!--.main-menu(class="#{menuColor} #{menuOpenType}", class=(menuShadow == true ? 'menu-shadow' : ''))-->
     @include('../../layouts/admin/header')
@@ -12,11 +22,11 @@
                                     <div class="card-header">
                                         <div class="row">
                                             <div class="col-md-6 ">
-                                                <h4 class="">All Service</h4>
+                                                <h4 class="">All Service Providers</h4>
                                             </div>
                                             <div class="col-md-6">
                                                 <a href="{{ route('admin.add_service_provider') }}"
-                                                    class="btn btn-info pull-right mx-3">Add New</a>
+                                                    class="btn-hover color-hover pull-right mx-3">Add New</a>
                                             </div>
                                         </div>
                                     </div>
@@ -29,14 +39,14 @@
                                                     {{ Session::get('message') }}
                                                 </div>
                                             @endif
-                                            <table class="table text-center">
+                                            <table class="table text-center table-striped table-hover shadow ">
                                                 <thead>
                                                     <tr>
                                                         <th>ID</th>
                                                         <th>Image</th>
+                                                        <th>Name</th>
                                                         <th>Profession</th>
                                                         <th>Phone</th>
-                                                        <th>City</th>
                                                         <th>Location</th>
                                                         <th>Action</th>
                                                     </tr>
@@ -44,23 +54,22 @@
                                                 <tbody>
                                                     @foreach ($sproviders as $sprovider)
                                                         <tr>
-                                                            <td>{{ $sprovider->user_id }}</td>
-                                                            <td><img src="{{ asset('images/sproviders') }}/{{ $sprovider->image }}"
-                                                                    width="60" alt=""></td>
-                                                            <td>{{ $sprovider->about }}</td>
+                                                            <td ><span class="badge badge-success mt-3">{{ $sprovider->id }}</span></td>
+                                                            <td><img  class="rounded-circle img-border gradient-summer  " src="{{ asset('images/sproviders') }}/{{ $sprovider->image }}"
+                                                                    width="80" height="80" alt=""></td>
+                                                            <td>{{ $sprovider->name }}</td>
+                                                            <td>
+                                                                @if ($sprovider->service_category_id)
+                                                        {{ $sprovider->category->name }}
+                                                    @endif
+
+                                                            </td>
                                                             <td>{{ $sprovider->phone }}</td>
-                                                            <td>{{ $sprovider->city }}</td>
-                                                            <td>{{ $sprovider->service_locations }}</td>
+                                                            <td>{{ $sprovider->address }}</td>
                                                             <td>
 
-                                                                <a
-                                                                    href="{{ route('admin.edit_service_categories', ['category_id' => $sprovider->id]) }}"><i
-                                                                        class="ft-edit font-medium-5 mr-2"></i></a>
-                                                                <a href="#"
-                                                                    onclick="confirm('Are you sure, you want to delete this service category!')||event.stopImmediatePropagation()"
-                                                                    wire:click.prevent="deleteServiceProvider({{ $sprovider->id  }})"
-                                                                    style="margin-left:10px"><i
-                                                                        class="ft-x  text-danger font-medium-5 mr-2"></i></a>
+                                                                                                        {{-- <a href="{{ route('admin.edit_service_categories', ['category_id' => $sprovider->id]) }}"><i class="ft-edit font-medium-5 mr-2"></i></a> --}}
+                                                                                                        <a href="#"  onclick="confirm('Are you sure, you want to delete this service Provider!')||event.stopImmediatePropagation()" wire:click.prevent="deleteServiceProvider({{  $sprovider->id }})" style="margin-left:10px"><i class="fa fa-trash  text-danger font-medium-5  mt-3 mr-2"></i></a>
                                                             </td>
                                                         </tr>
                                                     @endforeach

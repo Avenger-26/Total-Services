@@ -5,6 +5,8 @@
   margin-bottom: 1rem;
   max-width: 9rem;
 }
+
+
 </style>
 
 <div>
@@ -19,17 +21,21 @@
                         <div class="col-md-10 ">
                     <div class="container">
                     <div class="row">
-                    <div class="col-12 col-sm-8 col-md-6 col-lg-6 mx-auto">
+                    <div class="col-12 col-sm-8 col-md-6 col-lg-6 mx-auto ">
                         <div class="card mt-5">
                         {{-- <img class="card-img-top" src="https://tothecloud.dev/assets/images/home-automation-background.webp" alt="Bologna"> --}}
-                        <div class="card-body text-center">
-                            <img class="avatar rounded-circle" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/robert.jpg" alt="Bologna">
-                            <h4 class="card-title">Robert Downey Jr.</h4>
-                            <h6 class="card-subtitle mb-2 text-muted">Famous Actor</h6>
-                            <p class="card-text">Robert John Downey Jr.'career has included critical and popular success in his youth, followed by a period of substance abuse and legal difficulties, and a resurgence of commercial success in middle age. </p>
+                        <div class="card-body text-center gradient-border shadow">
+                            <img class="avatar rounded-circle img-border gradient-summer shadow gradient-border " src="{{asset('images/sproviders')}}/{{ $admin->image }}" alt="{{$admin->name}}">
+                            <h4 class="card-title  border-bottom pb-2"> <i class="fa fa-user"></i> Name: {{$admin->name}}</h4>
+                            <p class="card-text pt-2  border-bottom pb-2"><i class="fa fa-envelope"></i> Email: {{$admin->email}}</p>
+                            <p class="card-text border-bottom pb-2"> <i class="fa fa-phone"></i> Phone :{{$admin->phone}}</p>
+                            <p class="card-text border-bottom pb-2"> <i class="fa fa-marke"></i>Address :{{$admin->address}}</p>
+                            <p class="card-text border-bottom pb-2"> <i class="fa fa-users-cog"></i> Role : Admin</p>
 
 
-                                <a  class="btn btn-primary " href="{{url('admin/Update_Profile')}}">
+
+
+                                <a  class="btn btn-dark  px-4 " href="{{url('admin/Update_Profile')}}">
                                     Update Profile
                                 </a>
 

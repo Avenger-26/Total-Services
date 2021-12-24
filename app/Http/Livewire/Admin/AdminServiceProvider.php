@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Admin;
 
 use App\Models\ServiceProvider;
+use App\Models\User;
 use Livewire\WithPagination;
 use Livewire\Component;
 
@@ -12,7 +13,7 @@ class AdminServiceProvider extends Component
     use WithPagination;
     public function deleteServiceProvider($id)
     {
-        $sproviders = ServiceProvider::find($id);
+        $sproviders = User::find($id);
         if ($sproviders->image) {
             unlink('images/sproviders' . '/' . $sproviders->image);
         }
@@ -21,7 +22,7 @@ class AdminServiceProvider extends Component
     }
     public function render()
     {
-        $sproviders = ServiceProvider::paginate(10);
+        $sproviders = User::where('u_type', 'SPV')->paginate(10);
         return view('livewire.admin.admin-service-provider', ['sproviders' => $sproviders])->layout('FrontEnd.layouts.guest');
     }
 }

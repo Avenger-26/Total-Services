@@ -9,6 +9,7 @@ use Livewire\WithPagination;
 class AdminServiceCategoryComponent extends Component
 {
     use WithPagination;
+    public $no = 1;
     public function deleteServiceCategory($id)
     {
         $scategory = ServiceCategory::find($id);

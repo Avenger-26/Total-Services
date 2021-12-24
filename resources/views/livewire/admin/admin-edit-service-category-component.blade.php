@@ -53,11 +53,16 @@
                                                     </div>
                                                     <div class="form-group">
                                                         <div class="col-md-12">
+<<<<<<< HEAD
                                                         <label for="image" class=" label-control ">Category Image:
                                                         </label>
+=======
+                                                            <label for="image" class=" label-control ">Category Image:
+                                                            </label>
+>>>>>>> 69197a1e8c1af6502ed14c26331236ade75d08b0
 
                                                             <input id="image" type="file"
-                                                                class="form-control border-primary" name="newimage"
+                                                                class="" name="newimage"
                                                                 wire:model="newimage" />
                                                             @error('newimage')<p class="text-danger">
                                                                     {{ $message }}</p>

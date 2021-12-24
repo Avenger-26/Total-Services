@@ -1,3 +1,45 @@
+<style>
+    .badge-notify{
+   position:relative;
+   top: -20px;
+   border-radius: 50px;
+   left: -25px;
+  }
+  .gradient-border {
+  --borderWidth: 3px;
+  /* background: #1D1F20; */
+  position: relative;
+  border-radius: var(--borderWidth);
+}
+.gradient-border:after {
+  content: '';
+  position: absolute;
+  top: calc(-1 * var(--borderWidth));
+  left: calc(-1 * var(--borderWidth));
+  height: calc(100% + var(--borderWidth) * 2);
+  width: calc(100% + var(--borderWidth) * 2);
+  background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+  border-radius: calc(2 * var(--borderWidth));
+  z-index: -1;
+  animation: animatedgradient 3s ease alternate infinite;
+  background-size: 300% 300%;
+}
+
+
+@keyframes animatedgradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+</style>
+
 <div data-active-color="white" data-background-color="black"
 data-image="{{ asset('app-assets/img/sidebar-bg/01.jpg') }}" class="app-sidebar">
 <!-- main menu header-->
@@ -32,7 +74,7 @@ data-image="{{ asset('app-assets/img/sidebar-bg/01.jpg') }}" class="app-sidebar"
                 fa fa-users mr-2"></i><span data-i18n=""
                 class="menu-title">Service Provider</span></a>
             </li>
-            <li class=" nav-item"><a href=""><i class="ft-users mr-2"></i><span data-i18n=""
+            <li class=" nav-item"><a href="{{route('admin.users')}}"><i class="ft-users mr-2"></i><span data-i18n=""
                 class="menu-title">
                 Users</span></a></li>
             <li class=" nav-item"><a href="{{route('admin.service_categories')}}"><i class="
@@ -43,6 +85,11 @@ data-image="{{ asset('app-assets/img/sidebar-bg/01.jpg') }}" class="app-sidebar"
 
                 <i class="fa fa-envelope-open"></i><span data-i18n=""
                         class="menu-title">All Queries</span></a>
+            </li>
+            <li class=" nav-item"><a href="{{route('admin.changepassword')}}">
+
+                <i class="fa fa-key"></i><span data-i18n=""
+                        class="menu-title">Change Password</span></a>
             </li>
             <li class=" nav-item"><a href="{{ route('logout') }}"
                     onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i
@@ -115,6 +162,15 @@ data-image="{{ asset('app-assets/img/sidebar-bg/01.jpg') }}" class="app-sidebar"
         <div class="navbar-container">
             <div id="navbarSupportedContent" class="collapse navbar-collapse">
                 <ul class="navbar-nav">
+                    <li class="nav-item  d-none d-lg-block"><a id="navbar-fullscreen" href="{{route('admin.contacts')}}"
+                            class="nav-link apptogglefullscreen"> <span id="group">
+                                <button  type="button" class="btn btn-info ">
+                                 <i class="fa fa-envelope"></i>
+                                </button>
+                                <span class="badge badge-light badge-notify">5</span>
+                              </span>
+                            <p class="d-none">fullscreen</p>
+                        </a></li>
                     <li class="nav-item mr-2 d-none d-lg-block"><a id="navbar-fullscreen" href="javascript:;"
                             class="nav-link apptogglefullscreen"><i
                                 class="ft-maximize font-medium-3 blue-grey darken-4"></i>
@@ -127,11 +183,8 @@ data-image="{{ asset('app-assets/img/sidebar-bg/01.jpg') }}" class="app-sidebar"
                             <p class="d-none">User Settings</p>
                         </a>
                         <div ngbdropdownmenu="" aria-labelledby="dropdownBasic3"
-                            class="dropdown-menu text-left dropdown-menu-right"><a
-                                href="{{ route('sprovider.edit_profile') }}" class="dropdown-item py-1"><i
-                                    class="ft-edit mr-2"></i><span>Edit
-                                    Profile</span></a>
-                            <div class="dropdown-divider"></div><a href="{{ route('logout') }}"
+                            class="dropdown-menu text-left dropdown-menu-right">
+                            <a href="{{ route('logout') }}"
                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
                                 class="dropdown-item"><i class="ft-power mr-2"></i><span>Logout</span></a>
                         </div>

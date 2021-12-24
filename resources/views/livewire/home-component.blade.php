@@ -4,9 +4,10 @@
             <ul>
                 <li data-transition="slidevertical" data-slotamount="1" data-masterspeed="1000"
                     data-saveperformance="off" data-title="Slide">
-                    <img src="{{ asset('assets\img\slide\1-1.png') }}" alt="fullslide1" data-bgposition="center center"
-                        data-kenburns="on" data-duration="6000" data-ease="Linear.easeNone" data-bgfit="130"
-                        data-bgfitend="100" data-bgpositionend="right center">
+                    <img src="{{ asset('assets\img\slide\1-1.png') }}" alt="fullslide1"
+                        data-bgposition="center center" data-kenburns="on" data-duration="6000"
+                        data-ease="Linear.easeNone" data-bgfit="130" data-bgfitend="100"
+                        data-bgpositionend="right center">
                 </li>
                 <li data-transition="slidehorizontal" data-slotamount="1" data-masterspeed="1000"
                     data-saveperformance="off" data-title="Slide">
@@ -54,7 +55,7 @@
                         <ul id="sponsors" class="tooltip-hover">
                             @foreach ($scategories as $scategory)
                                 <li data-toggle="tooltip" title="" data-original-title="{{ $scategory->name }}"> <a
-                                        href="#"><img
+                                        href="{{ route('home.services_by_category', ['category_slug' => $scategory->slug]) }}"><img
                                             src="{{ asset('images/services-categories') }}/{{ $scategory->image }}"
                                             alt="{{ $scategory->name }}"></a>
 
@@ -223,257 +224,62 @@
 {{-- Service Carosel Slider start --}}
 <section class="container service-section ">
     <div class="row ">
-        <div class="title text-center">
-
-            <h2 class="title-text">Home Needs Services</h2>
-            <div class="container">
-                <div class="row">
+        <div class="content_info">
+            <div>
+                <div class="container-fluid">
                     <div class="row">
-                        <div class="col-md-9">
-
+                        <div class="titles">
+                            <h2>Total Service <span>Choice</span> of Services</h2>
+                            <hr class="tall">
                         </div>
-
-                    </div>
-                    <div id="carousel-example" class="carousel slide hidden-xs" data-ride="carousel">
-                        <!-- Wrapper for slides -->
-                        <div class="carousel-inner">
-                            <div class="item active">
-                                <div class="row">
-                                    <div class="col-sm-3">
-                                        <div class="col-item">
-                                            <div class="photo">
-                                                <img src="http://placehold.it/350x260" class="img-responsive" alt="a" />
-                                            </div>
-                                            <div class="info">
-                                                <div class="row">
-                                                    <div class="price col-md-6">
-                                                        <h5>
-                                                            Laundry</h5>
-                                                        <h5 class="price-text-color">
-                                                            Flat 25% offs</h5>
-                                                    </div>
-                                                    <div class="rating hidden-sm col-md-6">
-                                                        <i class="price-text-color fa fa-star"></i><i
-                                                            class="price-text-color fa fa-star">
-                                                        </i><i class="price-text-color fa fa-star"></i><i
-                                                            class="price-text-color fa fa-star">
-                                                        </i><i class="fa fa-star"></i>
+                        <div class="portfolioContainer" style="margin-top: -50px;">
+                            @foreach ($fserivces as $service)
+                                {{-- <div class="col-xs-6 col-sm-4 col-md-3 hsgrids mobile"
+                                style="padding-right: 5px;padding-left: 5px;">
+                                <a class="g-list" href="{{route('home.service_details',['service_slug'=>$service->slug])}}">
+                                    <div class="img-hover tb m-card">
+                                        <img src="{{asset('images/services/thumbnails')}}/{{$service->thumbnail}}" alt="{{$service->name}}"
+                                                        class="img-responsive">
+                                    </div>
+                                    <div class="info-gallery m-card">
+                                        <h3>{{$service->name}}</h3>
+                                        <hr class="separator">
+                                        <p>{{$service->tagline}}</p>
+                                        <div class="content-btn"><a href="{{route('home.service_details',['service_slug'=>$service->slug])}}"
+                                                class="btn btn-primary">Book Now</a></div>
+                                        <div class="price"><span></span><b>From</b>₹ {{$service->price}}</div>
+                                    </div>
+                                </a>
+                            </div> --}}
+                                <ul class="cards">
+                                    <li>
+                                        <div href="" class="card">
+                                            <img src="{{ asset('images/services/thumbnails') }}/{{ $service->thumbnail }}"
+                                                alt="{{ $service->name }}" class="card__image img-responsive" />
+                                            <div class="card__overlay">
+                                                <div class="card__header">
+                                                    {{-- <img class="card__thumb" src="{{ asset('images/services/thumbnails') }}/{{ $service->thumbnail }}" alt="{{ $service->name }}"/> --}}
+                                                    <div class="card__header-text">
+                                                        <h3 class="card__title">{{ $service->name }}</h3>
+                                                        <span class="card__status"><b>From: </b> ₹{{ $service->price}}</span>
+                                                        <span class="button"><a href="{{route('home.service_details',['service_slug'=>$service->slug])}}">Book</a> </span>
                                                     </div>
                                                 </div>
-
-                                                <div class="clearfix">
-                                                </div>
+                                                <p class="card__description">{{$service->description}}</p>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <div class="col-item">
-                                            <div class="photo">
-                                                <img src="http://placehold.it/350x260" class="img-responsive" alt="a" />
-                                            </div>
-                                            <div class="info">
-                                                <div class="row">
-                                                    <div class="price col-md-6">
-                                                        <h5>
-                                                            Electrician</h5>
-                                                        <h5 class="price-text-color">
-                                                            Flat 20% off </h5>
-                                                    </div>
-                                                    <div class="rating hidden-sm col-md-6">
-                                                    </div>
-                                                </div>
-
-                                                <div class="clearfix">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <div class="col-item">
-                                            <div class="photo">
-                                                <img src="http://placehold.it/350x260" class="img-responsive" alt="a" />
-                                            </div>
-                                            <div class="info">
-                                                <div class="row">
-                                                    <div class="price col-md-6">
-                                                        <h5>
-                                                            Next Sample Product</h5>
-                                                        <h5 class="price-text-color">
-                                                            $149.99</h5>
-                                                    </div>
-                                                    <div class="rating hidden-sm col-md-6">
-                                                        <i class="price-text-color fa fa-star"></i><i
-                                                            class="price-text-color fa fa-star">
-                                                        </i><i class="price-text-color fa fa-star"></i><i
-                                                            class="price-text-color fa fa-star">
-                                                        </i><i class="fa fa-star"></i>
-                                                    </div>
-                                                </div>
-
-                                                <div class="clearfix">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <div class="col-item">
-                                            <div class="photo">
-                                                <img src="http://placehold.it/350x260" class="img-responsive"
-                                                    alt="a" />
-                                            </div>
-                                            <div class="info">
-                                                <div class="row">
-                                                    <div class="price col-md-6">
-                                                        <h5>
-                                                            Sample Product</h5>
-                                                        <h5 class="price-text-color">
-                                                            $199.99</h5>
-                                                    </div>
-                                                    <div class="rating hidden-sm col-md-6">
-                                                        <i class="price-text-color fa fa-star"></i><i
-                                                            class="price-text-color fa fa-star">
-                                                        </i><i class="price-text-color fa fa-star"></i><i
-                                                            class="price-text-color fa fa-star">
-                                                        </i><i class="fa fa-star"></i>
-                                                    </div>
-                                                </div>
-
-                                                <div class="clearfix">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="row">
-                                    <div class="col-sm-3">
-                                        <div class="col-item">
-                                            <div class="photo">
-                                                <img src="http://placehold.it/350x260" class="img-responsive"
-                                                    alt="a" />
-                                            </div>
-                                            <div class="info">
-                                                <div class="row">
-                                                    <div class="price col-md-6">
-                                                        <h5>
-                                                            Product with Variants</h5>
-                                                        <h5 class="price-text-color">
-                                                            $199.99</h5>
-                                                    </div>
-                                                    <div class="rating hidden-sm col-md-6">
-                                                        <i class="price-text-color fa fa-star"></i><i
-                                                            class="price-text-color fa fa-star">
-                                                        </i><i class="price-text-color fa fa-star"></i><i
-                                                            class="price-text-color fa fa-star">
-                                                        </i><i class="fa fa-star"></i>
-                                                    </div>
-                                                </div>
-
-                                                <div class="clearfix">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <div class="col-item">
-                                            <div class="photo">
-                                                <img src="http://placehold.it/350x260" class="img-responsive"
-                                                    alt="a" />
-                                            </div>
-                                            <div class="info">
-                                                <div class="row">
-                                                    <div class="price col-md-6">
-                                                        <h5>
-                                                            Grouped Product</h5>
-                                                        <h5 class="price-text-color">
-                                                            $249.99</h5>
-                                                    </div>
-                                                    <div class="rating hidden-sm col-md-6">
-                                                    </div>
-                                                </div>
-
-                                                <div class="clearfix">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <div class="col-item">
-                                            <div class="photo">
-                                                <img src="http://placehold.it/350x260" class="img-responsive"
-                                                    alt="a" />
-                                            </div>
-                                            <div class="info">
-                                                <div class="row">
-                                                    <div class="price col-md-6">
-                                                        <h5>
-                                                            Product with Variants</h5>
-                                                        <h5 class="price-text-color">
-                                                            $149.99</h5>
-                                                    </div>
-                                                    <div class="rating hidden-sm col-md-6">
-                                                        <i class="price-text-color fa fa-star"></i><i
-                                                            class="price-text-color fa fa-star">
-                                                        </i><i class="price-text-color fa fa-star"></i><i
-                                                            class="price-text-color fa fa-star">
-                                                        </i><i class="fa fa-star"></i>
-                                                    </div>
-                                                </div>
-
-                                                <div class="clearfix">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <div class="col-item">
-                                            <div class="photo">
-                                                <img src="http://placehold.it/350x260" class="img-responsive"
-                                                    alt="a" />
-                                            </div>
-                                            <div class="info">
-                                                <div class="row">
-                                                    <div class="price col-md-6">
-                                                        <h5>
-                                                            Product with Variants</h5>
-                                                        <h5 class="price-text-color">
-                                                            $199.99</h5>
-                                                    </div>
-                                                    <div class="rating hidden-sm col-md-6">
-                                                        <i class="price-text-color fa fa-star"></i><i
-                                                            class="price-text-color fa fa-star">
-                                                        </i><i class="price-text-color fa fa-star"></i><i
-                                                            class="price-text-color fa fa-star">
-                                                        </i><i class="fa fa-star"></i>
-                                                    </div>
-                                                </div>
-
-                                                <div class="clearfix">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                                    </li>
+                                </ul>
+                            @endforeach
                         </div>
                     </div>
-                    <div class="col-md-7 " style="margin-right: 10px">
-                        <!-- Controls -->
-                        <div class="controls pull-right hidden-xs">
-                            <a class="left fa fa-chevron-left btn btn-primary" href="#carousel-example"
-                                data-slide="prev"></a>
-                            <a class="right fa fa-chevron-right btn btn-primary" href="#carousel-example"
-                                data-slide="next"></a>
-                        </div>
-                    </div>
+                    
                 </div>
-
             </div>
-
         </div>
     </div>
 </section>
+
 
 
 </div>

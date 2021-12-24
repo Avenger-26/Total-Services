@@ -33,7 +33,7 @@
                         <div class="col-xs-6 col-sm-4 col-md-3 nature hsgrids"
                             style="padding-right: 5px;padding-left: 5px;">
                             <a class="g-list" href="{{route('home.service_details',['service_slug'=>$service->slug])}}">
-                                <div class="img-hover">
+                                <div class="img-hover tb">
                                     <img src="{{asset('images/services/thumbnails')}}/{{$service->thumbnail}}" alt="{{$service->name}}"
                                         class="img-responsive">
                                 </div>

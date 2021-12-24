@@ -6,7 +6,7 @@
         <!-- main menu header-->
         <!-- Sidebar Header starts-->
         <div class="sidebar-header">
-            <div class="logo clearfix"><a href="index.html" class="logo-text float-left">
+            <div class="logo clearfix"><a href="/" class="logo-text float-left">
                     <span class="text align-left">Total Service</span>
                 </a>
                 <a id="sidebarToggle" href="javascript:;" class="nav-toggle d-none d-sm-none d-md-none d-lg-block"><i

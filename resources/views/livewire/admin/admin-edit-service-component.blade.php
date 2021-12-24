@@ -161,7 +161,7 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <a href="{{ route('admin.all_services') }}"
-                                                    class="btn btn-info pull-right">All Categories</a>
+                                                    class="btn btn-info pull-right">All Services</a>
                                             </div>
                                         </div>
                                     </div>
@@ -253,6 +253,18 @@
                                                         @error('discount_type')<p class="text-danger">
                                                                 {{ $message }}
                                                         </p>@enderror
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="col-md-12">
+                                                    <label for="name" class=" control-label text-light ">Featured:
+                                                        
+                                                    </label>
+                                                        <select name="featured" id="featured"
+                                                            class="form-control border-primary" wire:model="featured">
+                                                            <option value="0">No</option>
+                                                            <option value="1">Yes</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <div class="form-group">

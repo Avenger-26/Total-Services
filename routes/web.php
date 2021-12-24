@@ -27,7 +27,7 @@ use App\Http\Livewire\Sprovider\EditSproviderProfileComponent;
 Route::get('/', HomeComponent::class)->name('home');//->middleware('verified');
 Route::get('/service-categories', ServiceCategoriesComponent::class)->name('home.service_categories');
 Route::get('/{category_slug}/services',ServicesByCategoryComponent::class)->name('home.services_by_category');
-Route::get('/service/{service_slug}',ServiceDetailsComponent::class)->name('home.service_details');
+// Route::get('/service/{service_slug}',ServiceDetailsComponent::class)->name('home.service_details');
 
 Route::get('/autocomplete',[SearchController::class,'autocomplete'])->name('autocomplete');
 Route::post('/search',[SearchController::class,'searchService'])->name('searchService');

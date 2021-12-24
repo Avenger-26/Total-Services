@@ -120,7 +120,7 @@
                     @if (Route::has('login'))
                         @auth
                             @if (Auth::user()->u_type === 'ADM')
-                                <li class="login-form"><a href="#" title="Register">My Account( Admin )</a>
+                                <li class="login-form"><a href="#" title="Register">My Account ( {{Auth::user()->name}} )</a>
                                     <ul class="drop-down one-column hover-fade">
                                         <li><a href="{{ route('admin.dashboard') }}">Dasboard</a></li>
                                         <li><a href="{{ route('logout') }}"
@@ -129,7 +129,7 @@
                                     </ul>
                                 </li>
                             @elseif(Auth::user()->u_type==='SPV')
-                                <li class="login-form"><a href="#" title="Register">My Account(S Provider)</a>
+                                <li class="login-form"><a href="#" title="Register">My Account ( {{Auth::user()->name}} )</a>
                                     <ul class="drop-down one-column hover-fade">
                                         <li><a href="{{ route('sprovider.dashboard') }}">Dasboard</a></li>
                                         <li><a href="{{ route('logout') }}"
@@ -138,7 +138,7 @@
                                     </ul>
                                 </li>
                             @else
-                                <li class="login-form"><a href="" title="Register">My Account( Costumer )</a>
+                                <li class="login-form"><a href="" title="Register">My Account ( {{Auth::user()->name}} )</a>
                                     <ul class="drop-down one-column hover-fade">
                                         <li><a href="{{ route('costumer.dashboard') }}">Dasboard</a></li>
                                         <li><a href="{{ route('logout') }}"

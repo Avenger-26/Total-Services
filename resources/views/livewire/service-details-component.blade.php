@@ -1,5 +1,5 @@
 <div>
-    <div class="section-title-01 honmob">
+    <div class="section-title-02-2 honmob">
         <div class="bg_parallax image_02_parallax"></div>
         <div class="opacy_bg_02">
             <div class="container">
@@ -43,8 +43,8 @@
                                         </div>
                                     </div>
                                     <div class="col-md-12">
-                                        <div id="single-carousel">
-                                            <div class="img-hover">
+                                        <div id="single-carousel" class="custome-owl">
+                                            <div class="img-hover bg">
                                                 <img src="{{ asset('images/services') }}/{{ $service->image }}"
                                                     alt="{{ $service->name }}" class="img-responsive">
                                             </div>
@@ -81,8 +81,8 @@
                                                 <td colspan="2" style="text-align: center">
                                                     @if ($sprovider->image)
                                                         <img src="{{ asset('images/sproviders') }}/{{ $sprovider->image }}"
-                                                            width="100" height="100" alt=""
-                                                            class="rounded-circle img-border gradient-summer">
+                                                            width="100" alt=""
+                                                        class="rounded-circle img-border gradient-summer">
 
                                                     @else
                                                         <img src="{{ asset('images/sproviders/default.png') }}"
@@ -165,8 +165,6 @@
 
                                     <div class="panel-footer">
                                         <form>
-                                            {{-- <input type="submit" class="btn btn-primary" name="submit"
-                                                value=" Book Now"> --}}
                                             <button type="submit" name="submit" class="btn btn-primary"><a href="#"
                                                     style="color: white; text-decoration:none">Book Now</a></button>
                                         </form>

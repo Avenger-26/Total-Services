@@ -122,6 +122,7 @@
                             @if (Auth::user()->u_type === 'ADM')
                                 <li class="login-form"><a href="#" title="Register">My Account ( {{Auth::user()->name}} )</a>
                                     <ul class="drop-down one-column hover-fade">
+                                        <li><a href="#">ADMIN</a></li>
                                         <li><a href="{{ route('admin.dashboard') }}">Dasboard</a></li>
                                         <li><a href="{{ route('logout') }}"
                                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
@@ -131,7 +132,7 @@
                             @elseif(Auth::user()->u_type==='SPV')
                                 <li class="login-form"><a href="#" title="Register">My Account ( {{Auth::user()->name}} )</a>
                                     <ul class="drop-down one-column hover-fade">
-                                        <li><a href="{{ route('sprovider.dashboard') }}">Dasboard</a></li>
+                                        <li><a href="{{ route('sprovider.dashboard') }}">Dashboard</a></li>
                                         <li><a href="{{ route('logout') }}"
                                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
                                         </li>
@@ -140,7 +141,7 @@
                             @else
                                 <li class="login-form"><a href="" title="Register">My Account ( {{Auth::user()->name}} )</a>
                                     <ul class="drop-down one-column hover-fade">
-                                        <li><a href="{{ route('costumer.dashboard') }}">Dasboard</a></li>
+                                        <li><a href="{{ route('costumer.dashboard') }}">Dashboard</a></li>
                                         <li><a href="{{ route('logout') }}"
                                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
                                         </li>

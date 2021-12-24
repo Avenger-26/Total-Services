@@ -1,105 +1,5 @@
 ﻿@charset "utf-8";
 
-/* ==============================
-	- Template Name: Surfside Media Home Services.
-	- Autor: Surfside Media
-	- Email:
-	- Name File: style.css
-	- Version 1.0 - Created on 21 May 2021
-	- Website:
-	- Copyright: (C) 2021
-================================= */
-
-/* ----------------------
-	Stylesheet Table Guide
--------------------------
-
-01. Import styles
-	-  bootstrap.css  - include resetes ( Media querys, grid-responsive,layout).
-	-  bootstrap-theme.css
-	-  bootstrap-slider.css
-	-  style.css (Principal Nav Styles)
-	-  jquery.fancybox.css (Ligbox Styles)
-	-  theme-options.css (Skins And Layouts Options)
-	-  animate.css (Animations Styles)
-	-  owl.carousel.css
-	-  owl.theme.css
-	-  flickr.css
-	-  font-awesome.min.css
-	-  calendar.css
-	-  revolution.css
-	-  extralayers.css
-	-  settings.css
-	-  Google Fonts  - Open sans And Raleway
-
-02. Basic Elements
-	-  Standar Styles
-	-  Twitter Section
-	-  Titles
-	-  Hover efect
-	-  Semibox Layout
-	-  List
-
-0.3.  HEADER
-	-  Header 1 , 2, 3, 4
-	-  Info head
-	-  Filter Title
-	-  Title Header
-	-  Nav Tabs
-	-  Tabs Detailed
-	-  Filter Header
-	-  Calendar
-	-  Section Titles 1
-	-  Crumbs 1
-	-  Section Title 2
-	-  Crumbs 2
-	-  Section Title 3
-	-  Crumbs 3
-	-  section-title-detailed
-
-0.4.  GENERAL STRUCTURE
-	-  Content Info
-	-  Services Lines
-	-  item-boxed
-	-  Item Boxes 2
-	-  Features Items
-	-  Promotion Box
-	-  Parallax Secion
-	-  Video Section
- 	-  Footer
- 	-  Footer V-1
- 	-  Footer V-2
- 	-  Footer V-3
- 	-  Footer V-4
- 	-  Newsletter
- 	-  Social
- 	-  Footer Down
- 	-  Preloader
- 	-  toTop
- 	-  ACCORDION
-	-  Progress
-	-  Testimonial Properties
-	-  Filters
-	-  Galley
-	-  Galley list-view
-	-  Page Error
-	-  Sitemap
-	-  Blog Post
-	-  Sidebar Post
-	-  Single Post
-	-  Form Theme
-	-  Contact
-	-  Team Members
-	-  Numbers Info
-	-  Tables pricing
-	-  Form Detailed
-	-  sort-by-container
-	-  Filter widgets
-*/
-
-/* ------------------------------------------------------------------------ */
-/*	01 Import styles
-/* ------------------------------------------------------------------------ */
 
 /* bootstrap.css  - include resetes ( Media querys, grid-responsive,layout).*/
 @import url("bootstrap/bootstrap.min.css");
@@ -691,7 +591,7 @@ hr.tall {
     position: relative;
     padding: 0;
     margin-top: -120px;
-    
+
 }
 .tp-banner {
     width: 100%;

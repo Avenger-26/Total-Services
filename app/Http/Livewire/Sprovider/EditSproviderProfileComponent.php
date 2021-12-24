@@ -37,9 +37,13 @@ class EditSproviderProfileComponent extends Component
 
     public function updateProfile()
     {
-        $sprovider = ServiceProvider::where('user_id', Auth::user()->id)->first();
-        if ($this->newimage)
-        {
+
+      
+
+        $sprovider = User::where('id', Auth::user()->id)->first();
+        if ($this->newimage) 
+        { 
+
             $imageName = Carbon::now()->timestamp . '.' . $this->newimage->getClientOriginalName();
             $this->newimage->storeAs('sproviders', $imageName);
             $sprovider->image = $imageName;

@@ -23,5 +23,7 @@ class AdminServiceCategoryComponent extends Component
     {
         $scategories = ServiceCategory::paginate(10);
         return view('livewire.admin.admin-service-category-component', ['scategories' => $scategories])->layout('FrontEnd.layouts.guest');
+
+   
     }
 }

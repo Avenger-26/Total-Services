@@ -1,6 +1,7 @@
 <div>
     <!--.main-menu(class="#{menuColor} #{menuOpenType}", class=(menuShadow == true ? 'menu-shadow' : ''))-->
     @include('../../layouts/admin/header')
+
         <div class="main-panel">
             <!-- BEGIN : Main Content-->
             <div class="main-content">

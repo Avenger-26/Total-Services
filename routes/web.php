@@ -10,6 +10,7 @@ use App\Http\Livewire\Admin\AdminContactComponent;
 use App\Http\Livewire\ServicesByCategoryComponent;
 use App\Http\Livewire\Admin\AdminServicesComponent;
 use App\Http\Livewire\Admin\AdminDashboardComponent;
+
 use App\Http\Livewire\Admin\AdminChangePasswordComponent;
 use App\Http\Livewire\Admin\AdminAddServiceComponent;
 use App\Http\Livewire\Admin\AdminEditServiceComponent;
@@ -33,12 +34,16 @@ use App\Http\Livewire\Sprovider\EditSproviderProfileComponent;
 Route::get('/', HomeComponent::class)->name('home'); //->middleware('verified');
 Route::get('/service-categories', ServiceCategoriesComponent::class)->name('home.service_categories');
 
+Route::get('/{category_slug}/services',ServicesByCategoryComponent::class)->name('home.services_by_category');
+Route::get('/service/{service_slug}',ServiceDetailsComponent::class)->name('home.service_details');
+
 Route::get('/{category_slug}/services', ServicesByCategoryComponent::class)->name('home.services_by_category');
 
 Route::get('/autocomplete', [SearchController::class, 'autocomplete'])->name('autocomplete');
 Route::post('/search', [SearchController::class, 'searchService'])->name('searchService');
 
 Route::get('/contact-us', ContactComponenet::class)->name('home.contact');
+
 
 //customer
 Route::middleware(['auth:sanctum'])->group(function () {
@@ -71,4 +76,7 @@ Route::middleware(['auth:sanctum', 'authadmin'])->group(function () {
     Route::get('/admin/service-provider', AdminServiceProvider::class)->name('admin.service_provider');
     Route::get('/admin/Users', AdminUsersComponent::class)->name('admin.users');
     Route::get('/admin/ChangePassword', AdminChangePasswordComponent::class)->name('admin.changepassword');
+    Route::get('/admin/service/add',AdminAddServiceComponent::class)->name('admin.add_service');
+    Route::get('/admin/service/edit/{service_slug}',AdminEditServiceComponent::class)->name('admin.edit_service');
+
 });

@@ -27,6 +27,7 @@
             </div>
           </div>
         </div>
+
         <div class="col-xl-4 col-lg-4 col-md-4 col-11 mx-auto">
           <div class="card gradient-ibiza-sunset" wire:click="location.href='/admin/service-provider'">
             <div class="card-content">
@@ -44,8 +45,8 @@
               <div id="Widget-line-chart1" class="height-75 WidgetlineChart WidgetlineChartshadow mb-2">
               </div>
 
-            </div>
-          </div>
+
+        
         </div>
 
         <div class="col-xl-4 col-lg-4 col-md-4 col-11 mx-auto">

@@ -179,7 +179,9 @@
                                                     </label>
                                                     <div class="col-md-9">
                                                         <input type="radio" name="gender" value="Male" wire:model="gender"> Male
+
                                                         <input type="radio" name="gender" value="Female" wire:model="gender"> Female
+
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">

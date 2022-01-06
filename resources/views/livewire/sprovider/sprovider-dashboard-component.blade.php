@@ -1,229 +1,147 @@
 <div>
     @include('../layouts/sprovider/header')
     <div class="main-panel">
-            <!-- BEGIN : Main Content-->
-            <div class="main-content">
-                <div class="content-wrapper">
-                    <div class="row match-height">
-                        <div class="col-xl-4 col-lg-12">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h4 class="card-title">Statistics</h4>
-                                </div>
-                                <div class="card-content">
-
-                                    <p class="font-medium-2 text-muted text-center">Hobbies</p>
-                                    <div id="bar-chart" class="height-250 BarChartShadow BarChart">
-                                    </div>
-
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col text-center">
-                                                <span class="gradient-pomegranate d-block rounded-circle mx-auto mb-2"
-                                                    style="width:10px; height:10px;"></span>
-                                                <span class="font-large-1 d-block mb-2">48</span>
-                                                <span>Sport</span>
-                                            </div>
-                                            <div class="col text-center">
-                                                <span class="gradient-green-tea d-block rounded-circle mx-auto mb-2"
-                                                    style="width:10px; height:10px;"></span>
-                                                <span class="font-large-1 d-block mb-2">9</span>
-                                                <span>Music</span>
-                                            </div>
-                                            <div class="col text-center">
-                                                <span class="gradient-blackberry d-block rounded-circle mx-auto mb-2"
-                                                    style="width:10px; height:10px;"></span>
-                                                <span class="font-large-1 d-block mb-2">26</span>
-                                                <span>Travel</span>
-                                            </div>
-                                            <div class="col text-center">
-                                                <span class="gradient-ibiza-sunset d-block rounded-circle mx-auto mb-2"
-                                                    style="width:10px; height:10px;"></span>
-                                                <span class="font-large-1 d-block mb-2">17</span>
-                                                <span>News</span>
-                                            </div>
+        <!-- BEGIN : Main Content-->
+        <div class="main-content">
+            <div class="content-wrapper">
+                <div class="row">
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-12">
+                        <div class="card gradient-blackberry">
+                            <div class="card-content">
+                                <div class="card-body pt-2 pb-0">
+                                    <div class="media">
+                                        <div class="media-body white text-left">
+                                            <h3 class="font-large-1 mb-0">{{$totalUser}}</h3>
+                                            <span>Total Users</span>
+                                        </div>
+                                        <div class="media-right white text-right">
+                                            <i class="fa fa-users fa-2x"></i>
                                         </div>
                                     </div>
+                                </div>
+                                <div id="Widget-line-chart"
+                                    class="height-75 WidgetlineChart WidgetlineChartshadow mb-2">
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-4 col-lg-12">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h4 class="card-title mb-0">User List</h4>
-                                </div>
-                                <div class="card-content">
-                                    <div class="card-body">
-                                        <div class="media mb-1">
-                                            <a>
-                                                <img alt="96x96"
-                                                    class="media-object d-flex mr-3 bg-primary height-50 rounded-circle"
-                                                    src="{{ asset('app-assets/img/portrait/small/avatar-s-12.png') }}">
-                                            </a>
-                                            <div class="media-body">
-                                                <h4 class="font-medium-1 mt-1 mb-0">Jessica Rice</h4>
-                                                <p class="text-muted font-small-3">UX Designer</p>
-                                            </div>
-                                            <div class="mt-1">
-                                                <div class="custom-control custom-checkbox mb-2 mr-sm-2 mb-sm-0">
-                                                    <input type="checkbox" class="custom-control-input" checked
-                                                        id="customcheckbox1">
-                                                    <label class="custom-control-label" for="customcheckbox1"></label>
-                                                </div>
-
-                                            </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-12">
+                        <div class="card gradient-ibiza-sunset">
+                            <div class="card-content">
+                                <div class="card-body pt-2 pb-0">
+                                    <div class="media">
+                                        <div class="media-body white text-left">
+                                            <h3 class="font-large-1 mb-0">{{$totalService}}</h3>
+                                            <span>Total Services</span>
                                         </div>
-                                        <div class="media mb-1">
-                                            <a>
-                                                <img alt="96x96"
-                                                    class="media-object d-flex mr-3 bg-danger height-50 rounded-circle"
-                                                    src="{{ asset('app-assets/img/portrait/small/avatar-s-11.png') }}">
-                                            </a>
-                                            <div class="media-body">
-                                                <h4 class="font-medium-1 mt-1 mb-0">Jacob Rios</h4>
-                                                <p class="text-muted font-small-3">HTML Developer</p>
-                                            </div>
-                                            <div class="mt-1">
-                                                <div class="custom-control custom-checkbox mb-2 mr-sm-2 mb-sm-0">
-                                                    <input type="checkbox" class="custom-control-input"
-                                                        id="customcheckbox2">
-                                                    <label class="custom-control-label" for="customcheckbox2"></label>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                        <div class="media mb-1">
-                                            <a>
-                                                <img alt="96x96"
-                                                    class="media-object d-flex mr-3 bg-success height-50 rounded-circle"
-                                                    src="{{ asset('app-assets/img/portrait/small/avatar-s-3.png') }}">
-                                            </a>
-                                            <div class="media-body">
-                                                <h4 class="font-medium-1 mt-1 mb-0">Russell Delgado</h4>
-                                                <p class="text-muted font-small-3">Database Designer</p>
-                                            </div>
-                                            <div class="mt-1">
-                                                <div class="custom-control custom-checkbox mb-2 mr-sm-2 mb-sm-0">
-                                                    <input type="checkbox" class="custom-control-input"
-                                                        id="customcheckbox3">
-                                                    <label class="custom-control-label" for="customcheckbox3"></label>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                        <div class="media mb-1">
-                                            <a>
-                                                <img alt="96x96"
-                                                    class="media-object d-flex mr-3 bg-warning height-50 rounded-circle"
-                                                    src="{{ asset('app-assets/img/portrait/small/avatar-s-6.png') }}">
-                                            </a>
-                                            <div class="media-body">
-                                                <h4 class="font-medium-1 mt-1 mb-0">Sara McDonald</h4>
-                                                <p class="text-muted font-small-3">Team Leader</p>
-                                            </div>
-                                            <div class="mt-1">
-                                                <div class="custom-control custom-checkbox mb-2 mr-sm-2 mb-sm-0">
-                                                    <input type="checkbox" class="custom-control-input" checked
-                                                        id="customcheckbox4">
-                                                    <label class="custom-control-label" for="customcheckbox4"></label>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                        <div class="media mb-1">
-                                            <a>
-                                                <img alt="96x96"
-                                                    class="media-object d-flex mr-3 bg-info height-50 rounded-circle"
-                                                    src="{{ asset('app-assets/img/portrait/small/avatar-s-18.png') }}">
-                                            </a>
-                                            <div class="media-body">
-                                                <h4 class="font-medium-1 mt-1 mb-0">Janet Lucas</h4>
-                                                <p class="text-muted font-small-3">Project Manger</p>
-                                            </div>
-                                            <div class="mt-1">
-                                                <div class="custom-control custom-checkbox mb-2 mr-sm-2 mb-sm-0">
-                                                    <input type="checkbox" class="custom-control-input"
-                                                        id="customcheckbox5">
-                                                    <label class="custom-control-label" for="customcheckbox5"></label>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                        <div class="action-buttons mt-2 text-center">
-                                            <a class="btn btn-raised gradient-blackberry py-2 px-4 white mr-2">Add
-                                                New</a>
+                                        <div class="media-right white text-right">
+                                            <i class="ft-grid font-large-1"></i>
                                         </div>
                                     </div>
+                                </div>
+                                <div id="Widget-line-chart1"
+                                    class="height-75 WidgetlineChart WidgetlineChartshadow mb-2">
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-12">
+                        <div class="card gradient-green-tea">
+                            <div class="card-content">
+                                <div class="card-body pt-2 pb-0">
+                                    <div class="media">
+                                        <div class="media-body white text-left">
+                                            <h3 class="font-large-1 mb-0">{{$totalServe}}</h3>
+                                            <span>Total Services Done</span>
+                                        </div>
+                                        <div class="media-right white text-right">
+                                            <i class="fa ft-briefcase  fa-2x"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="Widget-line-chart2"
+                                    class="height-75 WidgetlineChart WidgetlineChartshadow mb-2">
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-4 col-lg-12">
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-12">
+                        <div class="card gradient-pomegranate">
+                            <div class="card-content">
+                                <div class="card-body pt-2 pb-0">
+                                    <div class="media">
+                                        <div class="media-body white text-left">
+                                            <h3 class="font-large-1 mb-0">₹{{$totalEarning}}</h3>
+                                            <span>Total Earning</span>
+                                        </div>
+                                        <div class="media-right white text-right">
+                                            <i class="icon-wallet font-large-1"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="Widget-line-chart3"
+                                    class="height-75 WidgetlineChart WidgetlineChartshadow mb-2">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <section id="extended">
+                    <div class="row">
+                        <div class="col-sm-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title">Project Stats</h4>
+                                    <h4 class="card-title" style="text-align: center; font-weight:700; font-size:1.6rem;"><i class="fa ft-briefcase  fa-1x"></i> Work History</h4>
                                 </div>
                                 <div class="card-content">
+                                    <div class="card-body table-responsive">
+                                        <table class="table text-center table-striped table-hover shadow table-responsive">
+                                            <thead>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>User Name</th>
+                                                    <th>Service Name</th>
+                                                    <th>Order ID</th>
+                                                    <th>Amount</th>
+                                                    <th>Serve Date</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach ($paytms as $paytm)
+                                                    @if ($paytm->sprovider_id === Auth::user()->id)
+                                                        <tr>
+                                                            <td><span class="badge badge-success ">#WH0{{ $paytm->id }}</span></td>
+                                                            <td>{{ $paytm->user_name }}</td>
+                                                            <td>{{ $paytm->slug_name }}</td>
+                                                            <td>{{ $paytm->order_id }}</td>
+                                                            <td>₹{{ $paytm->price }}</td>
+                                                            <td>{{ $paytm->created_at }}</td>
+                                                            <td>
+                                                                <a href="#"  onclick="confirm('Are you sure, you want to delete this booking histroy!')||event.stopImmediatePropagation()"
+                                                                wire:click.prevent="deleteService({{ $paytm->id }})">
+                                                                    <i class="ft-trash-2 text-danger font-medium-3"></i>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                    @endif
 
-                                    <p class="font-medium-2 text-muted text-center">Project Tasks</p>
-                                    <div id="donut-dashboard-chart" class="height-250 donut">
-                                    </div>
+                                                @endforeach
 
-                                    <div class="card-body">
-                                        <div class="row mb-3">
-                                            <div class="col">
-                                                <span class="mb-1 text-muted d-block">23% - Started</span>
-                                                <div class="progress" style="height: 5px;">
-                                                    <div class="progress-bar bg-success" role="progressbar"
-                                                        style="width: 23%;" aria-valuenow="23" aria-valuemin="0"
-                                                        aria-valuemax="100"></div>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <span class="mb-1 text-muted d-block">14% - In Progress</span>
-                                                <div class="progress" style="height: 5px;">
-                                                    <div class="progress-bar bg-amber" role="progressbar"
-                                                        style="width: 14%;" aria-valuenow="14" aria-valuemin="0"
-                                                        aria-valuemax="100"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row mb-2">
-                                            <div class="col">
-                                                <span class="mb-1 text-muted d-block">35% - Remaining</span>
-                                                <div class="progress" style="height: 5px;">
-                                                    <div class="progress-bar bg-deep-purple bg-lighten-1"
-                                                        role="progressbar" style="width: 35%;" aria-valuenow="35"
-                                                        aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <span class="mb-1 text-muted d-block">28% - Done</span>
-                                                <div class="progress" style="height: 5px;">
-                                                    <div class="progress-bar bg-blue" role="progressbar"
-                                                        style="width: 28%;" aria-valuenow="28" aria-valuemin="0"
-                                                        aria-valuemax="100"></div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                </div>
+                </section>
             </div>
-            <!-- END : End Main Content-->
-
-            <!-- BEGIN : Footer-->
-            <footer class="footer footer-static footer-light">
-                <p class="clearfix text-muted text-sm-center px-2"><span>Copyright &copy; 2021 <a
-                            href="https://themeforest.net/user/pixinvent/portfolio?ref=pixinvent" id="pixinventLink"
-                            target="_blank" class="text-bold-800 primary darken-2">Team 26 </a>, All rights
-                        reserved. </span></p>
-            </footer>
-            <!-- End : Footer-->
-
         </div>
+        <!-- END : End Main Content-->
+
     </div>
+</div>
 </div>

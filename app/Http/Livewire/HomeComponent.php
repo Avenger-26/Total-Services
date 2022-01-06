@@ -12,6 +12,7 @@ class HomeComponent extends Component
     {
         $scategories = ServiceCategory::inRandomOrder()->take(18)->get();
         $fserivces = Service::where('featured',1)->inRandomOrder()->take(8)->get();
-        return view('livewire.home-component', ['scategories' => $scategories,'fserivces'=>$fserivces])->layout('frontend.layouts.base');
+        $fscategories = ServiceCategory::where('featured',1)->inRandomOrder()->take(8)->get();
+        return view('livewire.home-component', ['scategories' => $scategories,'fserivces'=>$fserivces,'fscategories'=>$fscategories])->layout('frontend.layouts.base');
     }
 }

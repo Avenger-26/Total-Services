@@ -24,7 +24,7 @@
                                                 <a class="profile-image">
                                                     @if ($scustomer->image)
                                                         <img src="{{ asset('images/customer') }}/{{ $scustomer->image }}"
-                                                            alt="" width="150" height="150"
+                                                            alt="" width="100" height="100"
                                                             class="rounded-circle img-border gradient-summer">
                                                     @else
                                                         <img src="{{ asset('images/sproviders/default.png') }}" alt=""

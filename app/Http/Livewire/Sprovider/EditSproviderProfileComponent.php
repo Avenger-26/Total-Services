@@ -15,6 +15,8 @@ class EditSproviderProfileComponent extends Component
 {
     use WithFileUploads;
     public $service_provider_id;
+    public $name;
+    public $email;
     public $image;
     public $phone;
     public $gender;
@@ -27,6 +29,8 @@ class EditSproviderProfileComponent extends Component
     {
         $sprovider = User::where('id',Auth::user()->id)->first();
         $this->service_provider_id = $sprovider->id;
+        $this->name = $sprovider->name;
+        $this->email = $sprovider->email;
         $this->image = $sprovider->image;
         $this->phone = $sprovider->phone;
         $this->gender = $sprovider->gender;
@@ -48,6 +52,8 @@ class EditSproviderProfileComponent extends Component
             $this->newimage->storeAs('sproviders', $imageName);
             $sprovider->image = $imageName;
         }
+        $sprovider->name = $this->name;
+        $sprovider->email = $this->email;
         $sprovider->phone = $this->phone;
         $sprovider->gender = $this->gender;
         $sprovider->address = $this->address;

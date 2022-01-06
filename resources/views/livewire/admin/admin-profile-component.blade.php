@@ -1,5 +1,5 @@
 <style>
-    .avatar {
+.avatar {
   border: 0.3rem solid rgba(#fff, 0.3);
   margin-top: -6rem;
   margin-bottom: 1rem;

@@ -1,4 +1,4 @@
-<style>
+{{-- <style>
     table td{
         line-height:80px;
     }
@@ -6,7 +6,7 @@
         line-height:80px;
     }
 
-</style>
+</style> --}}
 
 <div>
     <!--.main-menu(class="#{menuColor} #{menuOpenType}", class=(menuShadow == true ? 'menu-shadow' : ''))-->
@@ -17,7 +17,7 @@
                 <div class="content-wrapper">
                     <section id="extended">
                         <div class="row justify-content-md-center">
-                            <div class="col-md-11 col-sm-11">
+                            <div class="col-md-11">
                                 <div class="card">
                                     <div class="card-header">
                                         <div class="row">
@@ -26,7 +26,7 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <a href="{{ route('admin.add_service_provider') }}"
-                                                    class="btn-hover color-hover pull-right mx-3">Add New</a>
+                                                    class="btn btn-primary pull-right mx-3">Add New</a>
                                             </div>
                                         </div>
                                     </div>
@@ -54,7 +54,7 @@
                                                 <tbody>
                                                     @foreach ($sproviders as $sprovider)
                                                         <tr>
-                                                            <td ><span class="badge badge-success mt-3">{{ $sprovider->id }}</span></td>
+                                                            <td ><span class="badge badge-success mt-3">#SP0{{ $sprovider->id }}</span></td>
                                                             <td><img  class="rounded-circle img-border gradient-summer  " src="{{ asset('images/sproviders') }}/{{ $sprovider->image }}"
                                                                     width="80" height="80" alt=""></td>
                                                             <td>{{ $sprovider->name }}</td>

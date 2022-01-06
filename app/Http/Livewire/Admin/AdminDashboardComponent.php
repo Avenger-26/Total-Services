@@ -2,10 +2,13 @@
 
 namespace App\Http\Livewire\Admin;
 
+use App\Models\User;
+use App\Models\Contact;
+use App\Models\Paytm;
+use Livewire\Component;
 use App\Models\ServiceCategory;
 use App\Models\ServiceProvider;
-use App\Models\User;
-use Livewire\Component;
+use Illuminate\Support\Facades\Auth;
 
 class AdminDashboardComponent extends Component
 {
@@ -15,6 +18,8 @@ class AdminDashboardComponent extends Component
         $totalServiceProvider = User::where('u_type', 'SPV')->count();
         $totalUser = User::where('u_type', 'CST')->count();
         $totalServiceCategories = ServiceCategory::count();
-        return view('livewire.admin.admin-dashboard-component', ['totalServiceProvider' => $totalServiceProvider, 'totalUser' => $totalUser,'totalServiceCategories'=>$totalServiceCategories])->layout('FrontEnd.layouts.guest');
+        $totalAmount = Paytm::all()->sum('price');
+        $total = ($totalAmount*10)/100;
+        return view('livewire.admin.admin-dashboard-component', ['totalServiceProvider' => $totalServiceProvider, 'totalUser' => $totalUser,'totalServiceCategories'=>$totalServiceCategories,'total'=>$total])->layout('FrontEnd.layouts.guest');
     }
 }

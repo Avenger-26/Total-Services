@@ -35,8 +35,6 @@
                                                 <h2 class="post-title"><a href="" title="Post Format: Standard"
                                                         rel="bookmark">{{ $service->name }}:{{ $service->category->name }}</a>
                                                 </h2>
-
-
                                                 <div class="post-meta" style="height: 10px;">
                                                 </div>
                                             </div>
@@ -53,7 +51,9 @@
                                     <div class="col-md-12">
                                         <div class="post-content">
                                             <h3>{{ $service->name }}</h3>
-                                            {{-- <p>{{ $service->description }}</p> --}}
+                                            @if ($service->price == '150')
+                                                <p>{{ $service->description }}</p>
+                                            @endif
                                             <h4>Inclusion</h4>
                                             <ul class="list-styles">
                                                 @foreach (explode('|', $service->inclusion) as $inclusion)
@@ -82,15 +82,15 @@
                                                     @if ($sprovider->image)
                                                         <img src="{{ asset('images/sproviders') }}/{{ $sprovider->image }}"
                                                             width="100" alt=""
-                                                        class="rounded-circle img-border gradient-summer">
+                                                            class="rounded-circle img-border gradient-summer">
 
                                                     @else
                                                         <img src="{{ asset('images/sproviders/default.png') }}"
                                                             alt="" width="100" height="100"
-                                                             class="rounded-circle img-border gradient-summer">
+                                                            class="rounded-circle img-border gradient-summer">
                                                     @endif
                                                 </td>
-                                               
+
                                             </tr>
                                             <tr>
                                                 <td>Servies Provider Name</td>
@@ -118,7 +118,7 @@
                                         </form>
                                     </div>
                                 </div>
-                            </aside> 
+                            </aside>
 
                             <aside class="widget" style="margin-top: 18px;">
                                 <div class="panel panel-default">
@@ -130,10 +130,7 @@
                                                 <td style="border-top: none;"><span>&#8377;</span>
                                                     {{ $service->price }}</td>
                                             </tr>
-                                            <tr>
-                                                <td>Quntity</td>
-                                                <td>1</td>
-                                            </tr>
+
                                             @php
                                                 $total = $service->price;
                                             @endphp
@@ -156,19 +153,22 @@
                                             @endif
 
                                             <tr>
-                                                <td>Total</td>
+                                                <td>Total-Price</td>
                                                 <td><span>&#8377;</span>{{ $total }}</td>
                                             </tr>
-                                            
+
                                         </table>
                                     </div>
+                                    @if ($service->price != '150')
+                                        <div class="panel-footer">
+                                            <form>
+                                                <button type="button" name="submit" class="btn btn-primary"><a
+                                                        href="{{ route('payment') }}"
+                                                        style="color: white; text-decoration:none">Book Now</a></button>
+                                            </form>
+                                        </div>
+                                    @endif
 
-                                    <div class="panel-footer">
-                                        <form>
-                                            <button type="submit" name="submit" class="btn btn-primary"><a href="#"
-                                                    style="color: white; text-decoration:none">Book Now</a></button>
-                                        </form>
-                                    </div>
                                 </div>
                             </aside>
 

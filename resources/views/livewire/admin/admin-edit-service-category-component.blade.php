@@ -75,6 +75,18 @@
                                                             @endif
                                                         </div>
                                                     </div>
+                                                    <div class="form-group">
+                                                        <div class="col-md-12">
+                                                        <label for="featured" class=" control-label text-light ">Featured:
+                                                            
+                                                        </label>
+                                                            <select name="featured" id="featured"
+                                                                class="form-control border-primary" wire:model="featured">
+                                                                <option value="0">No</option>
+                                                                <option value="1">Yes</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                                 <button type="submit"
                                                     class="btn btn-success mx-auto d-flex">Update</button>

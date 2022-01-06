@@ -3,14 +3,15 @@
 use App\Http\Livewire\HomeComponent;
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\ContactComponenet;
+use App\Http\Controllers\PaytmController;
 use App\Http\Controllers\SearchController;
 use App\Http\Livewire\ServiceDetailsComponent;
 use App\Http\Livewire\Admin\AdminUsersComponent;
 use App\Http\Livewire\Admin\AdminServiceProvider;
 use App\Http\Livewire\ServiceCategoriesComponent;
 use App\Http\Livewire\Admin\AdminContactComponent;
-use App\Http\Livewire\Admin\AdminProfileComponent;
 
+use App\Http\Livewire\Admin\AdminProfileComponent;
 use App\Http\Livewire\ServicesByCategoryComponent;
 use App\Http\Livewire\Admin\AdminServicesComponent;
 use App\Http\Livewire\Admin\AdminAddServiceProvider;
@@ -31,6 +32,7 @@ use App\Http\Livewire\Sprovider\SproviderDashboardComponent;
 use App\Http\Livewire\Admin\AdminAddServiceCategoryComponent;
 use App\Http\Livewire\Admin\AdminServicesByCategoryComponent;
 use App\Http\Livewire\Admin\AdminEditServiceCategoryComponent;
+use App\Http\Livewire\Paytm\PaymentSuccessComponent;
 use App\Http\Livewire\Sprovider\EditSproviderProfileComponent;
 use App\Http\Livewire\Sprovider\SproviderAddServicesComponent;
 use App\Http\Livewire\Sprovider\SproviderEditServicesComponent;
@@ -48,7 +50,12 @@ Route::post('/search', [SearchController::class, 'searchService'])->name('search
 
 Route::get('/contact-us', ContactComponenet::class)->name('home.contact');
 
-
+//paytm
+Route::get('/payment',[PaytmController::class,'index'])->name('payment');
+Route::post('/paytm-store',[PaytmController::class,'store'])->name('paytm-store');
+Route::post('/paytm-callback',[PaytmController::class,'paytmCallback'])->name('paytm-callback');
+// Route::get('/payment-success',[PaytmController::class,'paymentSuccess'])->name('payment-success');
+//paytm End
 //customer
 Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('/service/{service_slug}', ServiceDetailsComponent::class)->name('home.service_details');
@@ -65,8 +72,8 @@ Route::middleware(['auth:sanctum', 'authsprovider'])->group(function () {
     Route::get('/sprovider/profile/edit', EditSproviderProfileComponent::class)->name('sprovider.edit_profile');
     Route::get('/sprovider/ChangePassword', SproviderChangePassword::class)->name('sprovider.changepassword');
     Route::get('/sprovider/all-services', SproviderServicesComponent::class)->name('sprovider.all_services');
-    Route::get('/sprovider/service/add', SproviderAddServicesComponent::class)->name('sprovider.add_service');
-    Route::get('/sprovider/service/edit/{service_slug}', SproviderEditServicesComponent::class)->name('sprovider.edit_service');
+    Route::get('/sprovider/service/add',SproviderAddServicesComponent::class)->name('sprovider.add_service');
+    Route::get('/sprovider/service/edit/{service_slug}',SproviderEditServicesComponent::class)->name('sprovider.edit_service');
 });
 
 // For Admin
@@ -81,8 +88,8 @@ Route::middleware(['auth:sanctum', 'authadmin'])->group(function () {
     Route::get('/admin/service-provider/add', AdminAddServiceProvider::class)->name('admin.add_service_provider');
     Route::post('/admin/service-provider/add', AdminAddServiceProvider::class)->name('admin.add_service_provider');
     Route::get('/admin/all-services', AdminServicesComponent::class)->name('admin.all_services');
-    Route::get('/admin/service/add', AdminAddServiceComponent::class)->name('admin.add_service');
-    Route::get('/admin/service/edit/{service_slug}', AdminEditServiceComponent::class)->name('admin.edit_service');
+    Route::get('/admin/service/add',AdminAddServiceComponent::class)->name('admin.add_service');
+    Route::get('/admin/service/edit/{service_slug}',AdminEditServiceComponent::class)->name('admin.edit_service');
     Route::get('/admin/{category_slug}/services', AdminServicesByCategoryComponent::class)->name('admin.services_by_category');
     Route::get('/admin/service-provider', AdminServiceProvider::class)->name('admin.service_provider');
     Route::get('/admin/Users', AdminUsersComponent::class)->name('admin.users');

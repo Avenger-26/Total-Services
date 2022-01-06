@@ -45,7 +45,7 @@
                                                 <tbody>
                                                     @foreach ($services as $service)
                                                         <tr>
-                                                            <td><span class="badge badge-success ">{{ $no++ }}</span></td>
+                                                            <td><span class="badge badge-success ">#SER0{{ $no++ }}</span></td>
                                                             <td><img src="{{ asset('images/services/thumbnails') }}/{{ $service->thumbnail }}"
                                                                     width="80" alt=""></td>
                                                             <td>{{ $service->name }}</td>

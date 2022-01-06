@@ -31,6 +31,13 @@
                                             <input type="text" class="form-control border-primary" id="name" name="name"
                                                 required wire:model="name">
                                         </div>
+                                    @endif
+                                    <form wire:submit.prevent="updateProfile" enctype="multipart/form-data">
+                                        <div class="form-group">
+                                            <label for="inputAddress">Name</label>
+                                            <input type="text" class="form-control border-primary" id="name" name="name"
+                                                required wire:model="name">
+                                        </div>
                                         <div class="form-group">
                                             <label for="inputAddress">Email</label>
                                             <input type="text" class="form-control border-primary" id="email"

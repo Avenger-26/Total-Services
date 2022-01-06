@@ -1,113 +1,121 @@
 <div>
     @include('../layouts/customer/header')
+    <style>
+        th{
+            vertical-align: top;
+        }
+    </style>
+    <div class="main-panel">
+        <!-- BEGIN : Main Content-->
+        <div class="main-content">
+            <div class="content-wrapper">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-11 mx-auto">
+                        <div class="card gradient-blackberry">
+                            <div class="card-content">
+                                <div class="card-body pt-2 pb-2">
+                                    <div class="media">
+                                        <div class="media-body white text-left">
+                                            <h3 class="font-large-2 mb-0"><b>{{ $totalServices }}</b></h3>
+                                            <span class="font-medium-4"><b>Total Booked Services</b></span>
+                                        </div>
+                                        <div class="media-right white text-right">
+                                            <i class="fa ft-briefcase  fa-4x"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="Widget-line-chart"
+                                    class="height-80 WidgetlineChart WidgetlineChartshadow mb-2">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-11 mx-auto">
+                        <div class="card gradient-ibiza-sunset">
+                            <div class="card-content">
+                                <div class="card-body pt-2 pb-2">
+                                    <div class="media">
+                                        <div class="media-body white text-left">
+                                            <h3 class="font-large-2 mb-0"><b>₹{{ $totalCost }}</b></h3>
+                                            <span class="font-medium-4"><b>Total Services Cost</b></span>
+                                        </div>
+                                        <div class="media-right white text-right">
+                                            <i class="icon-wallet fa-4x"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="Widget-line-chart1"
+                                    class="height-80 WidgetlineChart WidgetlineChartshadow mb-2">
+                                </div>
 
-        <div class="main-panel">
-            <!-- BEGIN : Main Content-->
-            <div class="main-content">
-                <div class="content-wrapper">
-                    <div class="row match-height justify-content-md-center">
-                        <div class="col-xl-12 col-lg-12 col-12">
-                            <div class="card">
-                                <div class="card-header pb-2">
-                                    <h4 class="card-title">Shopping Cart</h4>
-                                </div>
-                                <div class="card-content">
-                                    <table class="table table-responsive-sm text-center">
-                                        <thead>
-                                            <tr>
-                                                <th>Image</th>
-                                                <th>Product</th>
-                                                <th>Quantity</th>
-                                                <th>Status</th>
-                                                <th>Amount</th>
-                                                <th>Delete</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td><img class="media-object round-media height-50"
-                                                        src="{{asset('app-assets/img/elements/01.png')}}"
-                                                        alt="Generic placeholder image" /></td>
-                                                <td>Ferrero Rocher</td>
-                                                <td>1</td>
-                                                <td>
-                                                    <a class="btn white btn-round btn-success">Purchased</a>
-                                                </td>
-                                                <td>$19.94</td>
-                                                <td>
-                                                    <a class="danger" data-original-title="" title="">
-                                                        <i class="ft-x"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td><img class="media-object round-media height-50"
-                                                        src="{{asset('app-assets/img/elements/07.png')}}"
-                                                        alt="Generic placeholder image" /></td>
-                                                <td>Headphones</td>
-                                                <td>2</td>
-                                                <td>
-                                                    <a class="btn white btn-round btn-danger">Cancelled</a>
-                                                </td>
-                                                <td>$99.00</td>
-                                                <td>
-                                                    <a class="danger" data-original-title="" title="">
-                                                        <i class="ft-x"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td><img class="media-object round-media height-50"
-                                                        src="{{asset('app-assets/img/elements/11.png')}}"
-                                                        alt="Generic placeholder image" /></td>
-                                                <td>Camera</td>
-                                                <td>1</td>
-                                                <td>
-                                                    <a class="btn white btn-round btn-info">On-Hold</a>
-                                                </td>
-                                                <td>$299.00</td>
-                                                <td>
-                                                    <a class="danger" data-original-title="" title="">
-                                                        <i class="ft-x"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td><img class="media-object round-media height-50"
-                                                        src="{{asset('app-assets/img/elements/13.png')}}"
-                                                        alt="Generic placeholder image" /></td>
-                                                <td>Laptop</td>
-                                                <td>1</td>
-                                                <td>
-                                                    <a class="btn white btn-round btn-success">Purchased</a>
-                                                </td>
-                                                <td>$2442.67</td>
-                                                <td>
-                                                    <a class="danger" data-original-title="" title="">
-                                                        <i class="ft-x"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
                             </div>
                         </div>
                     </div>
 
                 </div>
+                <div class="row match-height justify-content-md-center">
+                    <div class="col-xl-12 col-lg-12 col-12">
+                        <div class="card">
+                            <div class="card-header pb-2">
+                                <h4 class="card-title" style="text-align:center;font-weight:700; font-size:1.7rem;"><i
+                                    class="ft-shopping-cart fa-1x"> </i> Booking History</h4>
+                            </div>
+                            <div class="card-content">
+                                <table class="table table-responsive-sm text-center table-striped table-hover shadow ">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Service Image</th>
+                                            <th>Service Name</th>
+                                            <th>Order Id</th>
+                                            <th>Service Provider</th>
+                                            <th>Amount</th>
+                                            <th>Booking Data</th>
+                                            <th>Delete</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        @foreach ($paytms as $paytm)
+                                            @if ($paytm->user_id === Auth::user()->id)
+                                                <tr>
+                                                    <td><span
+                                                            class="badge badge-success mt-2 ">#BH0{{ $paytm->id }}</span>
+                                                    </td>
+                                                    <td><img class="media-object round-media height-50" width="100" height="100"
+                                                            src="{{ asset('images/services') }}/{{ $paytm->slug_image }}"
+                                                            alt="" /></td>
+                                                    <td>{{ $paytm->slug_name }}</td>
+                                                    <td>{{ $paytm->order_id }}</td>
+                                                    <td>{{ $paytm->sprovider_name }}</td>
+                                                    <td>{{ $paytm->price }}</td>
+                                                    <td>{{ $paytm->created_at }}</td>
+                                                    <td>
+                                                        <a href="#" onclick="confirm('Are you sure, you want to delete this booking histroy!')||event.stopImmediatePropagation()"
+                                                        wire:click.prevent="deleteService({{ $paytm->id }})"
+                                                        >
+                                                            <i class="ft-trash-2 text-danger font-medium-3"></i>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            @endif
+                                        @endforeach
+
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-            <!-- END : End Main Content-->
-
-            <!-- BEGIN : Footer-->
-            <footer class="footer footer-static footer-light">
-                <p class="clearfix text-muted text-sm-center px-2"><span>Copyright &copy; 2021 <a
-                            href="https://themeforest.net/user/pixinvent/portfolio?ref=pixinvent" id="pixinventLink"
-                            target="_blank" class="text-bold-800 primary darken-2">Team 26 </a>, All rights
-                        reserved. </span></p>
-            </footer>
-            <!-- End : Footer-->
-
         </div>
+        <!-- END : End Main Content-->
+
+       
+
     </div>
-    </div>
+</div>
+</div>

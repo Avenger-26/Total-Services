@@ -135,6 +135,16 @@ background-image: linear-gradient(#63a4ff 0%, #83eaf1 74%);
                     <div class="col-md-3 col-sm-11 mx-auto">
                         <div class="card" style="width: 18rem;">
                             <img class="card-img-top img-responsive"
+                                src="{{ asset('images/best-offer/auto-repair.jpg') }}" alt="Autocare">
+                            <div class="card-body">
+                                <h5 class="card-title">Auto Repair</h5>
+                                <p class="card-text">Flat 20% off</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-11 mx-auto">
+                        <div class="card" style="width: 18rem;">
+                            <img class="card-img-top img-responsive"
                                 src="{{ asset('images/best-offer/painter.jpg') }}" alt="Card image cap">
                             <div class="card-body">
                                 <h5 class="card-title">Painter</h5>
@@ -236,18 +246,17 @@ background-image: linear-gradient(#63a4ff 0%, #83eaf1 74%);
                             <ul class="services-lines">
                                 @foreach ($fscategories as $fscategory)
                                 <li>
-                                    <a href="{{route('home.services_by_category',['category_slug'=>$scategory->slug])}}">
+                                    <a href="{{route('home.services_by_category',['category_slug'=>$fscategory->slug])}}">
                                         <div class="item-service-line">
                                             <i class="fa"><img class="icon-img"
-                                                    src="{{asset('images/services-categories')}}/{{$fscategory->image}}" alt="{{$scategory->name}}" width="80" height="80"></i>
+                                                    src="{{asset('images/services-categories')}}/{{$fscategory->image}}" alt="{{$fscategory->name}}" width="80" height="80"></i>
                                             <h5>{{$fscategory->name}}</h5>
                                         </div>
                                     </a>
-                                </li>
+                                </li> 
                                 @endforeach
                             </ul>
                         </div>
-
                     </div>
                 </div>
             </div>

@@ -79,8 +79,9 @@
                     @if (Route::has('login'))
                         @auth
                             @if (Auth::user()->u_type === 'ADM')
-                                <li class="login-form"><a href="#" title="Register"> <i class="fa fa-user" aria-hidden="true"> My Account (
-                                         {{ Auth::user()->name }} )</i></a>
+                                <li class="login-form"><a href="#" title="Register"> <i class="fa fa-user"
+                                            aria-hidden="true"> My Account (
+                                            {{ Auth::user()->name }} )</i></a>
                                     <ul class="drop-down one-column hover-fade">
 
                                         <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
@@ -90,9 +91,12 @@
                                     </ul>
                                 </li>
                             @elseif(Auth::user()->u_type==='SPV')
-                                <li class="login-form"><a href="#" title="Register"><i class="fa fa-user" aria-hidden="true">
-                                     My Account  (
-                                        {{ Auth::user()->name }} )</i></a>
+                                <li class="login-form"><a href="#" title="Register"><i class="fa fa-user"
+                                            aria-hidden="true">
+                                            {{ Auth::user()->name }} ( @if (Auth::user()->service_category_id)
+                                                {{ Auth::user()->category->name }}
+                                            @endif
+                                            )</i></a>
                                     <ul class="drop-down one-column hover-fade">
                                         <li><a href="{{ route('sprovider.dashboard') }}">Dashboard</a></li>
                                         <li><a href="{{ route('logout') }}"
@@ -101,8 +105,9 @@
                                     </ul>
                                 </li>
                             @else
-                                <li class="login-form"><a href="" title="Register"> <i class="fa fa-user" aria-hidden="true"> My Account (
-                                        {{ Auth::user()->name }} ) </i></a>
+                                <li class="login-form"><a href="" title="Register"> <i class="fa fa-user"
+                                            aria-hidden="true"> My Account (
+                                            {{ Auth::user()->name }} ) </i></a>
                                     <ul class="drop-down one-column hover-fade">
                                         <li><a href="{{ route('costumer.dashboard') }}">Dashboard</a></li>
                                         <li><a href="{{ route('logout') }}"

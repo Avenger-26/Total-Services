@@ -25,7 +25,7 @@ class SproviderServicesComponent extends Component
     }
     public function render()
     {
-        $services = Service::where('service_category_id',Auth::user()->service_category_id)->paginate(10);
+        $services = Service::where('sprovider_id',Auth::user()->id)->paginate(10);
         return view('livewire.sprovider.sprovider-services-component',['services'=>$services])->layout('frontend.layouts.guest')->with('no', 1);
     }
 }

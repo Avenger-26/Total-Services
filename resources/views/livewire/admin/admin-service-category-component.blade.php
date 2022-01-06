@@ -13,7 +13,7 @@
                                     <div class="card-header">
                                         <div class="row">
                                             <div class="col-md-6 ">
-                                                <h4 class="">All Service</h4>
+                                                <h4 class="">All Service Categories</h4>
                                             </div>
                                             <div class="col-md-6">
                                                 <a href="{{ route('admin.add_service_categories') }}"
@@ -49,7 +49,7 @@
                                                 <tbody>
                                                     @foreach ($scategories as $scategory)
                                                         <tr>
-                                                            <td><span class="badge badge-success mt-3">{{ $no++ }}</span></td>
+                                                            <td><span class="badge badge-success mt-3">#SC0{{ $scategory->id }}</span></td>
                                                             <td><img class="rounded-circle img-border"src="{{ asset('images/services-categories') }}/{{ $scategory->image }}"
                                                                     width="80" height="80" alt=""></td>
                                                             <td>{{ $scategory->name }}</td>

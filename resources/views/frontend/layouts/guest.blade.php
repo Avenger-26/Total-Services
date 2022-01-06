@@ -37,6 +37,11 @@
         <!-- END VENDOR CSS-->
         <!-- BEGIN APEX CSS-->
         <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css/app.css') }}">
+        <style>
+         th{
+                vertical-align: top !important;
+         }
+        </style>
         @livewireStyles
         <!-- END APEX CSS-->
         <!-- BEGIN Page Level CSS-->

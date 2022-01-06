@@ -38,7 +38,7 @@
                                                 @foreach ($contacts as $contact)
                                                     <tr>
                                                         <td><span
-                                                                class="badge badge-success ">{{ $contact->id }}</span>
+                                                                class="badge badge-success ">#QU0{{ $contact->id }}</span>
                                                         </td>
                                                         <td>{{ $contact->name }}</td>
                                                         <td>{{ $contact->email }}</td>

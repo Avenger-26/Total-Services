@@ -35,8 +35,6 @@
                                                 <h2 class="post-title"><a href="" title="Post Format: Standard"
                                                         rel="bookmark">{{ $service->name }}:{{ $service->category->name }}</a>
                                                 </h2>
-
-
                                                 <div class="post-meta" style="height: 10px;">
                                                 </div>
                                             </div>
@@ -53,7 +51,9 @@
                                     <div class="col-md-12">
                                         <div class="post-content">
                                             <h3>{{ $service->name }}</h3>
-                                            {{-- <p>{{ $service->description }}</p> --}}
+                                            @if ($service->price == '150')
+                                                <p>{{ $service->description }}</p>
+                                            @endif
                                             <h4>Inclusion</h4>
                                             <ul class="list-styles">
                                                 @foreach (explode('|', $service->inclusion) as $inclusion)
@@ -87,7 +87,7 @@
                                                     @else
                                                         <img src="{{ asset('images/sproviders/default.png') }}"
                                                             alt="" width="100" height="100"
-                                                             class="rounded-circle img-border gradient-summer">
+                                                            class="rounded-circle img-border gradient-summer">
                                                     @endif
                                                 </td>
 
@@ -172,6 +172,15 @@
 
                                         </table>
                                     </div>
+                                    @if ($service->price != '150')
+                                        <div class="panel-footer">
+                                            <form>
+                                                <button type="button" name="submit" class="btn btn-primary"><a
+                                                        href="{{ route('payment') }}"
+                                                        style="color: white; text-decoration:none">Book Now</a></button>
+                                            </form>
+                                        </div>
+                                    @endif
 
                                     <div class="panel-footer">
                                         <form>

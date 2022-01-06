@@ -2,11 +2,13 @@
 
 namespace App\Http\Livewire\Sprovider;
 use Carbon\Carbon;
+use App\Models\User;
 use App\Models\Service;
 use Livewire\Component;
 use Illuminate\Support\Str;
 use Livewire\WithFileUploads;
 use App\Models\ServiceCategory;
+use Illuminate\Support\Facades\Auth;
 
 class SproviderAddServicesComponent extends Component
 {
@@ -23,6 +25,7 @@ class SproviderAddServicesComponent extends Component
     public $description;
     public $inclusion;
     public $exclusion;
+    public $sprovider_id;
 
     public function generateSlug()
     {
@@ -41,7 +44,7 @@ class SproviderAddServicesComponent extends Component
             'thumbnail' => 'required|mimes:jpeg,png',
             'description' => 'required',
             'inclusion' => 'required',
-            'exclusion' => 'required'
+            'exclusion' => 'required',
         ]);
     }
     public function createService()
@@ -56,7 +59,7 @@ class SproviderAddServicesComponent extends Component
             'thumbnail' => 'required|mimes:jpeg,png',
             'description' => 'required',
             'inclusion' => 'required',
-            'exclusion' => 'required'
+            'exclusion' => 'required',
         
         ]);
 
@@ -72,6 +75,8 @@ class SproviderAddServicesComponent extends Component
         $service->inclusion = str_replace("\n", '|', trim($this->inclusion));
         $service->exclusion = str_replace("\n", '|', trim($this->exclusion));
 
+        $service->sprovider_id = Auth::user()->id;
+
         $imageName = Carbon::now()->timestamp . '.' . $this->thumbnail->getClientOriginalName();
         $this->thumbnail->storeAs('services/thumbnails', $imageName);
         $service->thumbnail = $imageName;
@@ -86,6 +91,7 @@ class SproviderAddServicesComponent extends Component
     public function render()
     {
         $categories = ServiceCategory::all();
-        return view('livewire.sprovider.sprovider-add-services-component',['categories'=>$categories])->layout('frontend.layouts.guest');
+        $sproviders = User::all();
+        return view('livewire.sprovider.sprovider-add-services-component',['categories'=>$categories,'sproviders'=>$sproviders])->layout('frontend.layouts.guest');
     }
 }

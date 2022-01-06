@@ -53,7 +53,7 @@
                                                 <tbody>
                                                     @foreach ($users as $user)
                                                         <tr>
-                                                            <td ><span class="badge badge-success mt-3">{{ $user->id }}</span></td>
+                                                            <td ><span class="badge badge-success mt-3">#U0{{ $user->id }}</span></td>
                                                             <td><img  class="rounded-circle img-border gradient-summer  " src="{{ asset('images/sproviders') }}/{{ $user->image }}"
                                                                     width="80" height="80" alt=""></td>
                                                             <td>{{ $user->name }}</td>

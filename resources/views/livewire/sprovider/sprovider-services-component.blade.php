@@ -1,7 +1,5 @@
 <div>
-    <!--.main-menu(class="#{menuColor} #{menuOpenType}", class=(menuShadow == true ? 'menu-shadow' : ''))-->
-    @include('../../layouts/admin/header')
-        <!-- Navbar (Header) Ends-->
+    @include('../layouts/sprovider/header')
         <div class="main-panel">
             <!-- BEGIN : Main Content-->
             <div class="main-content">
@@ -16,8 +14,8 @@
                                                 <h4 class="">All Service</h4>
                                             </div>
                                             <div class="col-md-6">
-                                                {{-- <a href="{{ route('admin.add_service_categories') }}"
-                                                    class="btn btn-info pull-right mx-3">Add New</a> --}}
+                                                <a href="{{ route('sprovider.add_service') }}"
+                                                    class="btn btn-info pull-right mx-3">Add New</a>
                                             </div>
                                         </div>
                                     </div>
@@ -30,14 +28,15 @@
                                                     {{ Session::get('message') }}
                                                 </div>
                                             @endif
-                                            <table class="table table-striped">
+                                            <table class="table text-center table-striped table-hover shadow table-responsive">
                                                 <thead>
                                                     <tr>
-                                                        <th>#</th>
+                                                        <th>ID</th>
                                                         <th>Image</th>
                                                         <th>Name</th>
                                                         <th>Price</th>
                                                         <th>Status</th>
+                                                        <th>Featured</th>
                                                         <th>Category</th>
                                                         <th>Created At</th>
                                                         <th>Action</th>
@@ -46,7 +45,7 @@
                                                 <tbody>
                                                     @foreach ($services as $service)
                                                         <tr>
-                                                            <td>{{ $service->id }}</td>
+                                                            <td><span class="badge badge-success ">{{ $no++ }}</span></td>
                                                             <td><img src="{{ asset('images/services/thumbnails') }}/{{ $service->thumbnail }}"
                                                                     width="80" alt=""></td>
                                                             <td>{{ $service->name }}</td>
@@ -58,11 +57,24 @@
                                                                     Inactive
                                                                 @endif
                                                             </td>
+                                                            <td>
+                                                                @if ($service->featured)
+                                                                    Yes
+                                                                @else
+                                                                    No
+                                                                @endif
+                                                            </td>
                                                             <td>{{ $service->category->name }}</td>
                                                             <td>{{ $service->created_at }}</td>
                                                             <td>
-                                                                <a href="#"><i class="ft-edit mr-2 font-medium-4 text-info"></i></a>
-                                                                <a href="#"><i class="ft-x mr-2 font-medium-4 text-danger"></i></a>
+                                                                <a
+                                                                    href="{{ route('sprovider.edit_service', ['service_slug' => $service->slug]) }}"><i
+                                                                        class="ft-edit font-medium-3 mr-2   text-info"></i></a>
+                                                                <a href="#"
+                                                                    onclick="confirm('Are you sure, you want to delete this service category!')||event.stopImmediatePropagation()"
+                                                                    wire:click.prevent="deleteService({{ $service->id }})"
+                                                                    ><i
+                                                                        class="ft-trash-2 font-medium-3 mr-2  text-danger"></i></a>
                                                             </td>
                                                         </tr>
                                                     @endforeach
@@ -100,3 +112,4 @@
 
     </style>
     </div>
+

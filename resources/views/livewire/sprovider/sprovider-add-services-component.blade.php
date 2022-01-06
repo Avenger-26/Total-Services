@@ -1,5 +1,5 @@
 <div>
-    @include('../../layouts/admin/header')
+    @include('../layouts/sprovider/header')
         <!-- Navbar (Header) Ends-->
         <div class="main-panel">
             <!-- BEGIN : Main Content-->
@@ -13,10 +13,10 @@
                                     <div class="card-header">
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <h4>Edit Service Category</h4>
+                                                <h4>Add New Service</h4>
                                             </div>
                                             <div class="col-md-6">
-                                                <a href="{{ route('admin.all_services') }}"
+                                                <a href="{{ route('sprovider.all_services') }}"
                                                     class="btn btn-info pull-right">All Services</a>
                                             </div>
                                         </div>
@@ -28,11 +28,11 @@
                                             </div>
                                         @endif
                                         <div class="px-2">
-                                            <form class="form-horizontal" wire:submit.prevent="updateService">
+                                            <form class="form-horizontal" wire:submit.prevent="createService">
                                                 @csrf
                                                 <div class="form-group">
                                                     <div class="col-md-12">
-                                                    <label for="name" class=" control-label text-light ">Name: </label>
+                                                        <label for="name" class=" control-label text-light fw-900">Name: </label>
                                                         <input id="name" type="text" class="form-control border-primary" name="name"
                                                             wire:model="name" wire:keyup="generateSlug()" />
                                                         @error('name')<p class="text-danger">{{ $message }}</p>
@@ -41,7 +41,7 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <div class="col-md-12">
-                                                    <label for="name" class=" control-label text-light ">Slug: </label>
+                                                        <label for="name" class=" control-label text-light fw-900">Slug: </label>
                                                         <input id="slug" type="text" class="form-control border-primary" name="slug"
                                                             wire:model="slug" />
                                                         @error('slug')<p class="text-danger">{{ $message }}</p>
@@ -50,7 +50,7 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <div class="col-md-12">
-                                                    <label for="name" class=" control-label text-light ">Tagline: </label>
+                                                        <label for="name" class=" control-label text-light fw-900">Tagline: </label>
                                                         <input id="tagline" type="text" class="form-control border-primary"
                                                             name="tagline" wire:model="tagline" />
                                                         @error('tagline')<p class="text-danger">{{ $message }}</p>
@@ -59,10 +59,8 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <div class="col-md-12">
-                                                    <label for="service_category_id"
-                                                        class=" control-label text-light ">Service
-                                                        
-                                                        Category: </label>
+                                                        <label for="service_category_id" class=" control-label text-light fw-900">Service
+                                                            Category: </label>
                                                         <select name="service_category_id" id="service_category_id"
                                                             class="form-control border-primary" wire:model="service_category_id">
                                                             <option value="">Select Service Category</option>
@@ -78,7 +76,7 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <div class="col-md-12">
-                                                    <label for="name" class=" control-label text-light ">Price: </label>
+                                                        <label for="name" class=" control-label text-light fw-900">Price: </label>
                                                         <input id="price" type="text" class="form-control border-primary" name="price"
                                                             wire:model="price" />
                                                         @error('price')<p class="text-danger">{{ $message }}</p>
@@ -87,7 +85,7 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <div class="col-md-12">
-                                                    <label for="name" class=" control-label text-light ">Discount: </label>
+                                                        <label for="name" class=" control-label text-light fw-900">Discount: </label>
                                                         <input id="discount" type="text" class="form-control border-primary"
                                                             name="discount" wire:model="discount" />
                                                         @error('discount')<p class="text-danger">{{ $message }}
@@ -97,9 +95,9 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <div class="col-md-12">
-                                                    <label for="name" class=" control-label text-light ">Discount Type:
-                                                        
-                                                    </label>
+                                                        <label for="name" class=" control-label text-light fw-900">Discount Type:
+
+                                                        </label>
                                                         <select name="discount_type" id="discount_type"
                                                             class="form-control border-primary" wire:model="discount_type">
                                                             <option value="">Select Service Category</option>
@@ -113,19 +111,7 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <div class="col-md-12">
-                                                    <label for="name" class=" control-label text-light ">Featured:
-                                                        
-                                                    </label>
-                                                        <select name="featured" id="featured"
-                                                            class="form-control border-primary" wire:model="featured">
-                                                            <option value="0">No</option>
-                                                            <option value="1">Yes</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <div class="col-md-12">
-                                                    <label for="name" class=" control-label text-light ">Description: </label>
+                                                        <label for="name" class=" control-label text-light fw-900">Description: </label>
                                                         <textarea name="description" id="description"
                                                             class="form-control border-primary" wire:model="description"></textarea>
                                                         @error('description')<p class="text-danger">{{ $message }}
@@ -135,7 +121,7 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <div class="col-md-12">
-                                                    <label for="name" class=" control-label text-light ">Inclusion: </label>
+                                                        <label for="name" class=" control-label text-light fw-900">Inclusion: </label>
                                                         <textarea name="inclusion" id="inclusion" class="form-control border-primary"
                                                             wire:model="inclusion"></textarea>
                                                         @error('inclusion')<p class="text-danger">{{ $message }}
@@ -145,7 +131,7 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <div class="col-md-12">
-                                                    <label for="name" class=" control-label text-light ">Exclusion: </label>
+                                                        <label for="name" class=" control-label text-light fw-900">Exclusion: </label>
                                                         <textarea name="exclusion" id="exclusion" class="form-control border-primary"
                                                             wire:model="exclusion"></textarea>
                                                         @error('exclusion')<p class="text-danger">{{ $message }}
@@ -155,62 +141,54 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <div class="col-md-12">
-                                                    <label for="thumbnail" class=" control-label text-light ">Thumbnail:
+                                                    <label for="thumbnail" class=" control-label text-light fw-900">Thumbnail:
                                                         
                                                     </label>
-                                                        <input id="newthumbnail" type="file" class="form-control border-primary"
-                                                            name="thumbnail" wire:model="newthumbnail" />
-                                                        @error('newthumbnail')<p class="text-danger">
-                                                                {{ $message }}</p>
-                                                        @enderror
-                                                        @if ($newthumbnail)
-                                                            <img src="{{ $newthumbnail->temporaryUrl() }}" alt=""
-                                                                width="60">
-                                                        @else
-                                                            <img src="{{ asset('images/services/thumbnails') }}/{{ $thumbnail }}"
-                                                                alt="" width="60">
-                                                        @endif
-                                                    </div>
+                                                    <input id="thumbnail" type="file" class="form-control border-primary"
+                                                        name="thumbnail" wire:model="thumbnail" />
+                                                    @error('thumbnail')<p class="text-danger">{{ $message }}
+                                                        </p>
+                                                    @enderror
+                                                    @if ($thumbnail)
+                                                        <img src="{{ $thumbnail->temporaryUrl() }}" alt="" width="60">
+                                                    @endif
                                                 </div>
-                                                <div class="form-group">
-                                                    <div class="col-md-12">
-                                                    <label for="image" class=" control-label text-light ">Image: </label>
-                                                        <input id="newimage" type="file" class="form-control border-primary"
-                                                            name="image" wire:model="newimage" />
-                                                        @error('newimage')<p class="text-danger">{{ $message }}
-                                                            </p>
-                                                        @enderror
-                                                        @if ($newimage)
-                                                            <img src="{{ $newimage->temporaryUrl() }}" alt="" width="150">
-                                                        @else
-                                                            <img src="{{ asset('images/services') }}/{{ $image }}"
-                                                                alt="" width="100">
-                                                        @endif
-                                                    </div>
-                                                </div>
-                                                <button type="submit" class="btn btn-success mx-auto d-flex">Update
-                                                    Service</button>
-                                            </form>
                                         </div>
+                                        <div class="form-group">
+                                            <div class="col-md-12">
+                                                <label for="image" class=" control-label text-light fw-900">Image: </label>
+                                                <input id="image" type="file" class="form-control border-primary" name="image"
+                                                    wire:model="image" />
+                                                @error('image')<p class="text-danger">{{ $message }}</p>
+                                                @enderror
+                                                @if ($image)
+                                                    <img src="{{ $image->temporaryUrl() }}" alt="" width="60">
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-success mx-auto d-flex">Add
+                                            Service</button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
                         </div>
                 </div>
-                </section>
-
             </div>
-        </div>
-        <!-- END : End Main Content-->
+            </section>
 
-        <!-- BEGIN : Footer-->
-        <footer class="footer footer-static footer-light">
-            <p class="clearfix text-muted text-sm-center px-2"><span>Copyright &copy; 2021 <a
-                        href="https://themeforest.net/user/pixinvent/portfolio?ref=pixinvent" id="pixinventLink"
-                        target="_blank" class="text-bold-800 primary darken-2">Team 26 </a>, All rights
-                    reserved. </span></p>
-        </footer>
-        <!-- End : Footer-->
+        </div>
+    </div>
+    <!-- END : End Main Content-->
+
+    <!-- BEGIN : Footer-->
+    <footer class="footer footer-static footer-light">
+        <p class="clearfix text-muted text-sm-center px-2"><span>Copyright &copy; 2021 <a
+                    href="https://themeforest.net/user/pixinvent/portfolio?ref=pixinvent" id="pixinventLink" target="_blank"
+                    class="text-bold-800 primary darken-2">Team 26 </a>, All rights
+                reserved. </span></p>
+    </footer>
+    <!-- End : Footer-->
 
     </div>
     </div>

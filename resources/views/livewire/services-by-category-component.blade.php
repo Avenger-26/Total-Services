@@ -1,6 +1,6 @@
 <div>
     <div class="section-title-01 honmob">
-        <div class="bg_parallax image_01_parallax"></div>
+        <div class="bg_parallax image_02_parallax"></div>
         <div class="opacy_bg_02">
             <div class="container">
                 <h1>{{$scategory->name}} Services</h1>
@@ -40,7 +40,7 @@
                                 <div class="info-gallery">
                                     <h3>{{$service->name}}</h3>
                                     <hr class="separator">
-                                    <p>{{$service->tagline}}</p>
+                                    {{-- <p>{{$service->inclusion}}</p> --}}
                                     <div class="content-btn"><a href="{{route('home.service_details',['service_slug'=>$service->slug])}}"
                                             class="btn btn-primary">Book Now</a></div>
                                     <div class="price"><span></span><b>From</b>&#8377;{{$service->price}}</div>

@@ -1,7 +1,7 @@
 <div>
-    <div class="section-title-02-2 honmob">
-        <div class="bg_parallax image_02_parallax"></div>
-        <div class="opacy_bg_02">
+    <div class="section-title-02-2 honmob shadow-lg">
+        <div class="bg_parallax image_02_parallax "></div>
+        <div class="opacy_bg_02 ">
             <div class="container">
                 <h1>{{ $service->name }}</h1>
                 <div class="crumbs">
@@ -23,7 +23,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-8 single-blog">
-                            <div class="post-item">
+                            <div class="post-item shadow-lg border-none">
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="post-header">
@@ -73,16 +73,16 @@
                         </div>
                         <div class="col-md-4">
                             <aside class="widget" style="margin-top: 18px;">
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">Service Provider Details</div>
+                                <div class="panel text-primary  shadow-small border-none">
+                                    <div class="panel-heading bg-primary" >Service Provider Details</div>
                                     <div class="panel-body">
                                         <table class="table">
                                             <tr>
                                                 <td colspan="2" style="text-align: center">
                                                     @if ($sprovider->image)
                                                         <img src="{{ asset('images/sproviders') }}/{{ $sprovider->image }}"
-                                                            width="100" alt=""
-                                                        class="rounded-circle img-border gradient-summer">
+                                                            width="100" height="100" alt=""
+                                                        class="rounded-circle img-border gradient-summer shadow-small" style="border-radius:50px;border:5px solid #1597e5;">
 
                                                     @else
                                                         <img src="{{ asset('images/sproviders/default.png') }}"
@@ -90,7 +90,7 @@
                                                              class="rounded-circle img-border gradient-summer">
                                                     @endif
                                                 </td>
-                                               
+
                                             </tr>
                                             <tr>
                                                 <td>Servies Provider Name</td>
@@ -109,30 +109,40 @@
                                             {{-- <button type="submit" name="submit" class="btn btn-primary"><a href="#"
                                                     style="color: white; text-decoration:none">Contact Now</a>
                                                 </button> --}}
-                                            <button type="submit" name="submit" class="btn btn-primary mx-4"><a
+                                            <button type="submit" name="submit" class="btn-hover color-hover mx-auto shadow-small border-none"><a
                                                     href="tel:{{ $sprovider->phone }}"
                                                     onclick="ga('send', 'event', { eventCategory: 'Contact', eventAction: 'Call', eventLabel: 'Mobile Button'});"
-                                                    style="color: white; text-decoration:none">Click to
-                                                    Call</a></button>
+                                                    style="color: white; text-decoration:none"> <i class="fa fa-phone"></i> Call Now</a>
+                                                   </button>
 
                                         </form>
                                     </div>
                                 </div>
-                            </aside> 
+                            </aside>
 
                             <aside class="widget" style="margin-top: 18px;">
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">Booking Details</div>
+                                <div class="panel shadow-small border-none">
+                                    <div class="panel-heading  bg-primary">Booking Details</div>
                                     <div class="panel-body">
                                         <table class="table">
                                             <tr>
                                                 <td style="border-top: none;">Price</td>
-                                                <td style="border-top: none;"><span>&#8377;</span>
-                                                    {{ $service->price }}</td>
+                                                <td style="border-top: none;"><span >&#8377;</span>
+                                                    <span class="label label-success">{{ $service->price }}</span></td>
                                             </tr>
                                             <tr>
-                                                <td>Quntity</td>
-                                                <td>1</td>
+                                                <td style="border-top: none;">Discount</td>
+                                                <td style="border-top: none;"><span>&#8377;</span>
+                                                    @if ($service->discount===null)
+                                                       <span class="label label-danger">---------</span>
+                                                    @else
+                                                        {{ $service->discount }} %
+                                                    @endif</td>
+                                            </tr>
+                                            <tr>
+                                                <h4 class="post-title"><a href="" title="Post Format: Standard"
+                                                    rel="bookmark">{{ $service->name }}:{{ $service->category->name }}</a>
+                                            </h4>
                                             </tr>
                                             @php
                                                 $total = $service->price;
@@ -156,17 +166,17 @@
                                             @endif
 
                                             <tr>
-                                                <td>Total</td>
-                                                <td><span>&#8377;</span>{{ $total }}</td>
+                                                <td><strong>Total</strong></td>
+                                                <td><span> &#8377; </span> <span class="label label-warning">{{$total}}</span></td>
                                             </tr>
-                                            
+
                                         </table>
                                     </div>
 
                                     <div class="panel-footer">
                                         <form>
-                                            <button type="submit" name="submit" class="btn btn-primary"><a href="#"
-                                                    style="color: white; text-decoration:none">Book Now</a></button>
+                                            <button type="submit" name="submit" class="btn-hover color-hover mx-auto shadow-small border-none"><a href="#"
+                                                    style="color: white; text-decoration:none">Book Now <i class="fa fa-check"></i></a></button>
                                         </form>
                                     </div>
                                 </div>

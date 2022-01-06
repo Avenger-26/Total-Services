@@ -47835,6 +47835,7 @@ datetime .form-group {
 
 #user-profile .profile-with-cover .profil-cover-details .profile-image img.img-border {
   border: 5px solid #fff;
+  
 }
 
 #user-profile .profile-with-cover .profile-cover-buttons {
@@ -56098,7 +56099,9 @@ bootstrap table theme
   .app-content .wizard>.steps>ul {
     margin-bottom: 20px;
   }
-
+  #user-profile .profile-with-cover .profil-cover-details .profile-image img.img-border {
+    margin-left: -25px ;
+  }
   .app-content .wizard>.steps>ul>li {
     display: block;
     float: left;

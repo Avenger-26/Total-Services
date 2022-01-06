@@ -14,7 +14,7 @@
                 <div class="content-wrapper">
                     <section id="extended">
                         <div class="row justify-content-md-center">
-                            <div class="col-md-11 col-sm-11">
+                            <div class="col-md-12">
                                 <div class="card">
                                     <div class="card-header">
                                         <div class="row">
@@ -47,7 +47,7 @@
                                                         <th>Email</th>
                                                         <th>Phone</th>
                                                         <th>Location</th>
-                                                        <th>Action</th>
+                                                        {{-- <th>Action</th> --}}
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -61,7 +61,7 @@
                                                             <td>{{ $user->phone }}</td>
 
                                                             <td>{{ $user->address }}</td>
-                                                            <td>
+                                                            {{-- <td>
 
 
                                                                 <a href="#"
@@ -69,7 +69,7 @@
                                                                     wire:click.prevent="deleteUser({{ $user->id  }})"
                                                                     style="margin-left:10px"><i
                                                                         class="fa fa-trash  text-danger mt-3 font-medium-5 mr-2"></i></a>
-                                                            </td>
+                                                            </td> --}}
                                                         </tr>
                                                     @endforeach
                                                 </tbody>

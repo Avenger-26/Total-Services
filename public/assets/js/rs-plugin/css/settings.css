@@ -1558,7 +1558,8 @@ img.tp-slider-alternative-image	{	width:100%; height:auto;}
 /************************************
 		-	TP BANNER TIMER		-
 *************************************/
-.tp-bannertimer								{	width:100%; height:10px; background:url(../assets/timer.png);position:absolute; z-index:200;top:0px}
+.tp-bannertimer								{	background-color: #63a4ff !important;
+	background-image: linear-gradient(315deg, #63a4ff 0%, #83eaf1 74%) !important;  width:100%; height:6px; background:url(../assets/timer.png);position:absolute; z-index:200;top:0px}
 .tp-bannertimer.tp-bottom					{	bottom:0px;height:5px; top:auto}
 
 

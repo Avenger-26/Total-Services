@@ -28,10 +28,10 @@
         <div class="content_info" style="margin-top: -70px;">
             <div class="row">
                 <div class="col-md-12">
-                    <ul class="services-lines full-services">
+                    <ul class="services-lines full-services shadow-lg">
                         @foreach ($scategories as $scategory)
                         <li>
-                            <div class="item-service-line">
+                            <div class="item-service-line shadow-lg">
                                 <i class="fa"><a href="{{route('home.services_by_category',['category_slug'=>$scategory->slug])}}"><img class="icon-img" height="80px" width="80px"
                                             src="{{asset('images/services-categories')}}/{{$scategory->image}}" alt="{{$scategory->name}}"></a></i>
                                 <h5>{{$scategory->name}}</h5>

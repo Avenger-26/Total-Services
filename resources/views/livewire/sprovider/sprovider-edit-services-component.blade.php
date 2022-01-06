@@ -1,5 +1,5 @@
 <div>
-    @include('../../layouts/admin/header')
+    @include('../layouts/sprovider/header')
         <!-- Navbar (Header) Ends-->
         <div class="main-panel">
             <!-- BEGIN : Main Content-->
@@ -16,7 +16,7 @@
                                                 <h4>Edit Service Category</h4>
                                             </div>
                                             <div class="col-md-6">
-                                                <a href="{{ route('admin.all_services') }}"
+                                                <a href="{{ route('sprovider.all_services') }}"
                                                     class="btn btn-info pull-right">All Services</a>
                                             </div>
                                         </div>

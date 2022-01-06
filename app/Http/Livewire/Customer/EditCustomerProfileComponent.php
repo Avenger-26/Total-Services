@@ -13,6 +13,8 @@ class EditCustomerProfileComponent extends Component
 {
     use WithFileUploads;
     public $customer_id;
+    public $name;
+    public $email;
     public $image;
     public $phone;
     public $address;
@@ -22,6 +24,8 @@ class EditCustomerProfileComponent extends Component
     {
         $scustomer = User::where('id',Auth::user()->id)->first();
         $this->customer_id = $scustomer->id;
+        $this->name = $scustomer->name;
+        $this->email = $scustomer->email;
         $this->image = $scustomer->image;
         $this->phone = $scustomer->phone;
         $this->address = $scustomer->address;
@@ -35,6 +39,8 @@ class EditCustomerProfileComponent extends Component
             $this->newimage->storeAs('customer', $imageName);
             $scustomer->image = $imageName;
         }
+        $scustomer->name = $this->name;
+        $scustomer->email = $this->email;
         $scustomer->phone = $this->phone;
         $scustomer->address = $this->address;
         $scustomer ->save();

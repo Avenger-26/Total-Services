@@ -35,24 +35,32 @@
 
                                                 </div>
                                             @endif
-                                            <table class="table text-center">
+                                            <table class="table text-center table-striped table-hover shadow">
                                                 <thead>
                                                     <tr>
-                                                        <th>#</th>
+                                                        <th>ID</th>
                                                         <th>Image</th>
                                                         <th>Name</th>
                                                         <th>Slug</th>
+                                                        <th>Featured</th>
                                                         <th>Action</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     @foreach ($scategories as $scategory)
                                                         <tr>
-                                                            <td>{{ $no++ }}</td>
-                                                            <td><img src="{{ asset('images/services-categories') }}/{{ $scategory->image }}"
-                                                                    width="60" alt=""></td>
+                                                            <td><span class="badge badge-success mt-3">{{ $no++ }}</span></td>
+                                                            <td><img class="rounded-circle img-border"src="{{ asset('images/services-categories') }}/{{ $scategory->image }}"
+                                                                    width="80" height="80" alt=""></td>
                                                             <td>{{ $scategory->name }}</td>
                                                             <td>{{ $scategory->slug }}</td>
+                                                            <td>
+                                                                @if ($scategory->featured)
+                                                                    Yes
+                                                                @else
+                                                                    No
+                                                                @endif
+                                                            </td>
                                                             <td>
                                                                 <a href="{{ route('admin.services_by_category', ['category_slug' => $scategory->slug]) }}"
                                                                     style="margin-left:15px"><i

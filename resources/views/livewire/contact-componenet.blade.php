@@ -42,14 +42,14 @@
                             </aside>
                             <hr class="tall">
                         </div>
-                        <div class="col-md-8">
-                            <h3>Contact Form</h3>
+                        <div class="col-md-8 contact">
+                            <h3>Contact Us</h3>
                             <p class="lead">
                             </p>
                             @if (Session::has('message'))
                                 <div class="aleat alert-success" role="alert">{{ Session::get('message') }}</div>
                             @endif
-                            <form id="contactform" class="form-theme" method="post"
+                            <form id="contactform" class="form-theme " method="post"
                                 wire:submit.prevent="sendMessage">
                                 @csrf
                                 <input type="text" placeholder="Name" name="name" id="name" wire:model="name"
@@ -67,17 +67,6 @@
                                 <input type="submit" name="Submit" value="Send Message" class="btn btn-primary">
                             </form>
                             <div id="result"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="section-twitter content_resalt border-top">
-            <i class="fa fa-twitter icon-big"></i>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="text-center">
                         </div>
                     </div>
                 </div>

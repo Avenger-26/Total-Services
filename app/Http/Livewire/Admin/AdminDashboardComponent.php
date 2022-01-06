@@ -2,10 +2,12 @@
 
 namespace App\Http\Livewire\Admin;
 
+use App\Models\User;
+use App\Models\Contact;
+use Livewire\Component;
 use App\Models\ServiceCategory;
 use App\Models\ServiceProvider;
-use App\Models\User;
-use Livewire\Component;
+use Illuminate\Support\Facades\Auth;
 
 class AdminDashboardComponent extends Component
 {

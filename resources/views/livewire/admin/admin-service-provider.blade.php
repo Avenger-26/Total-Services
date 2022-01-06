@@ -1,4 +1,4 @@
-<style>
+{{-- <style>
     table td{
         line-height:80px;
     }
@@ -6,7 +6,7 @@
         line-height:80px;
     }
 
-</style>
+</style> --}}
 
 <div>
     <!--.main-menu(class="#{menuColor} #{menuOpenType}", class=(menuShadow == true ? 'menu-shadow' : ''))-->
@@ -17,7 +17,7 @@
                 <div class="content-wrapper">
                     <section id="extended">
                         <div class="row justify-content-md-center">
-                            <div class="col-md-11 col-sm-11">
+                            <div class="col-md-11">
                                 <div class="card">
                                     <div class="card-header">
                                         <div class="row">
@@ -26,7 +26,7 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <a href="{{ route('admin.add_service_provider') }}"
-                                                    class="btn-hover color-hover pull-right mx-3">Add New</a>
+                                                    class="btn btn-info pull-right mx-3">Add New</a>
                                             </div>
                                         </div>
                                     </div>
@@ -41,7 +41,7 @@
                                             @endif
                                             <table class="table text-center table-striped table-hover shadow ">
                                                 <thead>
-                                                    <tr>
+                                                    <tr class="bg-info">
                                                         <th>ID</th>
                                                         <th>Image</th>
                                                         <th>Name</th>

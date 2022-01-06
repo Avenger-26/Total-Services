@@ -119,10 +119,14 @@
                     <!-- ================ Redirect on Registration page ===================== -->
                     <div class="">
                         <span class="span-r"> Not a member?
-                            <a href="{{ route('register') }}">Sing up now!</a>
+                            <a href="{{ route('register') }}">Sign up now!</a>
                         </span>
                     </div>
+                    <div class="">
+                        
+                    </div>
                 </form>
+
 
             </div>
             <!-- =================================== Login Content  =============================== -->

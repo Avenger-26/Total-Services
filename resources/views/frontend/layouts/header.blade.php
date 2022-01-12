@@ -8,7 +8,7 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content='maximum-scale=1.0, initial-scale=1.0, width=device-width' name='viewport'>
     <link rel="shortcut icon" href="assets/img/favicon.png">
     <link href="{{ url('assets/css/style.css') }}" rel="stylesheet" media="screen">
     <link href="{{ url('assets/css/chblue.css') }}" rel="stylesheet" media="screen">
@@ -22,6 +22,8 @@
     <script type="text/javascript" src="{{ url('assets/js/jquery-ui.1.10.4.min.js') }}"></script>
     <script type="text/javascript" src="{{ url('assets/js/toastr.min.js') }}"></script>
     <script type="text/javascript" src="{{ url('assets/js/modernizr.js') }}"></script>
+    <script type="text/javascript" src="{{ url('js/tiltjs.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
     @livewireStyles
 </head>
 
@@ -77,8 +79,8 @@
                         @auth
                             @if (Auth::user()->u_type === 'ADM')
                                 <li class="login-form"><a href="#" title="Register"> <i class="fa fa-user"
-                                            aria-hidden="true"> My Account (
-                                            {{ Auth::user()->name }} )</i></a>
+                                            aria-hidden="true">
+                                            {{ Auth::user()->name }}(Admin)</i></a>
                                     <ul class="drop-down one-column hover-fade">
 
                                         <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
@@ -87,7 +89,7 @@
                                         </li>
                                     </ul>
                                 </li>
-                            @elseif(Auth::user()->u_type==='SPV')
+                            @elseif(Auth::user()->u_type === 'SPV')
                                 <li class="login-form"><a href="#" title="Register"><i class="fa fa-user"
                                             aria-hidden="true">
                                             {{ Auth::user()->name }} ( @if (Auth::user()->service_category_id)
@@ -102,9 +104,8 @@
                                     </ul>
                                 </li>
                             @else
-                                <li class="login-form"><a href="" title="Register"> <i class="fa fa-user"
-                                            aria-hidden="true"> My Account (
-                                            {{ Auth::user()->name }} ) </i></a>
+                                <li class=""> <i class="fa fa-user-circle" aria-hidden="true">
+                                        <strong> {{ Auth::user()->name }} (Customer) </strong></i>
                                     <ul class="drop-down one-column hover-fade">
                                         <li><a href="{{ route('costumer.dashboard') }}">Dashboard</a></li>
                                         <li><a href="{{ route('logout') }}"

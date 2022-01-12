@@ -1,3 +1,7 @@
+<head>
+    <title>Service Provider Dashboar</title>
+</head>
+
 <!--.main-menu(class="#{menuColor} #{menuOpenType}", class=(menuShadow == true ? 'menu-shadow' : ''))-->
 <div data-active-color="white" data-background-color="black"
     data-image="{{ asset('app-assets/img/sidebar-bg/01.jpg') }}" class="app-sidebar">

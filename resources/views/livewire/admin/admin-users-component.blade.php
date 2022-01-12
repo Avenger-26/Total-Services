@@ -1,7 +1,7 @@
 <style>
-    table td{
+    /* table td{
         line-height:80px;
-    }
+    } */
 
 </style>
 
@@ -14,19 +14,19 @@
                 <div class="content-wrapper">
                     <section id="extended">
                         <div class="row justify-content-md-center">
-                            <div class="col-md-12">
-                                <div class="card">
-                                    <div class="card-header">
+                            <div class="col-md-11">
+                                <div class="card shadow">
+                                    <div class="card-header py-3">
                                         <div class="row">
                                             <div class="col-md-6 ">
-                                                <h4 class="">All User</h4>
+                                                <h4 class="text-info font-weight-bold ">All User List</h4>
                                             </div>
 
                                         </div>
                                     </div>
-                                    <hr>
+                                  
                                     <div class="card-content">
-                                        <div class="card-body table-responsive">
+                                        <div class="">
 
                                             @if (Session::has('message'))
                                             <div class="alert alert-primary alert-dismissible mb-2" role="alert">
@@ -55,7 +55,7 @@
                                                         <tr>
                                                             <td ><span class="badge badge-success mt-3">#U0{{ $user->id }}</span></td>
                                                             <td><img  class="rounded-circle img-border gradient-summer  " src="{{ asset('images/sproviders') }}/{{ $user->image }}"
-                                                                    width="80" height="80" alt=""></td>
+                                                                    width="80" height="80" alt="user"></td>
                                                             <td>{{ $user->name }}</td>
                                                             <td>{{ $user->email }}</td>
                                                             <td>{{ $user->phone }}</td>

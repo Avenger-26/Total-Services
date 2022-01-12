@@ -4,14 +4,21 @@
         th{
             vertical-align: top;
         }
+        .dynamic-cards{
+            transition: all 0.3 s ease-in-out;
+        }
+        .dynamic-cards:hover{
+            transform: translate3d(0, -10px, 0);
+        }
     </style>
     <div class="main-panel">
         <!-- BEGIN : Main Content-->
         <div class="main-content">
             <div class="content-wrapper">
                 <div class="row">
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-11 mx-auto">
-                        <div class="card gradient-blackberry">
+                    <div class="col-md-1"></div>
+                    <div class="col-xl-5 col-lg-5 col-md-5 col-11 mx-auto ">
+                        <div class="card gradient-blackberry dynamic-cards">
                             <div class="card-content">
                                 <div class="card-body pt-2 pb-2">
                                     <div class="media">
@@ -30,8 +37,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-11 mx-auto">
-                        <div class="card gradient-ibiza-sunset">
+                    <div class="col-xl-5 col-lg-5 col-md-5 col-11 mx-auto h-50 ">
+                        <div class="card gradient-ibiza-sunset dynamic-cards">
                             <div class="card-content">
                                 <div class="card-body pt-2 pb-2">
                                     <div class="media">
@@ -51,13 +58,13 @@
                             </div>
                         </div>
                     </div>
-
+                    <div class="col-md-1"></div>
                 </div>
                 <div class="row match-height justify-content-md-center">
-                    <div class="col-xl-12 col-lg-12 col-12">
+                    <div class="col-xl-12 col-lg-8 col-md-8 col-sm-12">
                         <div class="card">
                             <div class="card-header pb-2">
-                                <h4 class="card-title" style="text-align:center;font-weight:700; font-size:1.7rem;"><i
+                                <h4 class="card-title" style="text-align:center;font-weight:500; font-size:1.7rem;"><i
                                     class="ft-shopping-cart fa-1x"> </i> Booking History</h4>
                             </div>
                             <div class="card-content">

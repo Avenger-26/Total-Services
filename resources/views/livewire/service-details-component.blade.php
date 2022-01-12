@@ -175,19 +175,14 @@
                                     @if ($service->price != '150')
                                         <div class="panel-footer">
                                             <form>
-                                                <button type="button" name="submit" class="btn btn-primary"><a
+                                                <button type="button" name="submit" class="btn-hover color-hover mx-auto shadow-small border-none"><a
                                                         href="{{ route('payment') }}"
                                                         style="color: white; text-decoration:none">Book Now</a></button>
                                             </form>
                                         </div>
                                     @endif
 
-                                    <div class="panel-footer">
-                                        <form>
-                                            <button type="submit" name="submit" class="btn-hover color-hover mx-auto shadow-small border-none"><a href="#"
-                                                    style="color: white; text-decoration:none">Book Now <i class="fa fa-check"></i></a></button>
-                                        </form>
-                                    </div>
+                                    
                                 </div>
                             </aside>
 

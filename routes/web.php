@@ -2,6 +2,7 @@
 
 use App\Http\Livewire\HomeComponent;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\admin\ChartController;
 use App\Http\Livewire\ContactComponenet;
 use App\Http\Controllers\PaytmController;
 use App\Http\Controllers\SearchController;
@@ -95,3 +96,6 @@ Route::middleware(['auth:sanctum', 'authadmin'])->group(function () {
     Route::get('/admin/Users', AdminUsersComponent::class)->name('admin.users');
     Route::get('/admin/ChangePassword', AdminChangePasswordComponent::class)->name('admin.changepassword');
 });
+
+
+Route::get('/chart',[ChartController::class,'barchart'])->name('admin.chart');

@@ -1,5 +1,7 @@
 <link rel="stylesheet" href="{{asset('assets/css/border.css')}}">
-
+<head>
+    <title>Customer  Dashboard</title>
+</head>
 
 <!-- main menu-->
 <!--.main-menu(class="#{menuColor} #{menuOpenType}", class=(menuShadow == true ? 'menu-shadow' : ''))-->
@@ -8,7 +10,7 @@
     <!-- main menu header-->
     <!-- Sidebar Header starts-->
     <div class="sidebar-header ">
-        <div class="logo clearfix"><a href="/" class="logo-904365235693text float-left">
+        <div class="logo clearfix"><a href="/" class="logo-text font-weight-bolder float-left">
                 <span class="text align-left">Totat Services</span>
             </a>
             <a id="sidebarToggle" href="javascript:;" class="nav-toggle d-none d-sm-none d-md-none d-lg-block"><i
@@ -27,33 +29,31 @@
                 {{-- <li class=" nav-item"><a href="{{ route('costumer.dashboard') }}">
 
                 </li> --}}
-                <div class="profile  ">
+                {{-- <div class="profile  ">
                     <img src="{{ asset('images/customer') }}/{{ Auth::user()->image }}" alt="profile"
                     width="100" height="100"
                     class="rounded-circle mx-auto d-block shadow img-border gradient-summer">
-                </div>
-                <div class="mt-2">
-                    <h6 class="text-center text-uppercase font-weight-bolder text-white">{{ Auth::user()->name }}</h6>
-                </div>
-                <li class=" nav-item"><a href="{{ route('costumer.dashboard') }}"><i
-                            class="ft-home"></i><span data-i18n="" class="menu-title">Dashboard</span></a>
+                </div> --}}
+               
+                <li class=" nav-item"><a href="{{ route('costumer.dashboard') }}" class="font-weight-bold"><i
+                            class="ft-home"></i><span data-i18n="" class="">Dashboard</span></a>
                 </li>
                 <li class=" nav-item"><a href="{{ route('costumer.profile') }}"><i
-                            class="ft-user mr-2"></i><span data-i18n="" class="menu-title">
+                            class="ft-user mr-2"></i><span data-i18n="" class="">
                             Profile</span></a>
                 </li>
                 <li class=" nav-item"><a href="{{ route('costumer.edit_profile') }}"><i
-                            class="ft-edit mr-2"></i><span data-i18n="" class="menu-title">Edit
+                            class="ft-edit mr-2"></i><span data-i18n="" class="">Edit
                             Profile</span></a>
                 </li>
                 <li class=" nav-item"><a href="{{ route('costumer.changepassword') }}">
 
-                        <i class="fa fa-key"></i><span data-i18n="" class="menu-title">Change
+                        <i class="fa fa-key"></i><span data-i18n="" class="">Change
                             Password</span></a>
                 </li>
                 <li class=" nav-item"><a href="{{ route('logout') }}"
                         onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i
-                            class="ft-power mr-2"></i><span data-i18n="" class="menu-title">Logout</span></a>
+                            class="ft-power mr-2"></i><span data-i18n="" class="">Logout</span></a>
                 </li>
                 </li>
             </ul>
@@ -111,13 +111,10 @@
                         class="icon-bar"></span><span class="icon-bar"></span></button><span
                     class="d-lg-none navbar-right navbar-collapse-toggle"><a aria-controls="navbarSupportedContent"
                         href="javascript:;" class="open-navbar-container black"><i class="ft-more-vertical"></i></a></span>
-                <form role="search" class="navbar-form navbar-right mt-1">
-                    <div class="position-relative has-icon-right">
-                        <input type="text" placeholder="Search" class="form-control round" />
-                        <div class="form-control-position"><i class="ft-search"></i></div>
-                    </div>
-                </form>
+                
             </div>
+           
+            
             <div class="navbar-container">
                 <div id="navbarSupportedContent" class="collapse navbar-collapse">
                     <ul class="navbar-nav">

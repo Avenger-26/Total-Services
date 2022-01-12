@@ -1,7 +1,6 @@
-
 <div>
     <div class="section-title-01 honmob">
-        <div class="bg_parallax image_01_parallax"></div>
+        <div class="bg_parallax image_02_parallax"></div>
         <div class="opacy_bg_02">
             <div class="container">
                 <h1>All Services</h1>
@@ -20,8 +19,8 @@
             <div class="row" style="margin-top: -30px;">
                 <div class="titles">
                     <h2>Service <span>Categories</span></h2>
-                    <i class="fa fa-plane"></i>
-                    <hr class="tall">
+                    <i class="fa fa-gear"></i>
+
                 </div>
             </div>
         </div>
@@ -30,13 +29,16 @@
                 <div class="col-md-12">
                     <ul class="services-lines full-services shadow-lg">
                         @foreach ($scategories as $scategory)
-                        <li>
-                            <div class="item-service-line shadow-lg">
-                                <i class="fa"><a href="{{route('home.services_by_category',['category_slug'=>$scategory->slug])}}"><img class="icon-img" height="80px" width="80px"
-                                            src="{{asset('images/services-categories')}}/{{$scategory->image}}" alt="{{$scategory->name}}"></a></i>
-                                <h5>{{$scategory->name}}</h5>
-                            </div>
-                        </li>
+                            <li>
+                                <div class="item-service-line shadow-lg">
+                                    <i class="fa"><a
+                                            href="{{ route('home.services_by_category', ['category_slug' => $scategory->slug]) }}"><img
+                                                class="icon-img" height="80px" width="80px"
+                                                src="{{ asset('images/services-categories') }}/{{ $scategory->image }}"
+                                                alt="{{ $scategory->name }}"></a></i>
+                                    <h5>{{ $scategory->name }}</h5>
+                                </div>
+                            </li>
                         @endforeach
 
                     </ul>

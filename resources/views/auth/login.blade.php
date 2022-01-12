@@ -65,7 +65,7 @@
         <!-- ================================== Main Container ===================================== -->
         <div class="container-lp">
             <div class="img-lp">
-                <img src="{{ asset('assets\img\loginpage\img\lp-1.svg') }}">
+                <img src="{{ asset('assets\img\login.png') }}">
             </div>
             <!-- ============================== Login Content ===================================== -->
             <div class="login-content-lp">
@@ -73,7 +73,8 @@
 
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
-                    <img src="{{ asset('assets\img\loginpage\img\avatar-2.svg') }}">
+                    <img src="{{ asset('https://cdn-icons-png.flaticon.com/512/1995/1995670.png') }}"
+                        style="filter: drop-shadow(0px 0px 3px black)">
                     <h2 class="title">Welcome</h2>
                     <x-jet-validation-errors />
                     @if (session('status'))
@@ -115,16 +116,17 @@
                         </div>
                         <!-- ============================Forgot Password =========================  -->
                     </div>
-                    <button type="submit" class="btn-lp">Login</button>
+                    <button type="submit" class="btn-lp">Login<i class="fa fa-sign-in"
+                            aria-hidden="true"></i></button>
                     <!-- ================ Redirect on Registration page ===================== -->
                     <div class="">
                         <span class="span-r"> Not a member?
                             <a href="{{ route('register') }}">Sign up now!</a>
                         </span>
                     </div>
-                    <div class="">
-                        
-                    </div>
+                    <span class="span-r">
+                        <a href="/">Back to Home</a>
+                    </span>
                 </form>
 
 

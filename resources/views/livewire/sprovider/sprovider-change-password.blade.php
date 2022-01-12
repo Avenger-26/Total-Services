@@ -7,10 +7,10 @@
                     <div class="content-wrapper">
                         <div class="row justify-content-md-center">
                             <div class="col-md-8 col-sm-11 mx-auto">
-                                <div class="card">
+                                <div class="card shadow">
                                     <div class="card-header">
                                         <h4 class="card-title text-center" style="font-size:28px; font-weight:bolder"
-                                            id="from-actions"><i class="fa fa-key"></i> Admin Change Password</h4>
+                                            id="from-actions"><i class="fa fa-key"></i> Change Password</h4>
                                     </div>
                                     <br>
                                     <div class="card-content">
@@ -41,19 +41,8 @@
                                                     <input type="password" class="form-control" id="confirm_password" placeholder=" Confirm Password" name="confirm_password" required wire:model="confirm_password">
                                                   </div>
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
                                                <div class=" mx-auto">
-                                                <button type="submit" class="btn-hover color-hover  mx-auto">Submit </button>
+                                                <button type="submit" class="btn-hover color-hover  mx-auto">Submit <i class="fa fa-check-circle"></i></button>
                                                </div>
                                               </form>
                                         </div>

@@ -1,3 +1,18 @@
+<style>
+    .dynamic-cards{
+        transition: all 0.6s ease;
+        box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.5),
+                2px 2px 0px rgba(0, 0, 0, 0.5),
+                3px 3px 0px rgba(0, 0, 0, 0.5),
+                4px 4px 0px rgba(0, 0, 0, 0.5),
+                5px 5px 0px rgba(0, 0, 0, 0.5),
+                6px 6px 0px rgba(0, 0, 0, 0.5);
+    }
+    .dynamic-cards:hover{
+        transform: scale(1.1);
+      
+    }
+</style>
 <div>
     @include('../layouts/sprovider/header')
     <div class="main-panel">
@@ -6,7 +21,7 @@
             <div class="content-wrapper">
                 <div class="row">
                     <div class="col-xl-3 col-lg-6 col-md-6 col-12">
-                        <div class="card gradient-blackberry">
+                        <div class="card gradient-blackberry dynamic-cards">
                             <div class="card-content">
                                 <div class="card-body pt-2 pb-0">
                                     <div class="media">
@@ -26,7 +41,7 @@
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-6 col-md-6 col-12">
-                        <div class="card gradient-ibiza-sunset">
+                        <div class="card gradient-ibiza-sunset dynamic-cards">
                             <div class="card-content">
                                 <div class="card-body pt-2 pb-0">
                                     <div class="media">
@@ -48,7 +63,7 @@
                     </div>
 
                     <div class="col-xl-3 col-lg-6 col-md-6 col-12">
-                        <div class="card gradient-green-tea">
+                        <div class="card gradient-green-tea dynamic-cards">
                             <div class="card-content">
                                 <div class="card-body pt-2 pb-0">
                                     <div class="media">
@@ -68,7 +83,7 @@
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-6 col-md-6 col-12">
-                        <div class="card gradient-pomegranate">
+                        <div class="card gradient-pomegranate dynamic-cards">
                             <div class="card-content">
                                 <div class="card-body pt-2 pb-0">
                                     <div class="media">
@@ -91,13 +106,13 @@
                 <section id="extended">
                     <div class="row">
                         <div class="col-sm-12">
-                            <div class="card">
+                            <div class="card shadow">
                                 <div class="card-header">
-                                    <h4 class="card-title" style="text-align: center; font-weight:700; font-size:1.6rem;"><i class="fa ft-briefcase  fa-1x"></i> Work History</h4>
+                                    <h4 class="card-title py-2 text-info" style="text-align: center; font-weight:500; font-size:1.6rem;"><i class="fa ft-briefcase  fa-1x"></i> Work History</h4>
                                 </div>
                                 <div class="card-content">
-                                    <div class="card-body table-responsive">
-                                        <table class="table text-center table-striped table-hover shadow table-responsive">
+                                    <div class=" table-responsive">
+                                        <table class="table text-center table-striped table-hover shadow ">
                                             <thead>
                                                 <tr>
                                                     <th>ID</th>

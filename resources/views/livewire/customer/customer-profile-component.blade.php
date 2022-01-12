@@ -7,7 +7,7 @@
                     <!--Basic User Details Starts-->
                     <section id="user-profile">
                         <div class="row">
-                            <div class="col-12">
+                            <div class="col-md-10 col-sm-11 mx-auto">
                                 <div class="card gradient-border profile-with-cover">
                                     <div class="card-img-top img-fluid bg-cover height-300"
                                         style="background: url({{ asset('app-assets/img/photos/15.jpg') }}) 50%;"></div>
@@ -79,13 +79,13 @@
                     <!--Basic User Details Ends-->
                     <!--About section starts-->
                     <section id="about">
-                        <div class="row">
-                            <div class="col-12">
+                        {{-- <div class="row">
+                            <div class="col-md-10 col-sm-11 mx-auto">
                                 <div class="content-header">About</div>
                             </div>
-                        </div>
+                        </div> --}}
                         <div class="row">
-                            <div class="col-sm-12">
+                            <div class="col-md-10 col-sm-11 mx-auto ">
                                 <div class="card gradient-border">
                                     <div class="card-header">
                                         <h5 class="card-title white">Personal Information</h5>

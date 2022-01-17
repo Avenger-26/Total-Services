@@ -1,3 +1,4 @@
+
 <div>
     <!--.main-menu(class="#{menuColor} #{menuOpenType}", class=(menuShadow == true ? 'menu-shadow' : ''))-->
     @include('../../layouts/admin/header')
@@ -8,22 +9,22 @@
                 <div class="content-wrapper">
                     <section id="extended">
                         <div class="row justify-content-md-center">
-                            <div class="col-md-12">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <div class="row">
-                                            <div class="col-md-6 ">
-                                                <h4 class="">All Service Categories</h4>
+                            <div class="col-md-11 ">
+                                <div class="card shadow ">
+                                    <div class="card-header py-3 ">
+                                        <div class="d-flex align-items-center justify-content-between ">
+                                            <div class=" ">
+                                                <h4 class="font-weight-bolder text-info">All Service Categories</h4>
                                             </div>
-                                            <div class="col-md-6">
+                                            <div class="">
                                                 <a href="{{ route('admin.add_service_categories') }}"
-                                                    class="btn btn-info pull-right mx-3">Add New</a>
+                                                    class="btn-hover color-hover mx-3 my-3"> <i class="fa fa-plus-circle"></i> Add New</a>
                                             </div>
                                         </div>
                                     </div>
-                                    <hr>
+                                    
                                     <div class="card-content">
-                                        <div class="card-body table-responsive">
+                                        <div class="">
 
                                             @if (Session::has('message'))
                                             <div class="alert alert-primary alert-dismissible mb-2" role="alert">
@@ -64,16 +65,16 @@
                                                             <td>
                                                                 <a href="{{ route('admin.services_by_category', ['category_slug' => $scategory->slug]) }}"
                                                                     style="margin-left:15px"><i
-                                                                        class="ft-list font-medium-3 mr-2 text-light"></i></a>
+                                                                        class="fa fa-list-alt text-warning  fa-2x mr-2 text-light"></i></a>
 
                                                                 <a
                                                                     href="{{ route('admin.edit_service_categories', ['category_id' => $scategory->id]) }}"><i
-                                                                        class="ft-edit-2 font-medium-3  mr-2"></i></a>
+                                                                        class="fa fa-pencil-square-o text-info fa-2x   mr-2"></i></a>
                                                                 <a href="#"
                                                                     onclick="confirm('Are you sure, you want to delete this service category!')||event.stopImmediatePropagation()"
                                                                     wire:click.prevent="deleteServiceCategory({{ $scategory->id }})"
                                                                 ><i
-                                                                        class="ft-x  text-danger font-medium-3  mr-2"></i></a>
+                                                                        class="fa fa-trash  text-danger  fa-2x   mr-2"></i></a>
                                                             </td>
                                                         </tr>
                                                     @endforeach

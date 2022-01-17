@@ -7,22 +7,22 @@
         <div class="main-content">
             <div class="content-wrapper">
                 <section id="extended">
-                    <div class="row justify-content-md-center">
-                        <div class="col-md-12">
-                            <div class="card">
-                                <div class="card-header">
-                                    <div class="row">
-                                        <div class="col-md-6 ">
-                                            <h4 class="">All Contact</h4>
+                    <div class="row justify-content-md-center ">
+                        <div class="col-md-12  ">
+                            <div class="card shadow-lg">
+                                <div class="card-header py-3">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class=" ">
+                                            <h4 class="font-weight-bolder text-info">All User Queries</h4>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="">
 
                                         </div>
                                     </div>
                                 </div>
-                                <hr>
+                               
                                 <div class="card-content">
-                                    <div class="card-body table-responsive">
+                                    <div class="">
                                         <table class="table text-center table-striped table-hover shadow">
                                             <thead>
                                                 <tr>

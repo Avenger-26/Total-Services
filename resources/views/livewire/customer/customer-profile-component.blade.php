@@ -1,5 +1,5 @@
 <div>
-@include('../layouts/customer/header') 
+@include('../layouts/customer/header')
 <div class="main-panel">
             <!-- BEGIN : Main Content-->
             <div class="main-content">
@@ -7,8 +7,8 @@
                     <!--Basic User Details Starts-->
                     <section id="user-profile">
                         <div class="row">
-                            <div class="col-12">
-                                <div class="card profile-with-cover">
+                            <div class="col-md-10 col-sm-11 mx-auto">
+                                <div class="card gradient-border profile-with-cover">
                                     <div class="card-img-top img-fluid bg-cover height-300"
                                         style="background: url({{ asset('app-assets/img/photos/15.jpg') }}) 50%;"></div>
                                     <div class="media profil-cover-details row">
@@ -49,7 +49,7 @@
                                     </div>
                                     <div class="profile-section">
                                         <div class="row">
-                                            <div class="col-lg-5 col-md-5 ">
+                                            <div class="col-lg-5 col-md-5">
                                                 <ul class="profile-menu no-list-style">
                                                     <li>
                                                         <a href="#about"
@@ -58,7 +58,7 @@
                                                 </ul>
                                             </div>
                                             <div class="col-lg-2 col-md-2 text-center">
-                                                <span class="font-medium-2 text-uppercase">{{ Auth::user()->name }}
+                                                <span class="card-title white text-uppercase">{{ Auth::user()->name }}
                                                 </span>
 
                                             </div>
@@ -79,16 +79,16 @@
                     <!--Basic User Details Ends-->
                     <!--About section starts-->
                     <section id="about">
-                        <div class="row">
-                            <div class="col-12">
+                        {{-- <div class="row">
+                            <div class="col-md-10 col-sm-11 mx-auto">
                                 <div class="content-header">About</div>
                             </div>
-                        </div>
+                        </div> --}}
                         <div class="row">
-                            <div class="col-sm-12">
-                                <div class="card">
+                            <div class="col-md-10 col-sm-11 mx-auto ">
+                                <div class="card gradient-border">
                                     <div class="card-header">
-                                        <h5>Personal Information</h5>
+                                        <h5 class="card-title white">Personal Information</h5>
                                     </div>
                                     <div class="card-content">
                                         <div class="card-body">
@@ -100,7 +100,7 @@
                                                             <span class="text-bold-500 primary"><a><i
                                                                         class="ft-mail font-small-3"></i> Email:</a></span>
                                                             <span
-                                                                class="d-block overflow-hidden">{{ Auth::user()->email }}</span>
+                                                                class="d-block overflow-hidden white">{{ Auth::user()->email }}</span>
                                                         </li>
 
                                                     </ul>
@@ -112,7 +112,7 @@
                                                                         class="ft-smartphone font-small-3"></i> Phone
                                                                     Number:</a></span>
                                                             <a
-                                                                class="d-block overflow-hidden">{{ $scustomer->phone }}</a>
+                                                                class="d-block overflow-hidden white">{{ $scustomer->phone }}</a>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -120,10 +120,10 @@
                                                     <ul class="no-list-style">
                                                         <li class="mb-2">
                                                             <span class="text-bold-500 primary"><a><i
-                                                                        class="ft-globe font-small-3"></i> Lives
-                                                                    in:</a></span>
+                                                                        class="ft-globe font-small-3"></i> Address
+                                                                    :</a></span>
                                                             <span
-                                                                class="d-block overflow-hidden">{{ $scustomer->address}}</span>
+                                                                class="d-block overflow-hidden white">{{ $scustomer->address}}</span>
                                                         </li>
 
                                                     </ul>
@@ -134,7 +134,7 @@
                                     </div>
                                 </div>
                             </div>
-            
+
                         </div>
                     </section>
                     <!--About section ends-->

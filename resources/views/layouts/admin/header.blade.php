@@ -1,6 +1,14 @@
+<head>
+    <title>Admin | Dashboard</title>
+    <meta content='maximum-scale=1.0, initial-scale=1.0, width=device-width' name='viewport'>
+</head>
 <style>
     table td {
         line-height: 20px !important;
+    }
+
+    @-ms-viewport {
+        width: device-width;
     }
 
     .badge-notify {
@@ -44,6 +52,28 @@
         100% {
             background-position: 0% 50%;
         }
+    }
+
+    .dynamic-cards {
+        transition: all 0.5s ease;
+
+        transform-style: preserve-3d;
+        border-radius: 32px;
+        box-shadow:
+            1px 1px 0 1px #f9f9fb,
+            -1px 0 28px 0 rgba(34, 33, 81, 0.01),
+            28px 28px 28px 0 rgba(34, 33, 81, 0.25);
+        transition:
+            .4s ease-in-out transform,
+            .4s ease-in-out box-shadow;
+    }
+
+    .dynamic-cards:hover {
+        transform: scale(1.1);
+        box-shadow:
+            1px 1px 0 1px #f9f9fb,
+            -1px 0 28px 0 rgba(34, 33, 81, 0.01),
+            28px 28px 28px 0 rgba(34, 33, 81, 0.25);
     }
 
 </style>
@@ -91,9 +121,10 @@
                             class="menu-title">Service Categories</span></a>
                 </li>
                 <li class=" nav-item"><a href="{{ route('admin.all_services') }}"><i
-                    class="
-                    ft-grid mr-2"></i><span data-i18n="" class="menu-title">All Services
-                            </span></a>
+                            class="
+                    ft-grid mr-2"></i><span data-i18n="" class="menu-title">All
+                            Services
+                        </span></a>
                 </li>
                 <li class=" nav-item"><a href="{{ route('admin.contacts') }}">
 
@@ -124,7 +155,7 @@
                         </li>
                     </ul>
                 </li>
-            @elseif(Auth::user()->u_type==='SPV')
+            @elseif(Auth::user()->u_type === 'SPV')
                 <li class="login-form"><a href="#" title="Register">My Account(S Provider)</a>
                     <ul class="drop-down one-column hover-fade">
                         <li><a href="{{ route('sprovider.dashboard') }}">Dasboard</a></li>
@@ -175,9 +206,8 @@
             <div class="navbar-container">
                 <div id="navbarSupportedContent" class="collapse navbar-collapse">
                     <ul class="navbar-nav">
-                        <li class="nav-item  d-none d-lg-block"><a 
-                                href="{{ route('admin.contacts') }}" class="nav-link "> <span
-                                    id="group">
+                        <li class="nav-item  d-none d-lg-block"><a href="{{ route('admin.contacts') }}"
+                                class="nav-link "> <span id="group">
                                     <button type="button" class="btn btn-info ">
                                         <i class="fa fa-envelope"></i>
                                     </button>

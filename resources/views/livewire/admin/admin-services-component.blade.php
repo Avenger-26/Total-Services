@@ -6,22 +6,22 @@
                 <div class="content-wrapper">
                     <section id="extended">
                         <div class="row justify-content-md-center">
-                            <div class="col-md-12">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <div class="row">
-                                            <div class="col-md-6 ">
-                                                <h4 class="">All Service</h4>
+                            <div class="col-md-12 ">
+                                <div class="card shadow">
+                                    <div class="card-header py-3">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <div class="">
+                                                <h4 class="font-weight-bolder text-info">All Service</h4>
                                             </div>
-                                            <div class="col-md-6">
+                                            <div class="">
                                                 <a href="{{ route('admin.add_service') }}"
-                                                    class="btn btn-info pull-right mx-3">Add New</a>
+                                                    class="btn-hover color-hover  mx-3 "><i class="fa fa-plus-circle"></i> Add New</a>
                                             </div>
                                         </div>
                                     </div>
-                                    <hr>
+                              
                                     <div class="card-content">
-                                        <div class="card-body table-responsive">
+                                        <div class="">
 
                                             @if (Session::has('message'))
                                                 <div class="alert alert-success" role="alert">
@@ -69,12 +69,12 @@
                                                             <td>
                                                                 <a
                                                                     href="{{ route('admin.edit_service', ['service_slug' => $service->slug]) }}"><i
-                                                                        class="ft-edit font-medium-3 mr-2 text-info"></i></a>
+                                                                        class="fa fa-pencil-square-o fa-2x mr-2 text-info"></i></a>
                                                                 <a href="#"
                                                                     onclick="confirm('Are you sure, you want to delete this service category!')||event.stopImmediatePropagation()"
                                                                     wire:click.prevent="deleteService({{ $service->id }})"
                                                                     ><i
-                                                                        class="ft-x font-medium-4 mr-2 text-danger"></i></a>
+                                                                        class="fa fa-trash fa-2x mr-2 text-danger"></i></a>
                                                             </td>
                                                         </tr>
                                                     @endforeach

@@ -394,8 +394,8 @@
                         @auth
                             @if (Auth::user()->u_type === 'ADM')
                                 <li class="login-form"><a href="#" title="Register"> <i class="fa fa-user"
-                                            aria-hidden="true"> My Account (
-                                            {{ Auth::user()->name }} )</i></a>
+                                            aria-hidden="true">
+                                            {{ Auth::user()->name }}(Admin)</i></a>
                                     <ul class="drop-down one-column hover-fade">
 
                                         <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
@@ -419,9 +419,8 @@
                                     </ul>
                                 </li>
                             @else
-                                <li class="login-form"><a href="" title="Register"> <i class="fa fa-user"
-                                            aria-hidden="true"> My Account (
-                                            {{ Auth::user()->name }} ) </i></a>
+                                <li class=""> <i class="fa fa-user-circle" aria-hidden="true">
+                                        <strong> {{ Auth::user()->name }} (Customer) </strong></i>
                                     <ul class="drop-down one-column hover-fade">
                                         <li><a href="{{ route('costumer.dashboard') }}">Dashboard</a></li>
                                         <li><a href="{{ route('logout') }}"

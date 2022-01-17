@@ -3,6 +3,7 @@
 use App\Http\Livewire\HomeComponent;
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\AboutUsComponent;
+use App\Http\Controllers\admin\ChartController;
 use App\Http\Livewire\ContactComponenet;
 use App\Http\Controllers\PaytmController;
 use App\Http\Controllers\SearchController;
@@ -70,11 +71,10 @@ Route::get('/sprovider/dashboard/export-csv', [ExportDataController::class,'expo
 //customer
 Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('/service/{service_slug}', ServiceDetailsComponent::class)->name('home.service_details');
-    Route::get('/costumer/dashboard', CustomerDashboardComponent::class)->name('costumer.dashboard');
-    Route::get('/costumer/profile', CustomerProfileComponent::class)->name('costumer.profile');
-    Route::get('/costumer/profile/edit', EditCustomerProfileComponent::class)->name('costumer.edit_profile');
-    Route::get('/costumer/ChangePassword', CustomerChangePassword::class)->name('costumer.changepassword');
-    
+    Route::get('/customer/dashboard', CustomerDashboardComponent::class)->name('costumer.dashboard');
+    Route::get('/customer/profile', CustomerProfileComponent::class)->name('costumer.profile');
+    Route::get('/customer/profile/edit', EditCustomerProfileComponent::class)->name('costumer.edit_profile');
+    Route::get('/customer/ChangePassword', CustomerChangePassword::class)->name('costumer.changepassword');
 });
 
 //For S Provider
@@ -107,3 +107,6 @@ Route::middleware(['auth:sanctum', 'authadmin'])->group(function () {
     Route::get('/admin/Users', AdminUsersComponent::class)->name('admin.users');
     Route::get('/admin/ChangePassword', AdminChangePasswordComponent::class)->name('admin.changepassword');
 });
+
+
+Route::get('/chart',[ChartController::class,'barchart'])->name('admin.chart');

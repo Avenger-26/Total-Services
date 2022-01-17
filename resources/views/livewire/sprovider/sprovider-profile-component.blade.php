@@ -7,15 +7,15 @@
                     <!--Basic User Details Starts-->
                     <section id="user-profile">
                         <div class="row">
-                            <div class="col-12">
-                                <div class="card profile-with-cover">
+                            <div class="col-md-11 col-sm-11 mx-auto">
+                                <div class="card profile-with-cover shadow">
                                     <div class="card-img-top img-fluid bg-cover height-300"
                                         style="background: url({{ asset('app-assets/img/photos/14.jpg') }}) 50%;"></div>
                                     <div class="media profil-cover-details row">
                                         <div class="col-5">
                                             <div class="align-self-start halfway-fab pl-3 pt-2">
                                                 <div class="text-left">
-                                                    <h3 class="card-title white">{{ $sprovider->name }}</h3>
+                                                    <h3 class="card-title white"><i class="fa fa-user-circle"></i > {{ $sprovider->name }}</h3>
                                                 </div>
                                             </div>
                                         </div>
@@ -54,7 +54,7 @@
                                                 <ul class="profile-menu no-list-style">
                                                     <li>
                                                         <a href="#about"
-                                                            class="primary font-medium-2 font-weight-600">About</a>
+                                                            class="primary font-medium-2 font-weight-600"> <i class="fa fa-user"></i > About</a>
                                                     </li>
 
                                                 </ul>
@@ -74,7 +74,9 @@
 
                                                     <li>
                                                         <a href="{{ route('sprovider.edit_profile') }}"
-                                                            class="primary font-medium-2 font-weight-600">Edit Profile</a>
+                                                            class="primary font-medium-2 font-weight-600">
+                                                            <i class="fa fa-pencil"></i >
+                                                            Edit Profile</a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -87,14 +89,14 @@
                     <!--Basic User Details Ends-->
                     <!--About section starts-->
                     <section id="about">
-                        <div class="row">
-                            <div class="col-12">
+                        {{-- <div class="row">
+                            <div class="col-md-10 col-sm-11 mx-auto">
                                 <div class="content-header">About</div>
                             </div>
-                        </div>
+                        </div> --}}
                         <div class="row">
-                            <div class="col-sm-12">
-                                <div class="card">
+                            <div class="col-md-11 col-sm-11 mx-auto">
+                                <div class="card shadow gradient-border">
                                     <div class="card-header">
                                         <h5>Personal Information</h5>
                                     </div>

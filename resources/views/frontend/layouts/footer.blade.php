@@ -16,8 +16,8 @@
             <div class="col-md-3 col-xs-6 col-sm-6">
                 <h3>AC SERVICES </h3>
                 <ul>
-                    <li><i class="fa fa-check"></i> <a
-                            href="service-details/ac-installation.html">Installation</a></li>
+                    <li><i class="fa fa-check"></i> <a href="service-details/ac-installation.html">Installation</a>
+                    </li>
                     <li><i class="fa fa-check"></i> <a
                             href="service-details/ac-uninstallation.html">Uninstallation</a></li>
                     <li><i class="fa fa-check"></i> <a href="service-details/ac-repair.html">AC Repair</a></li>
@@ -90,8 +90,8 @@
             <div class="row">
                 <div class="col-md-6">
                     <ul class="nav-footer">
-                        <li><a href="about-us.html">About Us</a> </li>
-                        <li><a href="{{route('home.contact')}}">Contact Us</a></li>
+                        <li><a href="{{route('home.about-us')}}">About Us</a> </li>
+                        <li><a href="{{ route('home.contact') }}">Contact Us</a></li>
                         <li><a href="faq.html">FAQ</a></li>
                         <li><a href="terms-of-use.html">Terms of Use</a></li>
                         <li><a href="privacy.html">Privacy</a></li>
@@ -105,44 +105,93 @@
     </div>
 </footer>
 </div>
-<script type="text/javascript" src="{{url('assets/js/nav/jquery.sticky.js')}}"></script>
-<script type="text/javascript" src="{{url('assets/js/totop/jquery.ui.totop.js')}}"></script>
-<script type="text/javascript" src="{{url('assets/js/accordion/accordion.js')}}"></script>
-<script type="text/javascript" src="{{url('assets/js/rs-plugin/js/jquery.themepunch.tools.min.js')}}"></script>
-<script type="text/javascript" src="{{url('assets/js/rs-plugin/js/jquery.themepunch.revolution.min.js')}}"></script>
-<script type="text/javascript" src="{{url('assets/js/maps/gmap3.js')}}"></script>
-<script type="text/javascript" src="{{url('assets/js/fancybox/jquery.fancybox.js')}}"></script>
-<script type="text/javascript" src="{{url('assets/js/carousel/carousel.js')}}"></script>
-<script type="text/javascript" src="{{url('assets/js/filters/jquery.isotope.js')}}"></script>
-<script type="text/javascript" src="{{url('assets/js/twitter/jquery.tweet.js')}}"></script>
-<script type="text/javascript" src="{{url('assets/js/flickr/jflickrfeed.min.js')}}"></script>
-<script type="text/javascript" src="{{url('assets/js/theme-options/theme-options.js')}}"></script>
-<script type="text/javascript" src="{{url('assets/js/theme-options/jquery.cookies.js')}}"></script>
-<script type="text/javascript" src="{{url('assets/js/bootstrap/bootstrap.min.js')}}"></script>
-<script type="text/javascript" src="{{url('assets/js/bootstrap/bootstrap-slider.js')}}"></script>
-<script type="text/javascript" src="{{url('assets/js/dtb/jquery.dataTables.min.js')}}"></script>
-<script type="text/javascript" src="{{url('assets/js/dtb/jquery.table2excel.js')}}"></script>
-<script type="text/javascript" src="{{url('assets/js/dtb/script.js')}}"></script>
-<script type="text/javascript" src="{{url('assets/js/select2.min.js')}}"></script>
-<script type="text/javascript" src="{{url('assets/js/jquery.validate.min.js')}}"></script>
-<script type="text/javascript" src="{{url('assets/js/validation-rule.js')}}"></script>
-<script type="text/javascript" src="{{url('assets/js/bootstrap3-typeahead.min.js')}}"></script>
-<script type="text/javascript" src="{{url('assets/js/main.js')}}"></script>
+<script type="text/javascript" src="{{ url('assets/js/nav/jquery.sticky.js') }}"></script>
+<script type="text/javascript" src="{{ url('assets/js/totop/jquery.ui.totop.js') }}"></script>
+{{-- <script type="text/javascript" src="{{ url('assets/js/accordion/accordion.js') }}"></script> --}}
+<script type="text/javascript" src="{{ url('assets/js/rs-plugin/js/jquery.themepunch.tools.min.js') }}"></script>
+<script type="text/javascript" src="{{ url('assets/js/rs-plugin/js/jquery.themepunch.revolution.min.js') }}"></script>
+{{-- <script type="text/javascript" src="{{ url('assets/js/maps/gmap3.js') }}"></script> --}}
+<script type="text/javascript" src="{{ url('assets/js/fancybox/jquery.fancybox.js') }}"></script>
+<script type="text/javascript" src="{{ url('assets/js/carousel/carousel.js') }}"></script>
+<script type="text/javascript" src="{{ url('assets/js/filters/jquery.isotope.js') }}"></script>
+<script type="text/javascript" src="{{ url('assets/js/twitter/jquery.tweet.js') }}"></script>
+<script type="text/javascript" src="{{ url('assets/js/flickr/jflickrfeed.min.js') }}"></script>
+{{-- <script type="text/javascript" src="{{ url('assets/js/theme-options/theme-options.js') }}"></script>
+<script type="text/javascript" src="{{ url('assets/js/theme-options/jquery.cookies.js') }}"></script> --}}
+<script type="text/javascript" src="{{ url('assets/js/bootstrap/bootstrap.min.js') }}"></script>
+{{-- <script type="text/javascript" src="{{ url('assets/js/bootstrap/bootstrap-slider.js') }}"></script>
+<script type="text/javascript" src="{{ url('assets/js/dtb/jquery.dataTables.min.js') }}"></script> --}}
+<script type="text/javascript" src="{{ url('assets/js/dtb/jquery.table2excel.js') }}"></script>
+{{-- <script type="text/javascript" src="{{ url('assets/js/dtb/script.js') }}"></script> --}}
+<script type="text/javascript" src="{{ url('assets/js/select2.min.js') }}"></script>
+{{-- <script type="text/javascript" src="{{ url('assets/js/jquery.validate.min.js') }}"></script>
+<script type="text/javascript" src="{{ url('assets/js/validation-rule.js') }}"></script> --}}
+<script type="text/javascript" src="{{ url('assets/js/bootstrap3-typeahead.min.js') }}"></script>
+<script type="text/javascript" src="{{ url('assets/js/main.js') }}"></script>
 <script type="text/javascript">
-jQuery(document).ready(function () {
-    jQuery('.tp-banner').show().revolution({
-        dottedOverlay: "none",
-        delay: 5000,
-        startwidth: 1170,
-        startheight: 480,
-        minHeight: 250,
-        navigationType: "none",
-        navigationArrows: "solo",
-        navigationStyle: "preview1"
+    jQuery(document).ready(function() {
+        jQuery('.tp-banner').show().revolution({
+            dottedOverlay: "none",
+            delay: 5000,
+            startwidth: 1170,
+            startheight: 480,
+            minHeight: 250,
+            navigationType: "none",
+            navigationArrows: "solo",
+            navigationStyle: "preview1"
+        });
     });
-});
 </script>
+<script>
+    $(document).ready(function() {
+
+        // YOUR CODE (NOT RELATED TO DIALOGFLOW MESSENGER)
+
+        window.addEventListener('dfMessengerLoaded', function(event) {
+            $r1 = document.querySelector("df-messenger");
+            $r2 = $r1.shadowRoot.querySelector("df-messenger-chat");
+            $r3 = $r2.shadowRoot.querySelector("df-messenger-user-input"); //for other mods
+
+            var sheet = new CSSStyleSheet;
+            sheet.replaceSync(`div.chat-wrapper[opened="true"] { height: 400px}`);
+            $r2.shadowRoot.adoptedStyleSheets = [sheet];
+
+            // MORE OF YOUR DIALOGFLOW MESSENGER CODE
+        });
+    });
+</script>
+
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" type="text/javascript">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.2/js/bootstrap-select.min.js"
+type="text/javascript"></script>
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'en',
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+            autoDisplay: false
+        }, 'google_translate_element');
+    }
+
+    function translateLanguage(lang) {
+        googleTranslateElementInit();
+        var $frame = $('.goog-te-menu-frame:first');
+        if (!$frame.size()) {
+            alert("Error: Could not find Google translate frame.");
+            return false;
+        }
+        $frame.contents().find('.goog-te-menu2-item span.text:contains(' + lang + ')').get(0).click();
+        return false;
+    }
+
+    $(function() {
+        $('.selectpicker').selectpicker();
+    });
+</script>
+@livewireStyles
 @stack('scripts')
 @livewireScripts
 </body>
+
 </html>

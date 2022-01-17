@@ -74,6 +74,10 @@
                                                     @endforeach
                                                 </tbody>
                                             </table>
+                                            <div class="Export-btn">
+                                                <a href="{{ route('admin.export_customer') }}"
+                                                    class="btn btn-info pull-right mx-3">Export Data</a>
+                                            </div>
                                             {{-- {{ $sprovider->links() }} --}}
 
 

@@ -132,6 +132,10 @@
 
                                             </tbody>
                                         </table>
+                                        <div class="Export-btn">
+                                            <a href="{{ route('sprovicer.export_work_history') }}"
+                                                class="btn btn-info pull-right mx-3">Export Data</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

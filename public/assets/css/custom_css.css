@@ -2,15 +2,6 @@
      height: 80px !important;
      width: 80px !important;
  }
-
- /* .fscategory-bg{
-    background: #1597e5;
-}
-p.lead .line{
-    background-color: black !important;
-    background: black !important;
-} */
-
  .home-img {
      width: 250px;
 
@@ -108,6 +99,7 @@ p.lead .line{
  .btn-hover:focus {
      outline: none;
  }
+ 
 
  .btn-hover.color-hover {
      background-image: linear-gradient(to right,
@@ -176,31 +168,6 @@ p.lead .line{
      font-weight: bold;
      color: #1597e5 !important;
  }
-
- /* .filter-header .input-large {
-    width: 35%;
-    background: #fff;
-    padding-left: 40px;
-    border-radius: 50px !important;
-} */
-
- /* .filter-header .input-large:focus {
-    outline: none !important;
-    border: none !important;
-} */
-
- /* .filter-header {
-    padding: 0;
-    max-width: 90%;
-    margin: 1 px auto 0 auto;
-    height: 56px;
-    border-radius: 50px !important;
-} */
-
- /* .filter-header input[type="submit"] {
-    border-radius: 50px !important;
-}*/
-
  .services-carousel .owl-carousel {
      padding: 50px 10px 0 10px !important;
  }

@@ -2,20 +2,23 @@
 
 use App\Http\Livewire\HomeComponent;
 use Illuminate\Support\Facades\Route;
+use App\Http\Livewire\AboutUsComponent;
 use App\Http\Livewire\ContactComponenet;
 use App\Http\Controllers\PaytmController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\ExportDataController;
 use App\Http\Livewire\ServiceDetailsComponent;
 use App\Http\Livewire\Admin\AdminUsersComponent;
 use App\Http\Livewire\Admin\AdminServiceProvider;
 use App\Http\Livewire\ServiceCategoriesComponent;
-use App\Http\Livewire\Admin\AdminContactComponent;
 
+use App\Http\Livewire\Admin\AdminContactComponent;
 use App\Http\Livewire\Admin\AdminProfileComponent;
 use App\Http\Livewire\ServicesByCategoryComponent;
 use App\Http\Livewire\Admin\AdminServicesComponent;
 use App\Http\Livewire\Admin\AdminAddServiceProvider;
 use App\Http\Livewire\Admin\AdminDashboardComponent;
+use App\Http\Livewire\Paytm\PaymentSuccessComponent;
 use App\Http\Livewire\Admin\AdminAddServiceComponent;
 use App\Http\Livewire\Admin\AdminEditServiceComponent;
 use App\Http\Livewire\Customer\CustomerChangePassword;
@@ -32,7 +35,6 @@ use App\Http\Livewire\Sprovider\SproviderDashboardComponent;
 use App\Http\Livewire\Admin\AdminAddServiceCategoryComponent;
 use App\Http\Livewire\Admin\AdminServicesByCategoryComponent;
 use App\Http\Livewire\Admin\AdminEditServiceCategoryComponent;
-use App\Http\Livewire\Paytm\PaymentSuccessComponent;
 use App\Http\Livewire\Sprovider\EditSproviderProfileComponent;
 use App\Http\Livewire\Sprovider\SproviderAddServicesComponent;
 use App\Http\Livewire\Sprovider\SproviderEditServicesComponent;
@@ -41,7 +43,6 @@ Route::get('/', HomeComponent::class)->name('home'); //->middleware('verified');
 Route::get('/service-categories', ServiceCategoriesComponent::class)->name('home.service_categories');
 
 Route::get('/{category_slug}/services',ServicesByCategoryComponent::class)->name('home.services_by_category');
-// Route::get('/service/{service_slug}',ServiceDetailsComponent::class)->name('home.service_details');
 
 Route::get('/{category_slug}/services', ServicesByCategoryComponent::class)->name('home.services_by_category');
 
@@ -49,13 +50,23 @@ Route::get('/autocomplete', [SearchController::class, 'autocomplete'])->name('au
 Route::post('/search', [SearchController::class, 'searchService'])->name('searchService');
 
 Route::get('/contact-us', ContactComponenet::class)->name('home.contact');
+Route::get('/about-us', AboutUsComponent::class)->name('home.about-us');
 
 //paytm
 Route::get('/payment',[PaytmController::class,'index'])->name('payment');
 Route::post('/paytm-store',[PaytmController::class,'store'])->name('paytm-store');
 Route::post('/paytm-callback',[PaytmController::class,'paytmCallback'])->name('paytm-callback');
-// Route::get('/payment-success',[PaytmController::class,'paymentSuccess'])->name('payment-success');
 //paytm End
+// Excel 
+Route::get('/admin/service-provider/export-csv', [ExportDataController::class,'export'])->name('admin.export_service_provider');
+Route::get('/admin/user/export-csv', [ExportDataController::class,'export_customer'])->name('admin.export_customer');
+Route::get('/admin/service-categories/export-csv', [ExportDataController::class,'export_scategories'])->name('admin.export_service_categories');
+Route::get('/admin/all-services/export-csv', [ExportDataController::class,'export_services'])->name('admin.export_all_services');
+Route::get('/admin/contacts/export-csv', [ExportDataController::class,'export_contact'])->name('admin.export_contacts');
+Route::get('/sprovider/all-services/export-csv', [ExportDataController::class,'export_sprovider_services'])->name('sprovicer.export_all_services');
+Route::get('/sprovider/dashboard/export-csv', [ExportDataController::class,'export_work_history'])->name('sprovicer.export_work_history');
+// Excel End
+
 //customer
 Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('/service/{service_slug}', ServiceDetailsComponent::class)->name('home.service_details');

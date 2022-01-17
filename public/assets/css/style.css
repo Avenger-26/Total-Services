@@ -114,6 +114,9 @@ ul.single-carousel,
     list-style: none;
 }
 
+div.chat-wrapper[opened="true"] {
+    height: 400px !important;
+ }
 .btn-primary {
     color: #fff;
     font-size: 0.875rem;
@@ -2164,7 +2167,7 @@ hr.separator:before {
     position: relative;
     height: 100%;
     z-index: 2;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 1);
 }
 
 .opacy_bg_02 .caption-head {
@@ -2231,6 +2234,7 @@ hr.separator:before {
 .opacy_bg_02,
 .color-white p {
     color: #f5f5f5;
+    font-size: 18px;
 }
 
 .color-white .services-lines .item-service-line h5 {

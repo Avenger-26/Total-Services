@@ -17,7 +17,6 @@
     padding-left: 50px;
     background-position: 15px;
 }
-
 .search {
     margin-left: 8px;
     width: 132px;
@@ -125,6 +124,10 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
 }
 
+ .btn-hover:focus {
+     outline: none;
+ }
+ 
 .form-theme input {
     border-radius: 25px;
     border-color: #1597e5 !important;
@@ -298,48 +301,6 @@ button.btn-hover:hover {
 }
 button {
     transition: all 0.5s ease-in-out;
-}
-
-.btn-hover {
-    font-size: 16px;
-    font-weight: 600;
-    color: #fff;
-    cursor: pointer;
-    margin: 0 auto;
-    display: block;
-    padding: 10px 20px;
-    text-align: center;
-    border: none;
-    background-size: 300% 100%;
-
-    border-radius: 50px;
-    moz-transition: all 0.4s ease-in-out;
-    -o-transition: all 0.4s ease-in-out;
-    -webkit-transition: all 0.4s ease-in-out;
-    transition: all 0.4s ease-in-out;
-}
-
-.btn-hover:hover {
-    background-position: 100% 0;
-    moz-transition: all 0.4s ease-in-out;
-    -o-transition: all 0.4s ease-in-out;
-    -webkit-transition: all 0.4s ease-in-out;
-    transition: all 0.4s ease-in-out;
-}
-
-.btn-hover:focus {
-    outline: none;
-}
-
-.btn-hover.color-hover {
-    background-image: linear-gradient(
-        to right,
-        #25aae1,
-        #4481eb,
-        #04befe,
-        #3f86ed
-    );
-    box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
 }
 .mx-auto {
     margin: 0 auto !important;

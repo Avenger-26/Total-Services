@@ -297,8 +297,6 @@ background-image: linear-gradient(#63a4ff 0%, #83eaf1 74%);
     </section>
 </div>
 
-
-
 @push('scripts')
     <script type="text/javascript">
         var path = "{{ route('autocomplete') }}";
@@ -315,13 +313,4 @@ background-image: linear-gradient(#63a4ff 0%, #83eaf1 74%);
     </script>
 @endpush
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
-<script>
-    $('.gallery-card').tilt({
-        glare: true,
-        maxGlare: .3,
-        maxTilt: 7,
-        speed: 520,
-    })
-</script>
+

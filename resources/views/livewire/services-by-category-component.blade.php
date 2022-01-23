@@ -3,12 +3,12 @@
         <div class="bg_parallax image_02_parallax"></div>
         <div class="opacy_bg_02">
             <div class="container">
-                <h1>{{$scategory->name}} Services</h1>
+                <h1>{{ $scategory->name }} Services</h1>
                 <div class="crumbs">
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li>/</li>
-                        <li>{{$scategory->name}}</li>
+                        <li>{{ $scategory->name }}</li>
                     </ul>
                 </div>
             </div>
@@ -18,42 +18,64 @@
         <div class="container">
             <div class="row" style="margin-top: -30px;">
                 <div class="titles">
-                    <h2>{{$scategory->name}} <span>Services</span></h2>
-                    <i class="fa fa-plane"></i>
-                    <hr class="tall">
+                    <h2 class="head-title hh-secondary head-primary">{{ $scategory->name }} Services</h2>
                 </div>
             </div>
         </div>
-        <div class="content_info" style="margin-top: -70px;">
+        <div class="content_info" style="margin-top: -70px; background:white !important; padding-bottom:0px !important;">
             <div>
-                <div class="container">
-                    <div class="portfolioContainer">
-                        @if ($scategory->services->count() > 0)
-                        @foreach ($scategory->services as $service)
-                        <div class="col-xs-6 col-sm-4 col-md-3 nature hsgrids"
-                            style="padding-right: 5px;padding-left: 5px;">
-                            <a class="g-list" href="{{route('home.service_details',['service_slug'=>$service->slug])}}">
-                                <div class="img-hover tb">
-                                    <img src="{{asset('images/services/thumbnails')}}/{{$service->thumbnail}}" alt="{{$service->name}}"
-                                        class="img-responsive">
+                <div class="container" >
+                    <div class="portfolioContainer" >
+                        <div class="col-md-12" style="padding-bottom:50px !important;">
+                            <div class="row">
+                                <div class="products-tabs">
+                                    <div id="tab1" class="tab-pane active">
+                                        <div class="products-slick" data-nav="#slick-nav-2">
+                                            @if ($scategory->services->count() > 0)
+                                                @foreach ($scategory->services as $service)
+                                                    <div class="product">
+                                                        <a
+                                                            href="{{ route('home.service_details', ['service_slug' => $service->slug]) }}">
+                                                            <div class="product-img tb">
+                                                                <img src="{{ asset('images/services/thumbnails') }}/{{ $service->thumbnail }}"
+                                                                    alt="{{ $service->name }}">
+                                                            </div>
+                                                            <div class="product-body">
+                                                                <p class="product-category">{{ $service->category->name }}</p>
+                                                                <h3 class="product-name"><a href="#">{{ $service->name }}</a>
+                                                                </h3>
+                                                                <h4 class="product-price">₹{{ $service->price }}
+                                                                    <div class="product-rating">
+                                                                        <i class="fa fa-star"></i>
+                                                                        <i class="fa fa-star"></i>
+                                                                        <i class="fa fa-star"></i>
+                                                                        <i class="fa fa-star"></i>
+                                                                        <i class="fa fa-star"></i>
+                                                                    </div>
+                                                            </div>
+                                                            <div class="add-to-cart">
+                                                                <button class="add-to-cart-btn">
+                                                                    <a
+                                                                        href="{{ route('home.service_details', ['service_slug' => $service->slug]) }}"><i
+                                                                            class="fa fa-shopping-cart"></i> Book Now</a></button>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+            
+                                                @endforeach
+                                            @else
+                                                <h2>Services will be available soon.</h2>
+                                            @endif
+                                        </div>
+                                        <div id="slick-nav-2" class="products-slick-nav"></div>
+                                    </div>
                                 </div>
-                                <div class="info-gallery">
-                                    <h3>{{$service->name}}</h3>
-                                    <p>{{$service->inclusion}}</p>
-                                    <div class="content-btn"><a href="{{route('home.service_details',['service_slug'=>$service->slug])}}"
-                                            class="btn btn-primary">Book Now</a></div>
-                                    <div class="price"><span></span><b>From</b>&#8377;{{$service->price}}</div>
-                                </div>
-                            </a>
+                            </div>
                         </div>
-                        @endforeach
-                        @else
-                        <h2>Services will be available soon.</h2>
-                        @endif
-
                     </div>
                 </div>
             </div>
+           
         </div>
     </section>
 </div>

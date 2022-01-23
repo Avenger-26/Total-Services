@@ -82,8 +82,9 @@
                 {{-- <x-jet-validation-errors class="mb-4" /> --}}
                 <form method="POST" action="{{ route('register') }}">
                     @csrf
-                    <img src="{{ asset('assets\img\loginpage\img\avatar-2.svg') }}">
-                    <h2 class="title">Welcome</h2>
+                    <img src="{{ asset('assets\img\loginpage\img\register.png') }}"
+                        style="filter: drop-shadow(0px 0px 3px black)">
+                    <h2 class="title">Registration</h2>
                     <x-jet-validation-errors />
                     <div class="input-div one">
                         <div class="i-lp">
@@ -146,7 +147,10 @@
                         <!-- ================== Redirect on Login page =========================  -->
                         <div class="span-r">
                             <a class="" href="{{ route('login') }}">Already a member? Login Now !</a>
-                        </div>
+                        </div><br>
+                        <span class="span-r">
+                            <a href="/">Back to Home</a>
+                        </span>
                         <!-- ================== Redirect on Login page =========================  -->
                     </div>
                 </form>

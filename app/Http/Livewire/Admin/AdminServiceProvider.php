@@ -11,7 +11,21 @@ use Livewire\Component;
 class AdminServiceProvider extends Component
 {
     use WithPagination;
-    public function deleteServiceProvider($id)
+    protected $listeners = ['delete'];
+    public function deleteConfirm($id)
+    {
+        $this->dispatchBrowserEvent('Swal.fire:confirm', [
+            'type' => 'warning',
+            'title' => 'Are you sure?',
+            'text' => '',
+            'id' => $id,
+            'showCancelButton' => true,
+            'confirmButtonColor' => '#3085d6',
+            'cancelButtonColor' => '#d33',
+            'confirmButtonText' => 'Yes, delete it!'
+        ]);
+    }
+    public function delete($id)
     {
         $sproviders = User::find($id);
         if ($sproviders->image) {

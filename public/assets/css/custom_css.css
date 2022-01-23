@@ -11,6 +11,12 @@ p.lead .line{
     background: black !important;
 } */
 
+.info-gallery p {
+    line-height: 1rem !important;
+
+    color: white;
+}
+
 .home-img {
     width: 250px;
 }
@@ -512,12 +518,4 @@ img.hover-img:hover {
 }
 .content-btn {
     padding-bottom: 20px !important;
-}
-@media only screen and (max-width: 600px) {
-    .gallery-card {
-        width: 88% !important;
-    }
-    .info-gallery {
-        height: auto !important;
-    }
 }

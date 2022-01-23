@@ -1,5 +1,6 @@
 <head>
     <title>Service Provider Dashboar</title>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <!--.main-menu(class="#{menuColor} #{menuOpenType}", class=(menuShadow == true ? 'menu-shadow' : ''))-->
@@ -36,9 +37,10 @@
                             Profile</span></a>
                 </li> --}}
                 <li class=" nav-item"><a href="{{ route('sprovider.all_services') }}"><i
-                    class="
-                    ft-grid mr-2"></i><span data-i18n="" class="menu-title">All Services
-                            </span></a>
+                            class="
+                    ft-grid mr-2"></i><span data-i18n="" class="menu-title">All
+                            Services
+                        </span></a>
                 </li>
                 <li class=" nav-item"><a href="{{ route('sprovider.changepassword') }}">
 
@@ -64,7 +66,7 @@
                         </li>
                     </ul>
                 </li>
-            @elseif(Auth::user()->u_type==='SPV')
+            @elseif(Auth::user()->u_type === 'SPV')
                 <li class="login-form"><a href="#" title="Register">My Account(S Provider)</a>
                     <ul class="drop-down one-column hover-fade">
                         <li><a href="{{ route('sprovider.dashboard') }}">Dasboard</a></li>
@@ -105,12 +107,12 @@
                         class="icon-bar"></span><span class="icon-bar"></span></button><span
                     class="d-lg-none navbar-right navbar-collapse-toggle"><a aria-controls="navbarSupportedContent"
                         href="javascript:;" class="open-navbar-container black"><i class="ft-more-vertical"></i></a></span>
-                <form role="search" class="navbar-form navbar-right mt-1">
-                    <div class="position-relative has-icon-right">
-                        <input type="text" placeholder="Search" class="form-control round" />
-                        <div class="form-control-position"><i class="ft-search"></i></div>
-                    </div>
-                </form>
+
+                <div>
+                    <h5 class="text-center mt-4">Service Provider Dashboard</h5>
+
+                </div>
+
             </div>
             <div class="navbar-container">
                 <div id="navbarSupportedContent" class="collapse navbar-collapse">

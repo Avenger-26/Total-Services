@@ -1,5 +1,3 @@
-
-
 <div>
     @include('../layouts/customer/header')
     <div class="main-panel">
@@ -8,25 +6,27 @@
             <div class="content-wrapper">
                 <div class="row justify-content-md-center">
                     <div class="col-md-8 col-sm-11 mx-auto ">
-                        <div class="card gradient-border">
+                        <div class="card gradient-border px-3">
                             <div class="card-header">
                                 <h4 class="card-title text-center" style="font-size:28px; font-weight:bolder"
-                                    id="from-actions"><i class="fa fa-key"></i>  Change Password</h4>
+                                    id="from-actions"><i class="fa fa-key"></i> Change Password</h4>
                             </div>
                             <br>
                             <div class="card-content">
-                                <div class=" col-md-10 col-sm-10 mx-auto px-3">
+                                <div class=" col-md-10 col-sm-10 mx-auto ">
                                     @if (Session::has('message'))
-                                        <div class="alert alert-success alert-dismissible mb-2" role="alert">
-                                            <button type="button" class="close" data-dismiss="alert"
-                                                aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                            {{ Session::get('message') }}
-                                        </div>
+                                        <script>
+                                            Swal.fire({
+                                                icon: 'success',
+                                                title: "{!! Session::get('message') !!}",
+                                                text: 'Great Job!',
+
+                                            })
+                                        </script>
+                                    @endif
 
                                 </div>
-                                @endif
+
                                 <form method="post" wire:submit.prevent="updatePassword">
                                     @csrf
                                     <div class="form-group">
@@ -48,9 +48,9 @@
                                             placeholder=" Confirm Password" name="confirm_password" required
                                             wire:model="confirm_password">
                                     </div>
-                                    <div class=" mx-auto">
-                                        <button type="submit" class="btn btn-primary  mx-auto">Submit </button>
-                                    </div>
+                                    <center>
+                                        <button type="submit" class="btn-hover color-hover ">Submit </button>
+                                    </center>
                                 </form>
                             </div>
                         </div>

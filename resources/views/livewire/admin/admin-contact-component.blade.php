@@ -20,7 +20,7 @@
                                         </div>
                                     </div>
                                 </div>
-                               
+
                                 <div class="card-content">
                                     <div class="">
                                         <table class="table text-center table-striped table-hover shadow">
@@ -31,25 +31,41 @@
                                                     <th>Email</th>
                                                     <th>Phone</th>
                                                     <th>Message</th>
-                                                    <th>Created At</th>
+                                                    <th>Received</th>
+                                                    <th>Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @foreach ($contacts as $contact)
-                                                    <tr>
-                                                        <td><span
-                                                                class="badge badge-success ">#QU0{{ $contact->id }}</span>
-                                                        </td>
-                                                        <td>{{ $contact->name }}</td>
-                                                        <td>{{ $contact->email }}</td>
-                                                        <td>{{ $contact->phone }}</td>
-                                                        <td>{{ $contact->message }}</td>
-                                                        <td>{{ $contact->created_at }}</td>
-                                                    </tr>
-                                                @endforeach
+                                                @if (!$contacts === null)
+
+                                                    @foreach ($contacts as $contact)
+                                                        <tr>
+                                                            <td><span
+                                                                    class="badge badge-success ">#QU0{{ $contact->id }}</span>
+                                                            </td>
+                                                            <td>{{ $contact->name }}</td>
+                                                            <td>{{ $contact->email }}</td>
+                                                            <td>{{ $contact->phone }}</td>
+                                                            <td>{{ $contact->message }}</td>
+                                                            <td>{{ $contact->created_at }}</td>
+                                                            <td> <a type="button" title="Delete" class=""
+                                                                    wire:click="deleteConfirm({{ $contact->id }})"><i
+                                                                        class="ft-trash-2 fa-2x mr-2  text-danger"></i></a>
+                                                            </td>
+                                                        </tr>
+                                                    @endforeach
+                                                @else
+                                                    <td colspan="6" class="text-center">
+                                                        <h4 class="text-danger font-weight-bolder">No Query Found</h4>
+                                                    </td>
+                                                @endif
                                             </tbody>
                                         </table>
-                                        {{ $contacts->links() }}
+                                        <div class="py-3">
+                                            <center>
+                                                {{ $contacts->links() }}
+                                            </center>
+                                        </div>
 
 
                                     </div>
@@ -81,3 +97,24 @@
 
     </style>
 </div>
+<script>
+    window.addEventListener('Swal.fire:confirm', event => {
+        Swal.fire({
+            title: event.detail.title,
+            text: event.detail.text,
+            icon: event.detail.type,
+            buttons: true,
+            dangerMode: true,
+            showCancelButton: event.detail.showCancelButton,
+            confirmButtonColor: event.detail.confirmButtonColor,
+            cancelButtonColor: event.detail.cancelButtonColor,
+            confirmButtonText: event.detail.confirmButtonText,
+        }).then((willDelete) => {
+            if (willDelete) {
+
+                window.livewire.emit('delete', event.detail.id);
+
+            }
+        });
+    });
+</script>

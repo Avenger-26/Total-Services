@@ -1,6 +1,7 @@
 <head>
     <title>Admin | Dashboard</title>
     <meta content='maximum-scale=1.0, initial-scale=1.0, width=device-width' name='viewport'>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <style>
     table td {

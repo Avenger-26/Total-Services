@@ -8,7 +8,7 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
-    <meta content='maximum-scale=1.0, initial-scale=1.0, width=device-width' name='viewport'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="assets/img/favicon.png">
     <link href="{{ url('assets/css/style.css') }}" rel="stylesheet" media="screen">
     <link href="{{ url('assets/css/chblue.css') }}" rel="stylesheet" media="screen">
@@ -107,9 +107,9 @@
                                 <li class=""> <i class="fa fa-user-circle" aria-hidden="true">
                                         <strong> {{ Auth::user()->name }} (Customer) </strong></i>
                                     <ul class="drop-down one-column hover-fade">
-                                        <li><a href="{{ route('costumer.dashboard') }}">Dashboard</a></li>
-                                        <li><a href="{{ route('logout') }}"
-                                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                                        <li><a href="{{ route('customer.dashboard') }}">Dashboard</a></li>
+                                        <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                        document.getElementById('logout-form').submit();">Logout</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -120,7 +120,8 @@
                         @else
                             <li class="login-form"> <a href="{{ route('register') }}" title="Register">Register</a>
                             </li>
-                            <li class="login-form"> <a href="{{ route('login') }}" title="Login">Login</a></li>
+                            <li class="login-form "> <a href="{{ route('login') }}" class=""
+                                    title="Login">Login</a></li>
                         @endif
                         @endif
                         <li class="search-bar">
@@ -128,3 +129,13 @@
                     </ul>
                 </nav>
             </header>
+            {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> --}}
+            {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
+            <script>
+                $('.gallery-card').tilt({
+                    glare: true,
+                    maxGlare: .3,
+                    maxTilt: 7,
+                    speed: 520,
+                })
+            </script> --}}

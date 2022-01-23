@@ -1,6 +1,7 @@
-.services-carousel ul li img {
+.owl-item-slider img {
     height: 80px !important;
     width: 80px !important;
+    margin-left: 30px;
 }
 .home-img {
     width: 250px;
@@ -187,13 +188,21 @@
     width: 80px !important;
 }
 
+.info-head{
+    background-color: rgb(15, 23, 43) !important;
+    background: none;
+}
 /* For mobile phones: */
 @media only screen and (max-width: 768px) {
     .flat-mega-menu img {
         margin-left: 20px;
     }
 
-    .title-header h1 {
+    .title-header h1{
+        font-size: 2.7rem;
+        font-weight: 800;
+    }
+    .title-header p, .title-header h1 {
         display: block;
     }
 
@@ -203,10 +212,7 @@
         overflow: auto;
     }
 
-    .services-carousel ul li img {
-        height: 100px !important;
-        width: 100px !important;
-    }
+   
 
     .services-carousel .owl-carousel {
         padding: 50px 6px 50px 8px !important;
@@ -214,7 +220,7 @@
 
     .tb img {
         width: 100% !important;
-        height: 160px !important;
+        height: 200px !important;
     }
 
     .info-gallery {
@@ -238,6 +244,12 @@
         padding-left: 50px;
         height: 44px;
         background-position: 15px;
+    }
+    .lead {
+        margin-bottom: 20px;
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 1.4;
     }
 
     .search {

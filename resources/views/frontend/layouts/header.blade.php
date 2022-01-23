@@ -14,15 +14,25 @@
     <link href="{{ url('assets/css/style.css') }}" rel="stylesheet" media="screen">
     <link href="{{ url('assets/css/chblue.css') }}" rel="stylesheet" media="screen">
 
+    <!-- Slick -->
+    <link type="text/css" rel="stylesheet" href="{{ asset('assets/css/slick.css') }}" />
+    <link type="text/css" rel="stylesheet" href="{{ asset('assets/css/slick-theme.css') }}" />
+    <link type="text/css" rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}" />
+
     <link href="{{ url('assets/css/theme-responsive.css') }}" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     {{-- <link href="{{ url('assets/css/dtb/jquery.dataTables.min.css') }}" rel="stylesheet" media="screen">
     <link href="{{ url('assets/css/select2.min.css') }}" rel="stylesheet" media="screen">
     <link href="{{ url('assets/css/toastr.min.css') }}" rel="stylesheet" media="screen"> --}}
     <link href="{{ url('assets/css/custom_css.css') }}" rel="stylesheet" media="screen">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.2/css/bootstrap-select.min.css"
         rel="stylesheet" type="text/css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
         type="text/css" />
+        
     <script type="text/javascript" src="{{ url('assets/js/jquery.js') }}"></script>
     <script type="text/javascript" src="{{ url('assets/js/jquery-ui.1.10.4.min.js') }}"></script>
     {{-- <script type="text/javascript" src="{{ url('assets/js/toastr.min.js') }}"></script>
@@ -151,7 +161,7 @@
                     <li> <a href="{{ route('home') }}">Home</a> </li>
 
                     <li> <a href="{{ route('home.service_categories') }}">Service Category</a> </li>
-                    <li> <a href="{{ route('home.about-us') }}">About Us</a></li>
+                    <li> <a href="#">Sanitization<sup class="badge badge-danger" style="margin-left:2px"><small>New</small></sup></a></li>
 
                     {{-- <li> <a href="#">Our Team</a></li> --}}
 
@@ -438,8 +448,8 @@
                             <li class="login-form"> <a href="{{ route('login') }}" title="Login">Login</a></li>
                         @endif
                         @endif
-                        <li class="search-bar">
-                        </li>
+                    <li class="search-bar">
+                    </li>
                     </ul>
                 </nav>
             </header>

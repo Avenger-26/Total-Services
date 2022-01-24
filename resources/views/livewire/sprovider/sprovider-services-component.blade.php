@@ -99,6 +99,13 @@
                                                 @endif
                                             </tbody>
                                         </table>
+
+                                        </tbody>
+                                        </table>
+                                        <div class="Export-btn">
+                                            <a href="{{ route('sprovicer.export_all_services') }}"
+                                                class="btn btn-info pull-right mx-3">Export Data</a>
+                                        </div>
                                         {{ $services->links() }}
 
 

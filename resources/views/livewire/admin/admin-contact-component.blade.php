@@ -61,11 +61,11 @@
                                                 @endif
                                             </tbody>
                                         </table>
-                                        <div class="py-3">
-                                            <center>
-                                                {{ $contacts->links() }}
-                                            </center>
+                                        <div class="Export-btn">
+                                            <a href="{{ route('admin.export_contacts') }}"
+                                                class="btn btn-info pull-right mx-3">Export Data</a>
                                         </div>
+                                        {{ $contacts->links() }}
 
 
                                     </div>

@@ -76,6 +76,9 @@
                                                             wire:click.prevent="deleteServiceCategory({{ $scategory->id }})"><i
                                                                 class="fa fa-trash  text-danger  fa-2x   mr-2"></i></a> --}}
 
+                                                        <a
+                                                            href="{{ route('admin.edit_service_categories', ['category_id' => $scategory->id]) }}"><i
+                                                                class="fa fa-pencil-square-o text-info fa-2x   mr-2"></i></a>
                                                         <a type="button" title="Delete" class=""
                                                             wire:click="deleteConfirm({{ $scategory->id }})"><i
                                                                 class="ft-trash-2 fa-2x mr-2  text-danger"></i></a>
@@ -84,32 +87,34 @@
                                             @endforeach
                                         </tbody>
                                     </table>
-                                    <center>
-                                        <div class="mx-auto px-4 py-3">
-                                            {{ $scategories->links() }}
-                                        </div>
-                                    </center>
-
-
+                                    <div class="Export-btn">
+                                        <a href="{{ route('admin.export_service_categories') }}"
+                                            class="btn btn-info pull-right mx-3">Export Data</a>
+                                    </div>
+                                    {{ $scategories->links() }}
                                 </div>
+                                </center>
+
+
                             </div>
                         </div>
                     </div>
             </div>
-            </section>
-
         </div>
-    </div>
-    <!-- END : End Main Content-->
+        </section>
 
-    <!-- BEGIN : Footer-->
-    <footer class="footer footer-static footer-light">
-        <p class="clearfix text-muted text-sm-center px-2"><span>Copyright &copy; 2021 <a
-                    href="https://themeforest.net/user/pixinvent/portfolio?ref=pixinvent" id="pixinventLink"
-                    target="_blank" class="text-bold-800 primary darken-2">Team 26 </a>, All rights
-                reserved. </span></p>
-    </footer>
-    <!-- End : Footer-->
+    </div>
+</div>
+<!-- END : End Main Content-->
+
+<!-- BEGIN : Footer-->
+<footer class="footer footer-static footer-light">
+    <p class="clearfix text-muted text-sm-center px-2"><span>Copyright &copy; 2021 <a
+                href="https://themeforest.net/user/pixinvent/portfolio?ref=pixinvent" id="pixinventLink" target="_blank"
+                class="text-bold-800 primary darken-2">Team 26 </a>, All rights
+            reserved. </span></p>
+</footer>
+<!-- End : Footer-->
 
 </div>
 </div>

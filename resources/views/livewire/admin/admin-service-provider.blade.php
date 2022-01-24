@@ -84,10 +84,14 @@
                                                             </td>
                                                         </tr>
                                                     @endforeach
-                                                @endif
-                                            </tbody>
-                                        </table>
-                                        {{-- {{ $sprovider->links() }} --}}
+                                                </tbody>
+                                            </table>
+
+                                            <div class="Export-btn">
+                                                <a href="{{ route('admin.export_service_provider') }}"
+                                                    class="btn btn-info pull-right mx-3">Export Data</a>
+                                            </div>
+                                            {{-- {{ $sprovider->links() }} --}}
 
 
                                     </div>

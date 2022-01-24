@@ -16,16 +16,16 @@
                                 </h4>
                             </div>
                             <br>
-                            <div class="card-content">
+                            <div class="card-content px-3">
                                 <div class="px-3">
                                     @if (Session::has('message'))
-                                        <div class="alert alert-success alert-dismissible " role="alert">
-                                            <button type="button" class="close" data-dismiss="alert"
-                                                aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                            <a>{{ Session::get('message') }}</a>
-                                        </div>
+                                        <script>
+                                            Swal.fire({
+                                                icon: 'success',
+                                                title: "{!! Session::get('message') !!}",
+                                                text: 'Great Job!',
+                                            });
+                                        </script>
                                     @endif
                                     <form enctype="multipart/form-data" method="post"
                                         wire:submit.prevent="updateProfile">
@@ -93,7 +93,8 @@
                                                 wire:model="image"required>
                                               </div> --}}
                                         <div class=" mx-auto">
-                                            <button type="submit" class="btn btn-primary px-4 mx-auto">Submit </button>
+                                            <center> <button type="submit" class="btn-hover color-hover mx-auto">Submit
+                                                </button></center>
                                         </div>
                                     </form>
                                 </div>

@@ -38,7 +38,45 @@
 html {
     font-size: 16px;
 }
+.login_button {
+    background: #1597e5;
 
+    color: white !important;
+}
+/* Let's get this party started */
+::-webkit-scrollbar {
+    width: 12px;
+    height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background-color: #63a4ff !important;
+    background-image: linear-gradient(
+        315deg,
+        #63a4ff 0%,
+        #83eaf1 74%
+    ) !important;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+    background-color: #63a4ff !important;
+    background-image: linear-gradient(
+        315deg,
+        #63a4ff 0%,
+        #83eaf1 74%
+    ) !important;
+}
 body {
     font-family: "Open Sans", sans-serif;
     color: #544e4e;
@@ -59,6 +97,50 @@ h6 {
     font-weight: normal;
     font-family: "Raleway", sans-serif;
     -webkit-font-smoothing: antialiased;
+}
+/* custom button  */
+.btn-hover {
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    cursor: pointer;
+    margin: 20px;
+    padding: 12px 24px;
+    text-align: center;
+    border: none;
+    background-size: 200% 100%;
+
+    border-radius: 50px;
+    moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+
+.btn-hover:hover {
+    background-position: 100% 0;
+    moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+    color: white;
+    outline: none;
+    border: none;
+}
+
+.btn-hover:focus {
+    outline: none;
+}
+
+.btn-hover.color-hover {
+    background-image: linear-gradient(
+        to right,
+        #25aae1,
+        #4481eb,
+        #04befe,
+        #3f86ed
+    );
+    box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
 }
 
 h1,
@@ -365,7 +447,7 @@ iframe.video {
 
 .titles h2 {
     color: #222;
-    padding: 0;
+    padding: 10px 0;
     z-index: 1;
     position: relative;
 }
@@ -374,7 +456,9 @@ iframe.video {
     margin-top: 0;
     position: relative;
     display: inline-block;
-    text-shadow: 0 2px 2px black;
+    /* text-shadow: 0 2px 2px black; */
+    filter: drop-shadow(0px 2px 2px #000);
+    padding: 20px 0;
 }
 
 .head-title::after {
@@ -400,7 +484,13 @@ iframe.video {
 }
 
 .head-primary {
-    color: #1597e5 !important;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(
+        315deg,
+        #63a4ff 0%,
+        #83eaf1 74%
+    ) !important;
 }
 
 .hh-secondary {
@@ -763,6 +853,7 @@ hr.tall {
 /* Title Header ---------------------------------------------*/
 .title-header {
     text-align: center;
+
 }
 
 .title-header h1 {
@@ -773,9 +864,9 @@ hr.tall {
     -moz-background-clip: text;
     -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
-    font-size: 5.2rem;
+    font-size:5vw ;
     filter: drop-shadow(0px 2px 2px #000);
-    line-height: 5.6rem;
+    width:100%!important;
     font-weight: bold;
     margin-top: 5rem;
 }
@@ -1489,7 +1580,12 @@ span.custom-select {
 }
 
 .content_resalt {
+<<<<<<< HEAD
+    background: #f5f6fa;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.27);
+=======
     background: #f8f8f8;
+>>>>>>> fac8d7db7d6ebe57c40d71d51047d56341094689
 }
 
 /* Services Lines ------------------------*/

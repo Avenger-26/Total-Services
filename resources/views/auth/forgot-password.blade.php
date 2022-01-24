@@ -67,7 +67,7 @@
                     </div>
                     @if (session('status'))
                         <div class="font-medium text-md text-green-600">
-                           <h6 style="color:#1597e5; text-align:center;">{{ session('status') }} </h6>
+                            <h6 style="color:#1597e5; text-align:center;">{{ session('status') }} </h6>
                         </div>
                     @endif
                     <br>
@@ -83,6 +83,9 @@
                     </div>
                     {{-- <input type="button" class="btn-lp" value="Password Reset"> --}}
                     <button type="submit" class="btn-lp">Password Reset</button>
+                    <span class="span-r">
+                        <a href="/">Back to Home</a>
+                    </span>
                 </form>
             </div>
             <!-- =================================== Login Content  =============================== -->

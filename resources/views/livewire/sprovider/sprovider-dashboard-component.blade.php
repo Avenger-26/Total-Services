@@ -1,17 +1,14 @@
 <style>
-    .dynamic-cards{
+    .dynamic-cards {
         transition: all 0.6s ease;
-        box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.5),
-                2px 2px 0px rgba(0, 0, 0, 0.5),
-                3px 3px 0px rgba(0, 0, 0, 0.5),
-                4px 4px 0px rgba(0, 0, 0, 0.5),
-                5px 5px 0px rgba(0, 0, 0, 0.5),
-                6px 6px 0px rgba(0, 0, 0, 0.5);
+
     }
-    .dynamic-cards:hover{
+
+    .dynamic-cards:hover {
         transform: scale(1.1);
-      
+
     }
+
 </style>
 <div>
     @include('../layouts/sprovider/header')
@@ -19,14 +16,16 @@
         <!-- BEGIN : Main Content-->
         <div class="main-content">
             <div class="content-wrapper">
+
                 <div class="row">
+
                     <div class="col-xl-3 col-lg-6 col-md-6 col-12">
-                        <div class="card gradient-blackberry dynamic-cards">
+                        <div class="card gradient-blackberry   dynamic-cards shadow">
                             <div class="card-content">
                                 <div class="card-body pt-2 pb-0">
                                     <div class="media">
                                         <div class="media-body white text-left">
-                                            <h3 class="font-large-1 mb-0">{{$totalUser}}</h3>
+                                            <h3 class="font-large-1 mb-0">{{ $totalUser }}</h3>
                                             <span>Total Users</span>
                                         </div>
                                         <div class="media-right white text-right">
@@ -41,12 +40,12 @@
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-6 col-md-6 col-12">
-                        <div class="card gradient-ibiza-sunset dynamic-cards">
+                        <div class="card gradient-ibiza-sunset dynamic-cards shadow">
                             <div class="card-content">
                                 <div class="card-body pt-2 pb-0">
                                     <div class="media">
                                         <div class="media-body white text-left">
-                                            <h3 class="font-large-1 mb-0">{{$totalService}}</h3>
+                                            <h3 class="font-large-1 mb-0">{{ $totalService }}</h3>
                                             <span>Total Services</span>
                                         </div>
                                         <div class="media-right white text-right">
@@ -63,12 +62,12 @@
                     </div>
 
                     <div class="col-xl-3 col-lg-6 col-md-6 col-12">
-                        <div class="card gradient-green-tea dynamic-cards">
+                        <div class="card gradient-green-tea dynamic-cards shadow">
                             <div class="card-content">
                                 <div class="card-body pt-2 pb-0">
                                     <div class="media">
                                         <div class="media-body white text-left">
-                                            <h3 class="font-large-1 mb-0">{{$totalServe}}</h3>
+                                            <h3 class="font-large-1 mb-0">{{ $totalServe }}</h3>
                                             <span>Total Services Done</span>
                                         </div>
                                         <div class="media-right white text-right">
@@ -83,12 +82,12 @@
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-6 col-md-6 col-12">
-                        <div class="card gradient-pomegranate dynamic-cards">
+                        <div class="card gradient-pomegranate dynamic-cards shadow">
                             <div class="card-content">
                                 <div class="card-body pt-2 pb-0">
                                     <div class="media">
                                         <div class="media-body white text-left">
-                                            <h3 class="font-large-1 mb-0">₹{{$totalEarning}}</h3>
+                                            <h3 class="font-large-1 mb-0">₹{{ $totalEarning }}</h3>
                                             <span>Total Earning</span>
                                         </div>
                                         <div class="media-right white text-right">
@@ -108,11 +107,22 @@
                         <div class="col-sm-12">
                             <div class="card shadow">
                                 <div class="card-header">
-                                    <h4 class="card-title py-2 text-info" style="text-align: center; font-weight:500; font-size:1.6rem;"><i class="fa ft-briefcase  fa-1x"></i> Work History</h4>
+                                    <h4 class="card-title py-2 text-info"
+                                        style="text-align: center; font-weight:500; font-size:1.6rem;"><i
+                                            class="fa ft-briefcase  fa-1x"></i> Work History</h4>
                                 </div>
+                                @if (Session::has('message'))
+                                    <script>
+                                        Swal.fire({
+                                            icon: 'success',
+                                            title: "{!! Session::get('message') !!}",
+                                            text: 'Great Job!',
+                                        });
+                                    </script>
+                                @endif
                                 <div class="card-content">
                                     <div class=" table-responsive">
-                                        <table class="table text-center table-striped table-hover shadow ">
+                                        <table class="table text-center table-striped table-hover ">
                                             <thead>
                                                 <tr>
                                                     <th>ID</th>
@@ -125,25 +135,42 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @foreach ($paytms as $paytm)
-                                                    @if ($paytm->sprovider_id === Auth::user()->id)
-                                                        <tr>
-                                                            <td><span class="badge badge-success ">#WH0{{ $paytm->id }}</span></td>
-                                                            <td>{{ $paytm->user_name }}</td>
-                                                            <td>{{ $paytm->slug_name }}</td>
-                                                            <td>{{ $paytm->order_id }}</td>
-                                                            <td>₹{{ $paytm->price }}</td>
-                                                            <td>{{ $paytm->created_at }}</td>
-                                                            <td>
-                                                                <a href="#"  onclick="confirm('Are you sure, you want to delete this booking histroy!')||event.stopImmediatePropagation()"
-                                                                wire:click.prevent="deleteService({{ $paytm->id }})">
-                                                                    <i class="ft-trash-2 text-danger font-medium-3"></i>
-                                                                </a>
-                                                            </td>
-                                                        </tr>
-                                                    @endif
+                                                @if (!$paytms === null)
+                                                    @foreach ($paytms as $paytm)
+                                                        @if ($paytm->sprovider_id === Auth::user()->id)
+                                                            <tr>
+                                                                <td><span
+                                                                        class="badge badge-success ">#WH0{{ $paytm->id }}</span>
+                                                                </td>
+                                                                <td>{{ $paytm->user_name }}</td>
+                                                                <td>{{ $paytm->slug_name }}</td>
+                                                                <td>{{ $paytm->order_id }}</td>
+                                                                <td>₹{{ $paytm->price }}</td>
+                                                                <td>{{ $paytm->created_at }}</td>
+                                                                <td>
+                                                                    {{-- <a href="#"
+                                                                        onclick="confirm('Are you sure, you want to delete this booking histroy!')||event.stopImmediatePropagation()"
+                                                                        wire:click.prevent="deleteService({{ $paytm->id }})">
+                                                                        <i
+                                                                            class="ft-trash-2 text-danger font-medium-3"></i>
+                                                                    </a> --}}
+                                                                    <button type="button" title="Delete"
+                                                                        class="btn btn-danger"
+                                                                        wire:click="deleteConfirm({{ $paytm->id }})"><i
+                                                                            class="ft-trash-2 fa-1x mr-2  text-danger"></i></button>
+                                                                </td>
+                                                            </tr>
+                                                        @endif
 
-                                                @endforeach
+                                                    @endforeach
+                                                @else
+                                                    <tr>
+                                                        <td colspan="7" class="text-center">
+                                                            <h4 class="text-danger font-weight-bolder">No Booking
+                                                                History Found</h4>
+                                                        </td>
+                                                    </tr>
+                                                @endif
 
                                             </tbody>
                                         </table>
@@ -164,3 +191,24 @@
     </div>
 </div>
 </div>
+<script>
+    window.addEventListener('Swal.fire:confirm', event => {
+        Swal.fire({
+            title: event.detail.title,
+            text: event.detail.text,
+            icon: event.detail.type,
+            buttons: true,
+            dangerMode: true,
+            showCancelButton: event.detail.showCancelButton,
+            confirmButtonColor: event.detail.confirmButtonColor,
+            cancelButtonColor: event.detail.cancelButtonColor,
+            confirmButtonText: event.detail.confirmButtonText,
+        }).then((willDelete) => {
+            if (willDelete) {
+
+                window.livewire.emit('delete', event.detail.id);
+
+            }
+        });
+    });
+</script>

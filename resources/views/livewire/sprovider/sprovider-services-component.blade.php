@@ -1,52 +1,59 @@
 <div>
     @include('../layouts/sprovider/header')
-        <div class="main-panel">
-            <!-- BEGIN : Main Content-->
-            <div class="main-content">
-                <div class="content-wrapper">
-                    <section id="extended">
-                        <div class="row justify-content-md-center">
-                            <div class="col-md-11 col-sm-11 mx-auto ">
-                                <div class="card shadow">
-                                    <div class="card-header py-3">
-                                        <div class="d-flex align-items-center justify-content-between">
-                                            <div class=" ">
-                                                <h4 class="font-weight-bolder text-info">All Service</h4>
-                                            </div>
-                                            <div class="">
-                                                <a href="{{ route('sprovider.add_service') }}"
-                                                    class="btn-hover color-hover mx-3">
-                                                    <i class="fa fa-plus-circle "></i>Add New</a>
-                                            </div>
+    <div class="main-panel">
+        <!-- BEGIN : Main Content-->
+        <div class="main-content">
+            <div class="content-wrapper">
+                <section id="extended">
+                    <div class="row justify-content-md-center">
+                        <div class="col-md-11 col-sm-11 mx-auto ">
+                            <div class="card shadow">
+                                <div class="card-header py-3">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class=" ">
+                                            <h4 class="font-weight-bolder text-info">All Service</h4>
+                                        </div>
+                                        <div class="">
+                                            <a href="{{ route('sprovider.add_service') }}"
+                                                class="btn-hover color-hover mx-3">
+                                                <i class="fa fa-plus-circle "></i>Add New</a>
                                         </div>
                                     </div>
-                                   
-                                    <div class="card-content">
-                                        <div class=" table-responsive">
+                                </div>
 
-                                            @if (Session::has('message'))
-                                                <div class="alert alert-success" role="alert">
-                                                    {{ Session::get('message') }}
-                                                </div>
-                                            @endif
-                                            <table class="table text-center table-striped table-hover shadow ">
-                                                <thead>
-                                                    <tr>
-                                                        <th>ID</th>
-                                                        <th>Image</th>
-                                                        <th>Name</th>
-                                                        <th>Price</th>
-                                                        <th>Status</th>
-                                                        <th>Featured</th>
-                                                        <th>Category</th>
-                                                        <th>Created At</th>
-                                                        <th>Action</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
+                                <div class="card-content">
+                                    <div class=" table-responsive">
+
+                                        @if (Session::has('message'))
+                                            <script>
+                                                Swal.fire({
+                                                    icon: 'success',
+                                                    title: "{!! Session::get('message') !!}",
+                                                    text: 'Great Job!',
+                                                });
+                                            </script>
+                                        @endif
+                                        <table class="table text-center table-striped table-hover shadow ">
+                                            <thead>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>Image</th>
+                                                    <th>Name</th>
+                                                    <th>Price</th>
+                                                    <th>Status</th>
+                                                    <th>Featured</th>
+                                                    <th>Category</th>
+                                                    <th>Created At</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @if (!$services === null)
                                                     @foreach ($services as $service)
                                                         <tr>
-                                                            <td><span class="badge badge-info mt-2" >#SER0{{ $service->id }}</span></td>
+                                                            <td><span
+                                                                    class="badge badge-info mt-2">#SER0{{ $service->id }}</span>
+                                                            </td>
                                                             <td><img src="{{ asset('images/services/thumbnails') }}/{{ $service->thumbnail }}"
                                                                     width="80" alt=""></td>
                                                             <td>{{ $service->name }}</td>
@@ -68,53 +75,80 @@
                                                             <td>{{ $service->category->name }}</td>
                                                             <td>{{ $service->created_at }}</td>
                                                             <td>
-                                                                <a
+                                                                <a title="Edit"
                                                                     href="{{ route('sprovider.edit_service', ['service_slug' => $service->slug]) }}"><i
-                                                                        class="ft-edit fa-2x mr-2   text-info"></i></a>
-                                                                <a href="#"
-                                                                    onclick="confirm('Are you sure, you want to delete this service category!')||event.stopImmediatePropagation()"
-                                                                    wire:click.prevent="deleteService({{ $service->id }})"
-                                                                    ><i
-                                                                        class="ft-trash-2 fa-2x mr-2  text-danger"></i></a>
+                                                                        class="ft-edit fa-1x mr-2   text-info"></i></a>
+                                                                {{-- <a href="#" title="Delete"
+                                                          onclick="confirm('Are you sure, you want to delete this service category!')||event.stopImmediatePropagation()"
+                                                          wire:click.prevent="deleteService({{ $service->id }})"><i
+                                                              class="ft-trash-2 fa-1x mr-2  text-danger"></i></a> --}}
+                                                                <button type="button" title="Delete"
+                                                                    class="btn btn-danger"
+                                                                    wire:click="deleteConfirm({{ $service->id }})"><i
+                                                                        class="ft-trash-2 fa-1x mr-2  text-danger"></i></button>
+
                                                             </td>
                                                         </tr>
                                                     @endforeach
-                                                </tbody>
-                                            </table>
-                                            <div class="Export-btn">
-                                                <a href="{{ route('sprovicer.export_all_services') }}"
-                                                    class="btn btn-info pull-right mx-3">Export Data</a>
-                                            </div>
-                                            {{ $services->links() }}
+                                                @else
+                                                    <tr>
+                                                        <td colspan="7" class="text-center">
+                                                            <h4 class="text-danger font-weight-bolder">No Booking
+                                                                History Found</h4>
+                                                    </tr>
+                                                @endif
+                                            </tbody>
+                                        </table>
 
-
+                                        </tbody>
+                                        </table>
+                                        <div class="Export-btn">
+                                            <a href="{{ route('sprovicer.export_all_services') }}"
+                                                class="btn btn-info pull-right mx-3">Export Data</a>
                                         </div>
+                                        {{ $services->links() }}
+
+
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </section>
+                    </div>
+                </section>
 
-                </div>
             </div>
-            <!-- END : End Main Content-->
-
-            <!-- BEGIN : Footer-->
-            <footer class="footer footer-static footer-light">
-                <p class="clearfix text-muted text-sm-center px-2"><span>Copyright &copy; 2021 <a
-                            href="https://themeforest.net/user/pixinvent/portfolio?ref=pixinvent" id="pixinventLink"
-                            target="_blank" class="text-bold-800 primary darken-2">Team 26 </a>, All rights
-                        reserved. </span></p>
-            </footer>
-            <!-- End : Footer-->
-
         </div>
-    </div>
-    <style>
-        .w-5 {
-            display: none;
-        }
+        <!-- END : End Main Content-->
 
-    </style>
-    </div>
 
+    </div>
+</div>
+<style>
+    .w-5 {
+        display: none;
+    }
+
+</style>
+</div>
+{{-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> --}}
+<script>
+    window.addEventListener('Swal.fire:confirm', event => {
+        Swal.fire({
+            title: event.detail.title,
+            text: event.detail.text,
+            icon: event.detail.type,
+            buttons: true,
+            dangerMode: true,
+            showCancelButton: event.detail.showCancelButton,
+            confirmButtonColor: event.detail.confirmButtonColor,
+            cancelButtonColor: event.detail.cancelButtonColor,
+            confirmButtonText: event.detail.confirmButtonText,
+        }).then((willDelete) => {
+            if (willDelete) {
+
+                window.livewire.emit('delete', event.detail.id);
+
+            }
+        });
+    });
+</script>

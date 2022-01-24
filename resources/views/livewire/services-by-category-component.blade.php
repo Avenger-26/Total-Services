@@ -17,7 +17,7 @@
     <section class="content-central">
         <div class="container">
             <div class="row" style="margin-top: -30px;">
-                <div class="titles">
+                <div class="titles" style=" padding-bottom:10px;">
                     <h2 class="head-title hh-secondary head-primary">{{ $scategory->name }} Services</h2>
                 </div>
             </div>
@@ -26,7 +26,7 @@
             <div>
                 <div class="container" >
                     <div class="portfolioContainer" >
-                        <div class="col-md-12" style="padding-bottom:50px !important;">
+                        <div class="col-md-12" style="padding-bottom:70px !important;">
                             <div class="row">
                                 <div class="products-tabs">
                                     <div id="tab1" class="tab-pane active">

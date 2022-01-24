@@ -41,86 +41,9 @@
     <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
     <df-messenger intent="WELCOME" chat-title="TS~Bot🤖" agent-id="b2e19dfa-a91a-41a6-b95c-df77b673663c"
         language-code="en" chat-icon="{{ asset('images\chatbot.gif') }}"></df-messenger>
-    <style>
-        df-messenger {
-            --df-messenger-bot-message: #34BE82;
-            --df-messenger-chat-background-color: #fff;
-            --df-messenger-input-box-color: rgba(0, 0, 0, 1);
-            --df-messenger-input-font-color: #fff;
-            --df-messenger-button-titlebar-color: rgba(0, 0, 0, 1);
-            --df-messenger-font-color: #fff;
-            --df-messenger-send-icon: #00adff;
-            --df-messenger-user-message: #1597e5;
-            --df-messenger-chip-border-color: #0041C2;
-
-        }
-
-        .goog-te-banner-frame.skiptranslate {
-            display: none !important;
-        }
-
-        body {
-            top: 0px !important;
-        }
-
-        .goog-logo-link {
-            display: none !important;
-        }
-
-        .bootstrap-select>.btn {
-            width: 100px !important;
-            padding: 2px 14px 2px 4px !important;
-            outline: none !important;
-            border-radius: 5px;
-            margin-bottom: -8px;
-            background: #fff;
-        }
-
-        .bootstrap-select>.btn:active,
-        .bootstrap-select>.btn:focus,
-        .bootstrap-select>.btn:hover {
-            outline: none !important;
-            background: #fff !important;
-
-        }
-
-        .bootstrap-select.btn-group .dropdown-menu li>a {
-            outline: none;
-        }
-
-        /* Let's get this party started */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-
-        /* Track */
-        ::-webkit-scrollbar-track {
-            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-            -webkit-border-radius: 10px;
-            border-radius: 10px;
-        }
-
-        /* Handle */
-        ::-webkit-scrollbar-thumb {
-            -webkit-border-radius: 10px;
-            border-radius: 10px;
-            background-color: #63a4ff !important;
-            background-image: linear-gradient(315deg, #63a4ff 0%, #83eaf1 74%) !important;
-            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
-        }
-
-        ::-webkit-scrollbar-thumb:window-inactive {
-            background-color: #63a4ff !important;
-            background-image: linear-gradient(315deg, #63a4ff 0%, #83eaf1 74%) !important;
-        }
-
-    </style>
-
-
 </head>
 
 <body>
-    <div id="layout">
         <div class="info-head">
             <div class="container">
                 <div class="row">
@@ -161,7 +84,7 @@
                     <li> <a href="{{ route('home') }}">Home</a> </li>
 
                     <li> <a href="{{ route('home.service_categories') }}">Service Category</a> </li>
-                    <li> <a href="#">Sanitization<sup class="badge badge-danger" style="margin-left:2px"><small>New</small></sup></a></li>
+                    <li> <a href="http://localhost:8000/disinfection/services">Disinfection<sup class="badge badge-danger" style="margin-left:2px"><small>New</small></sup></a></li>
 
                     {{-- <li> <a href="#">Our Team</a></li> --}}
 
@@ -422,7 +345,7 @@
                                             @endif
                                             )</i></a>
                                     <ul class="drop-down one-column hover-fade">
-                                        <li><a href="{{ route('sprovider.dashboard') }}">Dashboard</a></li>
+                                        <li><a href="{{ route('sprovider.dashboard') }}"><strong>Dashboard</strong></a></li>
                                         <li><a href="{{ route('logout') }}"
                                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
                                         </li>

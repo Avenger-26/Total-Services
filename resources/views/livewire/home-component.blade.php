@@ -2,7 +2,7 @@
     <section class="tp-banner-container">
         <div class="owl-carousel header-carousel position-relative">
             <div class="owl-carousel-item position-relative">
-                <img class="img-fluid" src="{{ asset('images/1-1.png') }}" height="550px" alt="">
+                <img class="img-fluid hero-img" src="{{ asset('images/1-1.png') }}"  alt="">
                 <div class="position-absolute top-0 start-0 w-100  d-flex align-items-center"
                     style="background: rgba(53, 53, 53, .7);">
                 </div>
@@ -59,7 +59,7 @@
                 </div>
             </div>
             <div class="owl-carousel-item position-relative">
-                <img class="img-fluid" src="{{ asset('images/2-1.png') }}" height="550" alt="">
+                <img class="img-fluid hero-img" src="{{ asset('images/2-1.png') }}"  alt="">
                 <div class="position-absolute top-0 start-0 w-100  d-flex align-items-center"
                     style="background: rgba(53, 53, 53, .7);">
                 </div>
@@ -116,7 +116,7 @@
                 </div>
             </div>    
             <div class="owl-carousel-item position-relative">
-                <img class="img-fluid" src="{{ asset('images/3-1.png') }}" height="550" alt="">
+                <img class="img-fluid hero-img" src="{{ asset('images/3-1.png') }}"  alt="">
                 <div class="position-absolute top-0 start-0 w-100  d-flex align-items-center"
                     style="background: rgba(53, 53, 53, .7);">
                 </div>
@@ -342,6 +342,49 @@
             </div>
         </div>
     </div>
+    <!-- ======= Counts Section ======= -->
+    <section id="counts" class="counts">
+        <div class="container" data-aos="fade-up">
+  
+          <div class="row">
+  
+            <div class="col-lg-3 col-md-6">
+              <div class="count-box">
+                <i class="bi bi-emoji-smile"></i>
+                <span data-purecounter-start="0" data-purecounter-end="24" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Happy Clients</p>
+              </div>
+            </div>
+  
+            <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+              <div class="count-box">
+                <i class="bi bi-headset"></i>
+                <span data-purecounter-start="0" data-purecounter-end="103" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Hours Of Support</p>
+              </div>
+            </div>
+  
+            <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
+                <div class="count-box">
+                  <i class="bi bi-journal-richtext"></i>
+                  <span data-purecounter-start="0" data-purecounter-end="24" data-purecounter-duration="1" class="purecounter"></span>
+                  <p>Services Done</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+              <div class="count-box">
+                <i class="bi bi-people"></i>
+                <span data-purecounter-start="0" data-purecounter-end="20" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Total Services</p>
+              </div>
+            </div>
+  
+          </div>
+  
+        </div>
+    </section>
+    <!-- End Counts Section -->
 
     <div class="section service-section">
         <div class="container">

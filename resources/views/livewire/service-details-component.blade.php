@@ -41,7 +41,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-12">
-                                        <div id="single-carousel" class="custome-owl">
+                                        <div id="single-carousel" >
                                             <div class="img-hover bg">
                                                 <img src="{{ asset('images/services') }}/{{ $service->image }}"
                                                     alt="{{ $service->name }}" class="img-responsive">

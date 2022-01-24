@@ -24,34 +24,22 @@
 
                                 <div class="card-content">
                                     @if (Session::has('message'))
-                                        <div class="alert alert-success" role="alert">{{ Session::get('message') }}
-                                        </div>
+                                        <script>
+                                            Swal.fire({
+                                                icon: 'success',
+                                                title: "{!! Session::get('message') !!}",
+                                                text: 'Great Job!',
+                                            });
+                                        </script>
                                     @endif
                                     <div class="px-2">
                                         <form class="form-horizontal" wire:submit.prevent="createService">
                                             @csrf
-                                            
-                                                    {{-- <div class="form-group">
-                                                        <div class="col-md-12">
-                                                            <label for="sprovider_id"
-                                                                class=" control-label text-light fw-900">Service
-                                                                Provider id: </label>
-                                                            <input id="sprovider_id" type="text"
-                                                                class="form-control border-primary" name="sprovider_id"
-                                                                wire:model="sprovider_id" value="{{ Auth::user()->id}}" />
-                                                            @error('sprovider_id')<p class="text-danger">
-                                                                    {{ $message }}</p>
-                                                            @enderror
-                                                        </div>
-                                                    </div> --}}
-                                                
-
-
                                             <div class="form-group">
                                                 <div class="col-md-12">
                                                     <label for="name" class=" control-label text-light fw-900">Name:
                                                     </label>
-                                                    <input id="name" type="text"  class="form-control border-primary"
+                                                    <input id="name" type="text" class="form-control border-primary"
                                                         name="name" wire:model="name" wire:keyup="generateSlug()" />
                                                     @error('name')<p class="text-danger">{{ $message }}</p>
                                                     @enderror
@@ -219,13 +207,13 @@
     <!-- BEGIN : Footer-->
     <footer class="footer footer-static footer-light">
         <p class="clearfix text-muted text-sm-center px-2"><span>Copyright &copy; 2021 <a
-                    href="https://themeforest.net/user/pixinvent/portfolio?ref=pixinvent" id="pixinventLink" target="_blank"
-                    class="text-bold-800 primary darken-2">Team 26 </a>, All rights
+                    href="https://themeforest.net/user/pixinvent/portfolio?ref=pixinvent" id="pixinventLink"
+                    target="_blank" class="text-bold-800 primary darken-2">Team 26 </a>, All rights
                 reserved. </span></p>
     </footer>
     <!-- End : Footer-->
 
-    </div>
-    </div>
+</div>
+</div>
 
-    </div>
+</div>

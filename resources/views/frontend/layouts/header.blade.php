@@ -32,7 +32,7 @@
         rel="stylesheet" type="text/css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
         type="text/css" />
-        
+
     <script type="text/javascript" src="{{ url('assets/js/jquery.js') }}"></script>
     <script type="text/javascript" src="{{ url('assets/js/jquery-ui.1.10.4.min.js') }}"></script>
     {{-- <script type="text/javascript" src="{{ url('assets/js/toastr.min.js') }}"></script>
@@ -355,9 +355,9 @@
                                 <li class=""> <i class="fa fa-user-circle" aria-hidden="true">
                                         <strong> {{ Auth::user()->name }} (Customer) </strong></i>
                                     <ul class="drop-down one-column hover-fade">
-                                        <li><a href="{{ route('costumer.dashboard') }}">Dashboard</a></li>
-                                        <li><a href="{{ route('logout') }}"
-                                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                                        <li><a href="{{ route('customer.dashboard') }}">Dashboard</a></li>
+                                        <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                        document.getElementById('logout-form').submit();">Logout</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -368,7 +368,8 @@
                         @else
                             <li class="login-form"> <a href="{{ route('register') }}" title="Register">Register</a>
                             </li>
-                            <li class="login-form"> <a href="{{ route('login') }}" title="Login">Login</a></li>
+                            <li class="login-form "> <a href="{{ route('login') }}" class=""
+                                    title="Login">Login</a></li>
                         @endif
                         @endif
                     <li class="search-bar">
@@ -376,3 +377,13 @@
                     </ul>
                 </nav>
             </header>
+            {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> --}}
+            {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
+            <script>
+                $('.gallery-card').tilt({
+                    glare: true,
+                    maxGlare: .3,
+                    maxTilt: 7,
+                    speed: 520,
+                })
+            </script> --}}

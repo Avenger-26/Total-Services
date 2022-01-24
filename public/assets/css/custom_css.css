@@ -78,6 +78,21 @@ body {
     width: 80px !important;
     margin-left: 30px;
 }
+
+/* .fscategory-bg{
+    background: #1597e5;
+}
+p.lead .line{
+    background-color: black !important;
+    background: black !important;
+} */
+
+.info-gallery p {
+    line-height: 1rem !important;
+
+    color: white;
+}
+
 .home-img {
     width: 250px;
 }
@@ -200,10 +215,10 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
 }
 
- .btn-hover:focus {
-     outline: none;
- }
- 
+.btn-hover:focus {
+    outline: none;
+}
+
 .form-theme input {
     border-radius: 25px;
     border-color: #1597e5 !important;
@@ -263,7 +278,7 @@ body {
     width: 80px !important;
 }
 
-.info-head{
+.info-head {
     background-color: rgb(15, 23, 43) !important;
     background: none;
 }
@@ -277,11 +292,12 @@ body {
         margin-left: 20px;
     }
 
-    .title-header h1{
+    .title-header h1 {
         font-size: 2.7rem;
         font-weight: 800;
     }
-    .title-header p, .title-header h1 {
+    .title-header p,
+    .title-header h1 {
         display: block;
     }
 
@@ -290,8 +306,6 @@ body {
         height: auto;
         overflow: auto;
     }
-
-   
 
     .services-carousel .owl-carousel {
         padding: 50px 6px 50px 8px !important;
@@ -407,11 +421,40 @@ img.hover-img:hover {
 .content-btn {
     padding-bottom: 20px !important;
 }
-@media only screen and (max-width: 600px) {
-    .gallery-card {
-        width: 88% !important;
-    }
-    .info-gallery {
-        height: auto !important;
-    }
+
+/* tesimonial section */
+.gradient-box {
+    margin: auto;
+    height: 100%;
+    position: relative;
+
+    box-sizing: border-box;
+
+    background: #000;
+    background-clip: padding-box;
+    /* !importanté */
+    border: solid 5px transparent;
+    /* !importanté */
+    transition: all 0.3s ease;
+}
+
+.gradient-box:hover:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    z-index: -1;
+    margin: -5px;
+    /* !importanté */
+    border-radius: inherit;
+    /* !importanté */
+    background-color: #63a4ff !important;
+    background-image: linear-gradient(
+        315deg,
+        #63a4ff 0%,
+        #83eaf1 74%
+    ) !important;
 }

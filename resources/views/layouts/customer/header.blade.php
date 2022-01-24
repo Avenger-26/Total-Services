@@ -1,11 +1,14 @@
-<link rel="stylesheet" href="{{asset('assets/css/border.css')}}">
+<link rel="stylesheet" href="{{ asset('assets/css/border.css') }}">
+
 <head>
-    <title>Customer  Dashboard</title>
+    <title>Customer Dashboard</title>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 
 <!-- main menu-->
 <!--.main-menu(class="#{menuColor} #{menuOpenType}", class=(menuShadow == true ? 'menu-shadow' : ''))-->
-<div data-active-color="white" data-background-color="info"
+<div data-active-color="white" data-background-color="black"
     data-image="{{ asset('app-assets/img/sidebar-bg/01.jpg') }}" class="app-sidebar ">
     <!-- main menu header-->
     <!-- Sidebar Header starts-->
@@ -26,30 +29,25 @@
         <div class="nav-container">
             <ul id="main-menu-navigation" data-menu="menu-navigation" data-scroll-to-active="true"
                 class="navigation navigation-main">
-                {{-- <li class=" nav-item"><a href="{{ route('costumer.dashboard') }}">
-
-                </li> --}}
-                {{-- <div class="profile  ">
-                    <img src="{{ asset('images/customer') }}/{{ Auth::user()->image }}" alt="profile"
-                    width="100" height="100"
-                    class="rounded-circle mx-auto d-block shadow img-border gradient-summer">
-                </div> --}}
-               
-                <li class=" nav-item"><a href="{{ route('costumer.dashboard') }}" class="font-weight-bold"><i
+                <li class=" nav-item"><a href="{{ route('customer.dashboard') }}" class="font-weight-bold"><i
                             class="ft-home"></i><span data-i18n="" class="">Dashboard</span></a>
                 </li>
-                <li class=" nav-item"><a href="{{ route('costumer.profile') }}"><i
+                <li class=" nav-item"><a href="{{ route('customer.profile') }}"><i
                             class="ft-user mr-2"></i><span data-i18n="" class="">
                             Profile</span></a>
                 </li>
-                <li class=" nav-item"><a href="{{ route('costumer.edit_profile') }}"><i
+                <li class=" nav-item"><a href="{{ route('customer.edit_profile') }}"><i
                             class="ft-edit mr-2"></i><span data-i18n="" class="">Edit
                             Profile</span></a>
                 </li>
-                <li class=" nav-item"><a href="{{ route('costumer.changepassword') }}">
+                <li class=" nav-item"><a href="{{ route('customer.changepassword') }}">
 
                         <i class="fa fa-key"></i><span data-i18n="" class="">Change
                             Password</span></a>
+                </li>
+                <li class=" nav-item"><a href="{{ route('customer.feedback') }}">
+
+                        <i class="fa fa-comments"></i><span data-i18n="" class="">Feedback</span></a>
                 </li>
                 <li class=" nav-item"><a href="{{ route('logout') }}"
                         onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i
@@ -70,7 +68,7 @@
                         </li>
                     </ul>
                 </li>
-            @elseif(Auth::user()->u_type==='SPV')
+            @elseif(Auth::user()->u_type === 'SPV')
                 <li class="login-form"><a href="#" title="Register">My Account(S Provider)</a>
                     <ul class="drop-down one-column hover-fade">
                         <li><a href="{{ route('sprovider.dashboard') }}">Dasboard</a></li>
@@ -80,9 +78,9 @@
                     </ul>
                 </li>
             @else
-                <li class="login-form"><a href="" title="Register">My Account( Costumer )</a>
+                <li class="login-form"><a href="" title="Register">My Account( customer )</a>
                     <ul class="drop-down one-column hover-fade">
-                        <li><a href="{{ route('costumer.dashboard') }}">Dasboard</a></li>
+                        <li><a href="{{ route('customer.dashboard') }}">Dasboard</a></li>
                         <li><a href="{{ route('logout') }}"
                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
                         </li>
@@ -111,10 +109,10 @@
                         class="icon-bar"></span><span class="icon-bar"></span></button><span
                     class="d-lg-none navbar-right navbar-collapse-toggle"><a aria-controls="navbarSupportedContent"
                         href="javascript:;" class="open-navbar-container black"><i class="ft-more-vertical"></i></a></span>
-                
+
             </div>
-           
-            
+
+
             <div class="navbar-container">
                 <div id="navbarSupportedContent" class="collapse navbar-collapse">
                     <ul class="navbar-nav">
@@ -131,7 +129,7 @@
                             </a>
                             <div ngbdropdownmenu="" aria-labelledby="dropdownBasic3"
                                 class="dropdown-menu text-left dropdown-menu-right"><a
-                                    href="{{ route('costumer.edit_profile') }}" class="dropdown-item py-1"><i
+                                    href="{{ route('customer.edit_profile') }}" class="dropdown-item py-1"><i
                                         class="ft-edit mr-2"></i><span>Edit
                                         Profile</span></a>
                                 <div class="dropdown-divider"></div><a href="{{ route('logout') }}"

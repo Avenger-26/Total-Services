@@ -16,19 +16,20 @@
                             <div class="card-content">
                                 <div class="px-3">
                                     @if (Session::has('message'))
-                                        <div class="alert alert-success alert-dismissible " role="alert">
-                                            <button type="button" class="close" data-dismiss="alert"
-                                                aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                            <a>{{ Session::get('message') }}</a>
-                                        </div>
+                                        <script>
+                                            Swal.fire({
+                                                icon: 'success',
+                                                title: "{!! Session::get('message') !!}",
+                                                text: 'Great Job!',
+
+                                            })
+                                        </script>
                                     @endif
                                     <form wire:submit.prevent="updateProfile" enctype="multipart/form-data">
                                         <div class="form-group">
                                             <label for="inputAddress">Name</label>
-                                            <input type="text" class="form-control border-primary" id="name" name="name" required
-                                                wire:model="name">
+                                            <input type="text" class="form-control border-primary" id="name" name="name"
+                                                required wire:model="name">
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
@@ -38,8 +39,8 @@
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="gender">Gender</label>
-                                                <select class="form-control border-primary" id="gender" name="gender" required
-                                                    wire:model="gender">
+                                                <select class="form-control border-primary" id="gender" name="gender"
+                                                    required wire:model="gender">
                                                     <option value="Male">Male</option>
                                                     <option value="Female">Female</option>
                                                     <option value="Others">Others</option>
@@ -112,9 +113,11 @@
 
                             </div>
 
-                            <button type="submit" class="btn btn-raised btn-primary mx-auto d-flex">
-                                Update Profile
-                            </button>
+                            <div class="mx-auto">
+                                <button type="submit" class="btn-hover color-hover">
+                                    Update Profile
+                                </button>
+                            </div>
 
                             </form>
                         </div>

@@ -13,9 +13,9 @@
                                         <div class=" ">
                                             <h4 class="font-weight-bolder text-info">All Service</h4>
                                         </div>
-                                        <div class="">
+                                        <div class="marge">
                                             <a href="{{ route('sprovider.add_service') }}"
-                                                class="btn-hover color-hover mx-3">
+                                                class="btn-hover color-hover">
                                                 <i class="fa fa-plus-circle "></i>Add New</a>
                                         </div>
                                     </div>
@@ -48,7 +48,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @if (!$services === null)
+                                                @if (!$services == null)
                                                     @foreach ($services as $service)
                                                         <tr>
                                                             <td><span
@@ -77,15 +77,14 @@
                                                             <td>
                                                                 <a title="Edit"
                                                                     href="{{ route('sprovider.edit_service', ['service_slug' => $service->slug]) }}"><i
-                                                                        class="ft-edit fa-1x mr-2   text-info"></i></a>
+                                                                        class="ft-edit fa-2x mr-2   text-info"></i></a>
                                                                 {{-- <a href="#" title="Delete"
                                                           onclick="confirm('Are you sure, you want to delete this service category!')||event.stopImmediatePropagation()"
                                                           wire:click.prevent="deleteService({{ $service->id }})"><i
                                                               class="ft-trash-2 fa-1x mr-2  text-danger"></i></a> --}}
-                                                                <button type="button" title="Delete"
-                                                                    class="btn btn-danger"
-                                                                    wire:click="deleteConfirm({{ $service->id }})"><i
-                                                                        class="ft-trash-2 fa-1x mr-2  text-danger"></i></button>
+                                                              <a type="button" title="Delete" class=""
+                                                              wire:click="deleteConfirm({{ $service->id }})"><i
+                                                                  class="ft-trash-2 fa-2x mr-2  text-danger"></i></a>
 
                                                             </td>
                                                         </tr>
@@ -102,11 +101,11 @@
 
                                         </tbody>
                                         </table>
+                                        {{ $services->links('pagination.custom') }}
                                         <div class="Export-btn">
                                             <a href="{{ route('sprovicer.export_all_services') }}"
-                                                class="btn btn-info pull-right mx-3">Export Data</a>
+                                                class="btn btn-success pull-left ml-2">Export Data</a>
                                         </div>
-                                        {{ $services->links() }}
 
 
                                     </div>

@@ -6,7 +6,7 @@
                 <h1>{{ $scategory->name }} Services</h1>
                 <div class="crumbs">
                     <ul>
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="/">Home</a></li>
                         <li>/</li>
                         <li>{{ $scategory->name }}</li>
                     </ul>
@@ -22,15 +22,16 @@
                 </div>
             </div>
         </div>
-        <div class="content_info" style="margin-top: -70px; background:white !important; padding-bottom:0px !important;">
-            <div>
-                <div class="container" >
-                    <div class="portfolioContainer" >
+        <div class="content_info "
+            style="margin-top: -70px; background:white !important; padding-bottom:0px !important;">
+            <div class="section ">
+                <div class="container">
+                    <div class="row">
                         <div class="col-md-12" style="padding-bottom:70px !important;">
                             <div class="row">
                                 <div class="products-tabs">
                                     <div id="tab1" class="tab-pane active">
-                                        <div class="products-slick" data-nav="#slick-nav-2">
+                                        <div class="products-slick" data-nav="#slick-nav-3">
                                             @if ($scategory->services->count() > 0)
                                                 @foreach ($scategory->services as $service)
                                                     <div class="product">
@@ -41,8 +42,10 @@
                                                                     alt="{{ $service->name }}">
                                                             </div>
                                                             <div class="product-body">
-                                                                <p class="product-category">{{ $service->category->name }}</p>
-                                                                <h3 class="product-name"><a href="#">{{ $service->name }}</a>
+                                                                <p class="product-category">
+                                                                    {{ $service->category->name }}</p>
+                                                                <h3 class="product-name"><a
+                                                                        href="#">{{ $service->name }}</a>
                                                                 </h3>
                                                                 <h4 class="product-price">₹{{ $service->price }}
                                                                     <div class="product-rating">
@@ -57,17 +60,18 @@
                                                                 <button class="add-to-cart-btn">
                                                                     <a
                                                                         href="{{ route('home.service_details', ['service_slug' => $service->slug]) }}"><i
-                                                                            class="fa fa-shopping-cart"></i> Book Now</a></button>
+                                                                            class="fa fa-shopping-cart"></i> Book
+                                                                        Now</a></button>
                                                             </div>
                                                         </a>
                                                     </div>
-            
+
                                                 @endforeach
                                             @else
                                                 <h2>Services will be available soon.</h2>
                                             @endif
                                         </div>
-                                        <div id="slick-nav-2" class="products-slick-nav"></div>
+                                        <div id="slick-nav-3" class="products-slick-nav-3"></div>
                                     </div>
                                 </div>
                             </div>
@@ -75,7 +79,6 @@
                     </div>
                 </div>
             </div>
-           
         </div>
     </section>
 </div>

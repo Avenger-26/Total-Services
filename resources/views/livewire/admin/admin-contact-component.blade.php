@@ -23,7 +23,7 @@
 
                                 <div class="card-content">
                                     <div class="">
-                                        <table class="table text-center table-striped table-hover shadow">
+                                        <table class="table text-center table-responsive table-striped table-hover shadow">
                                             <thead>
                                                 <tr>
                                                     <th>ID</th>
@@ -36,7 +36,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @if (!$contacts === null)
+                                                @if ($contacts != null)
 
                                                     @foreach ($contacts as $contact)
                                                         <tr>
@@ -61,11 +61,11 @@
                                                 @endif
                                             </tbody>
                                         </table>
+                                        {{ $contacts->links('pagination.custom') }}
                                         <div class="Export-btn">
                                             <a href="{{ route('admin.export_contacts') }}"
-                                                class="btn btn-info pull-right mx-3">Export Data</a>
+                                                class="btn btn-success pull-left ml-1">Export Data</a>
                                         </div>
-                                        {{ $contacts->links() }}
 
 
                                     </div>

@@ -42,6 +42,53 @@
                 vertical-align: top !important;
             }
 
+            body>div:nth-child(2)>div>div>div.app-sidebar>li>a {
+                display: none !important;
+            }
+
+            .page-item.active .page-link {
+                z-index: 3;
+                color: #fff !important;
+                background-color: #00ACD6 !important;
+                border-color: #00ACD6 !important;
+                border-radius: 50%;
+                padding: 6px 12px;
+                ;
+            }
+
+            .page-link {
+                z-index: 3;
+                color: #00ACD6 !important;
+                background-color: #fff;
+                border-color: #007bff;
+                border-radius: 50%;
+                padding: 6px 12px !important;
+            }
+
+            .page-item:first-child .page-link {
+                border-radius: 30% !important;
+                /* display :none !important */
+
+            }
+
+            .page-item:last-child .page-link {
+                border-radius: 30% !important;
+                /* display :none !important */
+            }
+
+            .pagination li {
+                padding: 3px;
+            }
+
+            .disabled .page-link {
+                color: #1597e5 !important;
+                opacity: 0.5 !important;
+            }
+
+            .justify-content-end {
+                justify-content: flex-start !important;
+            }
+
         </style>
         @livewireStyles
         <!-- END APEX CSS-->

@@ -6,11 +6,11 @@
             <div class="col-lg-3 col-md-6">
                 <h4 class="footer-title ff-secondary text-start footer-primary " style="margin-bottom: 1.5rem;">Home
                     Needs</h4>
-                <a class="btn btn-link" href="">Electrical</a>
-                <a class="btn btn-link" href="">Electrician</a>
-                <a class="btn btn-link" href="">Carpentry</a>
-                <a class="btn btn-link" href="">Plumbing</a>
-                <a class="btn btn-link" href="">Laundry</a>
+                <a class="btn btn-link" href="http://localhost:8000/Electronic/services">Electronic</a>
+                <a class="btn btn-link" href="http://localhost:8000/Electrician/services">Electrician</a>
+                <a class="btn btn-link" href="http://localhost:8000/Carpenter/services">Carpenter</a>
+                <a class="btn btn-link" href="http://localhost:8000/Plumber/services">Plumber</a>
+                <a class="btn btn-link" href="http://localhost:8000/Painter/services">Painter</a>
             </div>
             <div class="col-lg-3 col-md-6">
                 <h4 class="footer-title ff-secondary text-start footer-primary " style="margin-bottom: 1.5rem;">
@@ -24,11 +24,11 @@
             <div class="col-lg-3 col-md-6">
                 <h4 class="footer-title ff-secondary text-start footer-primary " style="margin-bottom: 1.5rem;">
                     Ac-Services</h4>
-                <a class="btn btn-link" href="">Iinstallation</a>
-                <a class="btn btn-link" href="">Uninstallation</a>
-                <a class="btn btn-link" href="">Gas Refill</a>
-                <a class="btn btn-link" href="">Wet Servicing</a>
-                <a class="btn btn-link" href="">Dry Service</a>
+                <a class="btn btn-link" href="http://localhost:8000/home-appliances/services">Iinstallation</a>
+                <a class="btn btn-link" href="http://localhost:8000/home-appliances/services">Uninstallation</a>
+                <a class="btn btn-link" href="http://localhost:8000/home-appliances/services">Gas Refill</a>
+                <a class="btn btn-link" href="http://localhost:8000/home-appliances/services">Wet Servicing</a>
+                <a class="btn btn-link" href="http://localhost:8000/home-appliances/services">Dry Service</a>
             </div>
             <div class="col-lg-3 col-md-6">
                 <h4 class="footer-title ff-secondary text-start footer-primary fw-normal">Contact</h4>
@@ -53,9 +53,8 @@
                 <div class="col-md-6 text-center text-md-end">
                     <div class="footer-menu">
                         <a href="/">Home</a>
-                        <a href="{{ route('home.about-us') }}">About Us</a>
                         <a href="{{ route('home.contact') }}">Contact Us</a>
-                        {{-- <a href="">FQAs</a> --}}
+                        <a href="">FQAs</a>
                     </div>
                 </div>
                 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0" style="color: #fff">
@@ -69,6 +68,8 @@
     </div>
 </div>
 <!-- Footer End -->
+<!-- loader -->
+
 </div>
 <script type="text/javascript" src="{{ url('assets/js/nav/jquery.sticky.js') }}"></script>
 <script type="text/javascript" src="{{ url('assets/js/totop/jquery.ui.totop.js') }}"></script>

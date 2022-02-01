@@ -15,7 +15,7 @@
                                         <div class=" ">
                                             <h4 class="font-weight-bolder text-info">All Service Categories</h4>
                                         </div>
-                                        <div class="">
+                                        <div class="marge">
                                             <a href="{{ route('admin.add_service_categories') }}"
                                                 class="btn-hover color-hover mx-3 my-3"> <i
                                                     class="fa fa-plus-circle"></i> Add New</a>
@@ -33,7 +33,7 @@
                                             });
                                         </script>
                                     @endif
-
+                                    
                                     <table class="table text-center table-striped table-hover shadow">
                                         <thead>
                                             <tr>
@@ -71,14 +71,6 @@
                                                         <a
                                                             href="{{ route('admin.edit_service_categories', ['category_id' => $scategory->id]) }}"><i
                                                                 class="fa fa-pencil-square-o text-info fa-2x   mr-2"></i></a>
-                                                        {{-- <a href="#"
-                                                            onclick="confirm('Are you sure, you want to delete this service category!')||event.stopImmediatePropagation()"
-                                                            wire:click.prevent="deleteServiceCategory({{ $scategory->id }})"><i
-                                                                class="fa fa-trash  text-danger  fa-2x   mr-2"></i></a> --}}
-
-                                                        <a
-                                                            href="{{ route('admin.edit_service_categories', ['category_id' => $scategory->id]) }}"><i
-                                                                class="fa fa-pencil-square-o text-info fa-2x   mr-2"></i></a>
                                                         <a type="button" title="Delete" class=""
                                                             wire:click="deleteConfirm({{ $scategory->id }})"><i
                                                                 class="ft-trash-2 fa-2x mr-2  text-danger"></i></a>
@@ -87,13 +79,12 @@
                                             @endforeach
                                         </tbody>
                                     </table>
+                                    {{ $scategories->links('pagination.custom') }}
                                     <div class="Export-btn">
                                         <a href="{{ route('admin.export_service_categories') }}"
-                                            class="btn btn-info pull-right mx-3">Export Data</a>
+                                            class="btn btn-success pull-left ml-2">Export Data</a>
                                     </div>
-                                    {{ $scategories->links() }}
                                 </div>
-                                </center>
 
 
                             </div>

@@ -32,10 +32,10 @@
                             class="ft-user mr-2"></i><span data-i18n="" class="menu-title">
                             Profile</span></a>
                 </li>
-                {{-- <li class=" nav-item"><a href="{{ route('sprovider.edit_profile') }}"><i
+                <li class=" nav-item"><a href="{{ route('sprovider.edit_profile') }}"><i
                             class="ft-edit mr-2"></i><span data-i18n="" class="menu-title">Edit
                             Profile</span></a>
-                </li> --}}
+                </li>
                 <li class=" nav-item"><a href="{{ route('sprovider.all_services') }}"><i
                             class="
                     ft-grid mr-2"></i><span data-i18n="" class="menu-title">All

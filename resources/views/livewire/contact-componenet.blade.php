@@ -49,7 +49,13 @@
                             <p class="lead">
                             </p>
                             @if (Session::has('message'))
-                                <div class="aleat alert-success" role="alert">{{ Session::get('message') }}</div>
+                                <script>
+                                    Swal.fire({
+                                        icon: 'success',
+                                        title: "{!! Session::get('message') !!}",
+                                        text: 'Great Job!',
+                                    });
+                                </script>
                             @endif
                             <form id="contactform" class="form-theme " method="post"
                                 wire:submit.prevent="sendMessage">

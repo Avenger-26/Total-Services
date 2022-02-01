@@ -39,7 +39,7 @@
             <div class="content-wrapper">
                 <!--Statistics cards Starts-->
                 <div class="row">
-                    <div class="col-xl-3 col-lg-3 col-md-3 col-11 mx-auto">
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-12 mx-auto">
                         <div class="card gradient-blackberry dynamic-cards shadow">
                             <div class="card-content">
                                 <div class="card-body pt-2 pb-0">
@@ -60,7 +60,7 @@
                         </div>
                     </div>
 
-                    <div class="col-xl-3 col-lg-6 col-md-6 col-11 mx-auto">
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-12 ">
                         <div class="card gradient-ibiza-sunset dynamic-cards shadow"
                             wire:click="location.href='/admin/service-provider'">
                             <div class="card-content">
@@ -81,12 +81,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-lg-6 col-md-6 col-11 mx-auto">
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-12 mx-auto">
                         <div class="card gradient-green-tea shadow dynamic-cards">
                             <div class="card-content">
                                 <div class="card-body pt-2 pb-0">
                                     <div class="media">
-
                                         <div class="media-body white text-left">
                                             <h3 class="font-large-1 mb-0">{{ $totalServiceCategories }}</h3>
                                             <span class="font-small-3">Total Service Categories</span>
@@ -200,10 +199,9 @@
                                             <tr>
                                                 <td>
                                                     @if ($user->image)
-                                                        <img src="{{ asset('images/sproviders') }}/{{ $user->image }}"
-                                                            width="40" height="40" alt="{{ $user->name }}"
+                                                        <img src="{{ asset('images/customer') }}/{{ $user->image }}"
+                                                            alt="" width="100" height="100"
                                                             class="rounded-circle img-border gradient-summer">
-
                                                     @else
                                                         <img src="{{ asset('images/sproviders/default.png') }}" alt=""
                                                             class="rounded-circle img-border gradient-summer width-100">
@@ -213,21 +211,12 @@
                                                 <td>{{ $user->phone }}</td>
 
                                                 <td>{{ $user->address }}</td>
-                                                {{-- <td>
-
-
-                                                                <a href="#"
-                                                                    onclick="confirm('Are you sure, you want to delete this User!')||event.stopImmediatePropagation()"
-                                                                    wire:click.prevent="deleteUser({{ $user->id  }})"
-                                                                    style="margin-left:10px"><i
-                                                                        class="fa fa-trash  text-danger mt-3 font-medium-5 mr-2"></i></a>
-                                                            </td> --}}
                                             </tr>
                                         @endforeach
                                         @endif
                                     </tbody>
                                 </table>
-                                {{-- {{ $sprovider->links() }} --}}
+                                {{ $users->links('pagination.custom') }}
                             </div>
                         </div>
                     </div>
@@ -241,7 +230,7 @@
                                 <div class=" ">
                                     <h4 class="font-weight-bolder text-info">All Service Providers</h4>
                                 </div>
-                                <div class="">
+                                <div class="marge">
                                     <a href="{{ route('admin.add_service_provider') }}"
                                         class="btn-hover color-hover  mx-3"><i class="fa fa-plus-circle"></i> Add
                                         New</a>
@@ -251,15 +240,10 @@
 
                         <div class="card-content ">
                             <div class="">
-
-                                @if (Session::has('message'))
-                                    <div class="alert alert-success" role="alert">
-                                        {{ Session::get('message') }}
-                                    </div>
-                                @endif
-                                <table class="table text-center table-striped table-hover  shadow px-3">
+                                <table
+                                    class="table text-center table-striped table-hover table-responsive  shadow px-3">
                                     <thead>
-                                        <tr class="">
+                                        <tr>
                                             <th>ID</th>
                                             <th>Image</th>
                                             <th>Name</th>
@@ -273,11 +257,20 @@
                                         @foreach ($sproviders as $sprovider)
                                             <tr>
                                                 <td><span
-                                                        class="badge badge-success mt-3">#SP0{{ $sprovider->id }}</span>
+                                                        class="badge badge-success my-3">#SP0{{ $sprovider->id }}</span>
                                                 </td>
-                                                <td><img class="rounded-circle img-border gradient-summer  "
-                                                        src="{{ asset('images/sproviders') }}/{{ $sprovider->image }}"
-                                                        width="80" height="80" alt=""></td>
+                                                <td>
+                                                    @if ($sprovider->image)
+                                                        <img src="{{ asset('images/sproviders') }}/{{ $sprovider->image }}"
+                                                            width="80" height="80" alt=""
+                                                            class="rounded-circle img-border gradient-summer">
+
+                                                    @else
+                                                        <img src="{{ asset('images/sproviders/default.jpg') }}"
+                                                            alt="" class="rounded-circle img-border gradient-summer "
+                                                            width="80" height="80">
+                                                    @endif
+                                                </td>
                                                 <td>{{ $sprovider->name }}</td>
                                                 <td>
                                                     @if ($sprovider->service_category_id)
@@ -294,13 +287,13 @@
                                                         onclick="confirm('Are you sure, you want to delete this service Provider!')||event.stopImmediatePropagation()"
                                                         wire:click.prevent="deleteServiceProvider({{ $sprovider->id }})"
                                                         style="margin-left:10px"><i
-                                                            class="fa fa-trash fa fa-trash  text-danger  fa-2x   mr-2"></i></a>
+                                                            class="fa fa-trash fa fa-trash  text-danger  fa-2x   mr-2 my-3"></i></a>
                                                 </td>
                                             </tr>
                                         @endforeach
                                     </tbody>
                                 </table>
-                                {{-- {{ $sprovider->links() }} --}}
+                                {{ $sproviders->links('pagination.custom') }}
 
 
                             </div>

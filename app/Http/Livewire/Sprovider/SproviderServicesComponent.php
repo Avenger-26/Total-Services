@@ -13,7 +13,7 @@ class SproviderServicesComponent extends Component
     protected $listeners = ['delete'];
     public function render()
     {
-        $services = Service::where('sprovider_id', Auth::user()->id)->paginate(10);
+        $services = Service::where('sprovider_id', Auth::user()->id)->paginate(5);
         return view('livewire.sprovider.sprovider-services-component', ['services' => $services])->layout('frontend.layouts.guest')->with('no', 1);
     }
 

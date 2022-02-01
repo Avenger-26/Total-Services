@@ -52524,19 +52524,7 @@ bootstrap table theme
   font-size : 1.1rem;
   line-height : 2rem;
 }
-.dropzone .dz-preview .dz-remove:before {
-  content : '\e9e6';
-  font-family : 'feather';
-  display : inline-block;
-  line-height : 1;
-  z-index : 2;
-  text-indent : 0;
-  font-weight : normal;
-  -webkit-font-smoothing : antialiased;
-}
-.dropzone .dz-preview .dz-remove:hover {
-  text-decoration : none;
-}
+
 
 .form-group.issue .help-block, .form-group.issue .help-inline {
   color : #FF8D60;

@@ -22,7 +22,7 @@ class CustomerDashboardComponent extends Component
     public function render()
     {
         
-        $paytms = Paytm::all();
+        $paytms = Paytm::paginate(5);
         $totalServices = Paytm::where('user_id',Auth::user()->id)->count();
         $totalCost = Paytm::where('user_id',Auth::user()->id)->sum('price');
         return view('livewire.customer.customer-dashboard-component',['paytms'=>$paytms,'totalServices'=>$totalServices,'totalCost'=>$totalCost])->layout('FrontEnd.layouts.guest');

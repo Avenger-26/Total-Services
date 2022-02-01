@@ -1,5 +1,6 @@
 <div>
-    <div class="section-title-02-2 honmob shadow-lg">
+
+    <div class="section-title-01 honmob shadow-lg">
         <div class="bg_parallax image_02_parallax "></div>
         <div class="opacy_bg_02 ">
             <div class="container">
@@ -41,7 +42,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-12">
-                                        <div id="single-carousel" >
+                                        <div id="" class="custome-owl">
                                             <div class="img-hover bg">
                                                 <img src="{{ asset('images/services') }}/{{ $service->image }}"
                                                     alt="{{ $service->name }}" class="img-responsive">
@@ -74,7 +75,7 @@
                         <div class="col-md-4">
                             <aside class="widget" style="margin-top: 18px;">
                                 <div class="panel text-primary  shadow-small border-none">
-                                    <div class="panel-heading bg-primary" >Service Provider Details</div>
+                                    <div class="panel-heading bg-primary">Service Provider Details</div>
                                     <div class="panel-body">
                                         <table class="table">
                                             <tr>
@@ -82,12 +83,14 @@
                                                     @if ($sprovider->image)
                                                         <img src="{{ asset('images/sproviders') }}/{{ $sprovider->image }}"
                                                             width="100" height="100" alt=""
-                                                        class="rounded-circle img-border gradient-summer shadow-small" style="border-radius:50px;border:5px solid #1597e5;">
+                                                            class="rounded-circle img-border gradient-summer shadow-small"
+                                                            style="border-radius:50px;border:5px solid #1597e5;">
 
                                                     @else
-                                                        <img src="{{ asset('images/sproviders/default.png') }}"
+                                                        <img src="{{ asset('images/sproviders/default.jpg') }}"
                                                             alt="" width="100" height="100"
-                                                            class="rounded-circle img-border gradient-summer">
+                                                            class="rounded-circle img-border gradient-summer shadow-small"
+                                                            style="border-radius:50px;border:5px solid #1597e5;">
                                                     @endif
                                                 </td>
 
@@ -106,15 +109,15 @@
 
                                     <div class="panel-footer">
                                         <form>
-                                            {{-- <button type="submit" name="submit" class="btn btn-primary"><a href="#"
-                                                    style="color: white; text-decoration:none">Contact Now</a>
-                                                </button> --}}
-                                            <button type="submit" name="submit" class="btn-hover color-hover mx-auto shadow-small border-none"><a
-                                                    href="tel:{{ $sprovider->phone }}"
-                                                    onclick="ga('send', 'event', { eventCategory: 'Contact', eventAction: 'Call', eventLabel: 'Mobile Button'});"
-                                                    style="color: white; text-decoration:none"> <i class="fa fa-phone"></i> Call Now</a>
-                                                   </button>
-
+                                            <center>
+                                                <button type="submit" name="submit"
+                                                    class="btn-hover color-hover mx-auto shadow-small border-none"><a
+                                                        href="tel:{{ $sprovider->phone }}"
+                                                        onclick="ga('send', 'event', { eventCategory: 'Contact', eventAction: 'Call', eventLabel: 'Mobile Button'});"
+                                                        style="color: white; text-decoration:none; "> <i
+                                                            class="fa fa-phone"></i> Call Now</a>
+                                                </button>
+                                            </center>
                                         </form>
                                     </div>
                                 </div>
@@ -127,22 +130,24 @@
                                         <table class="table">
                                             <tr>
                                                 <td style="border-top: none;">Price</td>
-                                                <td style="border-top: none;"><span >&#8377;</span>
-                                                    <span class="label label-success">{{ $service->price }}</span></td>
+                                                <td style="border-top: none;"><span>&#8377;</span>
+                                                    <span class="label label-success">{{ $service->price }}</span>
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <td style="border-top: none;">Discount</td>
                                                 <td style="border-top: none;"><span>&#8377;</span>
-                                                    @if ($service->discount===null)
-                                                       <span class="label label-danger">---------</span>
+                                                    @if ($service->discount === null)
+                                                        <span class="label label-danger">---------</span>
                                                     @else
                                                         {{ $service->discount }} %
-                                                    @endif</td>
+                                                    @endif
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <h4 class="post-title"><a href="" title="Post Format: Standard"
-                                                    rel="bookmark">{{ $service->name }}:{{ $service->category->name }}</a>
-                                            </h4>
+                                                        rel="bookmark">{{ $service->name }}:{{ $service->category->name }}</a>
+                                                </h4>
                                             </tr>
                                             @php
                                                 $total = $service->price;
@@ -167,7 +172,8 @@
 
                                             <tr>
                                                 <td><strong>Total</strong></td>
-                                                <td><span> &#8377; </span> <span class="label label-warning">{{$total}}</span></td>
+                                                <td><span> &#8377; </span> <span
+                                                        class="label label-warning">{{ $total }}</span></td>
                                             </tr>
 
                                         </table>
@@ -175,45 +181,22 @@
                                     @if ($service->price != '150')
                                         <div class="panel-footer">
                                             <form>
-                                                <button type="button" name="submit" class="btn-hover color-hover mx-auto shadow-small border-none"><a
-                                                        href="{{ route('payment') }}"
-                                                        style="color: white; text-decoration:none">Book Now</a></button>
+                                                <center>
+                                                    <button type="button" name="submit"
+                                                        class="btn-hover color-hover mx-auto shadow-small border-none"><a
+                                                            href="{{ route('payment') }}"
+                                                            style="color: white; text-decoration:none">Book Now</a>
+                                                    </button>
+                                                </center>
                                             </form>
                                         </div>
                                     @endif
 
-                                    
+
                                 </div>
                             </aside>
 
-                            {{-- <aside>
-                                @if ($r_service)
-                                    <h3>Related Service</h3>
-                                    <div class="col-md-12 col-sm-6 col-xs-12 bg-dark color-white padding-top-mini"
-                                        style="max-width: 360px">
-                                        <a
-                                            href="{{ route('home.service_details', ['service_slug' => $r_service->slug]) }}">
-                                            <div class="img-hover">
-                                                <img src="{{ asset('images/services/thumbnails') }}/{{ $r_service->thumbnail }}"
-                                                    alt="{{ $r_service->name }}" class="img-responsive">
-                                            </div>
-                                            <div class="info-gallery">
-                                                <h3>
-                                                    {{ $r_service->name }}
-                                                </h3>
-                                                <hr class="separator">
-                                                <p>{{ $r_service->name }}</p>
-                                                <div class="content-btn"><a
-                                                        href="{{ route('home.service_details', ['service_slug' => $r_service->slug]) }}"
-                                                        class="btn btn-warning">View Details</a></div>
-                                                <div class="price">
-                                                    <span>&#8377;</span><b>From</b>{{ $r_service->price }}
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                @endif
-                            </aside> --}}
+
                         </div>
                     </div>
                 </div>

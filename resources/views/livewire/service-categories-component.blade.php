@@ -17,10 +17,8 @@
     <section class="content-central">
         <div class="container">
             <div class="row" style="margin-top: -30px;">
-                <div class="titles">
-                    <h2>Service <span>Categories</span></h2>
-                    <i class="fa fa-gear"></i>
-
+                <div class="titles" style="padding-bottom:10px;">
+                    <h2 class="head-title hh-secondary head-primary">Service Categories</h2>
                 </div>
             </div>
         </div>
@@ -42,14 +40,6 @@
                         @endforeach
 
                     </ul>
-                </div>
-            </div>
-        </div>
-        <div class="content_info content_resalt">
-            <div class="container">
-                <div class="row">
-                    <div class="titles">
-                    </div>
                 </div>
             </div>
         </div>

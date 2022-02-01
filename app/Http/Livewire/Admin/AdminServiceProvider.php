@@ -36,7 +36,7 @@ class AdminServiceProvider extends Component
     }
     public function render()
     {
-        $sproviders = User::where('u_type', 'SPV')->paginate(10);
+        $sproviders = User::where('u_type', 'SPV')->paginate(5);
         return view('livewire.admin.admin-service-provider', ['sproviders' => $sproviders])->layout('FrontEnd.layouts.guest');
     }
 }

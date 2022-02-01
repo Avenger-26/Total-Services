@@ -9,7 +9,7 @@
                 <section id="extended">
                     <div class="row justify-content-md-center">
                         <div class="col-md-12">
-                            <div class="card">
+                            <div class="card shadow"  style="overflow-x: auto">
                                 <div class="card-header py-3 ">
                                     <div class="d-flex align-items-center justify-content-between ">
                                         <div class=" ">

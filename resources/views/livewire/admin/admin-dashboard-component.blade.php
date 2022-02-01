@@ -1,4 +1,5 @@
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
 <script type="text/javascript">
     google.charts.load('current', {
         'packages': ['corechart']
@@ -14,7 +15,7 @@
 
         var options = {
 
-            // is3D: true,
+            is3D: true,
             pieHole: 0.4,
 
 
@@ -27,6 +28,8 @@
         chart.draw(data, options);
     }
 </script>
+
+
 
 
 
@@ -104,7 +107,7 @@
                         </div>
 
                     </div>
-                    <div class="col-xl-3 col-lg-6 col-md-6 col-12">
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-11 mx-auto">
                         <div class="card gradient-pomegranate shadow dynamic-cards">
                             <div class="card-content">
                                 <div class="card-body pt-2 pb-0">
@@ -133,36 +136,52 @@
                 {{-- Line with Area Chart 1 Starts--> --}}
                 <div class="row">
                     <div class="col-md-6 col-sm-11 h-100">
-                        <div class="card ">
+                        <div class="card shadow w-100">
                             <div class="card-header">
                                 <h4 class="card-title text-center text-info">Total Users and Service Providers </h4>
                             </div>
                             <div class="card-content">
                                 <div class="card-body">
 
-                                    {{-- <div id="line-area" class="height-350 lineArea">
-                                    </div> --}}
-                                    {{-- <div id="piechart_3d" style="background:transparent"></div> --}}
-                                    {{-- <div class="ct-chart ct-golden-section" id="chart1"></div> --}}
-                                    <div id="piechart" style="width: 100%; height: 400px; "></div>
+                                    <div id="piechart" style=" height: 400px; "></div>
 
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-11 h-100">
+                        <div class="card shadow">
+                            <div class="card-header">
+                                <h4 class="card-title text-center text-info">Total Users and Service Providers </h4>
+                            </div>
+                            <div class="card-content">
+                                <div class="card-body">
+                                    <div id="container"></div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="row ">
+                    <div class="col-md-12 col-sm-12">
                         <div class="card shadow">
                             <div class="card-header py-3">
-                                <div class="row">
-                                    <div class="col-md-6 ">
-                                        <h4 class="text-info font-weight-bold ">All User List</h4>
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class=" ">
+                                        <h4 class="font-weight-bolder text-info">All Users List</h4>
                                     </div>
 
                                 </div>
                             </div>
+                        </div>
 
-                            <div class="card-content">
-                                <div class="table-responsive">
+                        <div class="card-content ">
+                            <div class="">
+
 
                                     @if (Session::has('message'))
                                         <script>
@@ -175,10 +194,9 @@
 
                                 </div>
                                 @endif
-                                <table class="table text-center table-responsive table-striped table-hover shadow ">
+                                <table class="table text-center table-striped table-hover shadow">
                                     <thead>
                                         <tr>
-
 
                                             <th>Name</th>
                                             <th>Email</th>
@@ -213,21 +231,77 @@
                                                 <td>{{ $user->phone }}</td>
 
                                                 <td>{{ $user->address }}</td>
-                                                {{-- <td>
 
-
-                                                                <a href="#"
-                                                                    onclick="confirm('Are you sure, you want to delete this User!')||event.stopImmediatePropagation()"
-                                                                    wire:click.prevent="deleteUser({{ $user->id  }})"
-                                                                    style="margin-left:10px"><i
-                                                                        class="fa fa-trash  text-danger mt-3 font-medium-5 mr-2"></i></a>
-                                                            </td> --}}
                                             </tr>
                                         @endforeach
                                         @endif
                                     </tbody>
                                 </table>
+                                <div class="Export-btn">
+                                    <a href="{{ route('admin.export_customer') }}"
+                                        class="btn btn-success pull-right mx-3">Export Data</a>
+                                </div>
                                 {{-- {{ $sprovider->links() }} --}}
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12  col-sm-12 ">
+                    <div class="card shadow-lg">
+                        <div class="card-header py-3">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class=" ">
+                                    <h4 class="font-weight-bolder text-info">All User Queries</h4>
+                                </div>
+                                <div class="">
+
+                            </div>
+                        </div>
+
+                        <div class="card-content">
+                            <div class="">
+                                <table class="table text-center table-striped table-hover shadow">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Phone</th>
+                                            <th>Message</th>
+                                            <th>Received</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        @foreach ($contacts as $contact)
+                                            <tr>
+                                                <td><span class="badge badge-success ">#QU0{{ $contact->id }}</span>
+                                                </td>
+                                                <td>{{ $contact->name }}</td>
+                                                <td>{{ $contact->email }}</td>
+                                                <td>{{ $contact->phone }}</td>
+                                                <td>{{ $contact->message }}</td>
+                                                <td>{{ $contact->created_at }}</td>
+                                                <td> <a type="button" title="Delete" class=""
+                                                        wire:click="deleteConfirm({{ $contact->id }})"><i
+                                                            class="ft-trash-2 fa-2x mr-2  text-danger"></i></a>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+
+
+                                    </tbody>
+                                </table>
+                                <div class="Export-btn">
+                                    <a href="{{ route('admin.export_contacts') }}"
+                                        class="btn btn-success pull-right mx-3">Export Data</a>
+                                </div>
+                                {{ $contacts->links() }}
+
+
                             </div>
                         </div>
                     </div>
@@ -235,7 +309,7 @@
             </div>
             <div class="row ">
                 <div class="col-md-12 col-sm-12">
-                    <div class="card shadow">
+                    <div class="card shadow" style="overflow-x:auto;">
                         <div class="card-header py-3">
                             <div class="d-flex align-items-center justify-content-between">
                                 <div class=" ">
@@ -300,7 +374,11 @@
                                         @endforeach
                                     </tbody>
                                 </table>
-                                {{-- {{ $sprovider->links() }} --}}
+                                <div class="Export-btn">
+                                    <a href="{{ route('admin.export_service_provider') }}"
+                                        class="btn btn-success pull-right mx-3">Export Data</a>
+                                </div>
+
 
 
                             </div>
@@ -317,3 +395,52 @@
 
 
 </div>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script type="text/javascript">
+    var users = <?php echo json_encode($new_users); ?>;
+
+    Highcharts.chart('container', {
+        title: {
+            text: 'New Users Growth - 2022'
+        },
+        subtitle: {
+            text: ' TotalService.in'
+        },
+        xAxis: {
+            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+        },
+        yAxis: {
+            title: {
+                text: 'Number of Users'
+            }
+        },
+        legend: {
+            layout: 'horizontal',
+            align: 'center',
+            verticalAlign: 'bottom'
+        },
+        plotOptions: {
+            series: {
+                allowPointSelect: true
+            }
+        },
+        series: [{
+            name: 'New Users',
+            data: users
+        }],
+        responsive: {
+            rules: [{
+                condition: {
+                    maxWidth: 300
+                },
+                chartOptions: {
+                    legend: {
+                        layout: 'horizontal',
+                        align: 'center',
+                        verticalAlign: 'bottom'
+                    }
+                }
+            }]
+        }
+    });
+</script>

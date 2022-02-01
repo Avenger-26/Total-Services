@@ -3,12 +3,12 @@
         <div class="bg_parallax image_02_parallax"></div>
         <div class="opacy_bg_02">
             <div class="container">
-                <h1>{{ $scategory->name }} Services</h1>
-                <div class="crumbs">
-                    <ul>
+                <h1 class="animate__animated animate__slideInLeft">{{ $scategory->name }} Services</h1>
+                <div class="crumbs animate__animate animate__slideInLeft">
+                    <ul class="animate__animate animate__slideInLeft">
                         <li><a href="index.html">Home</a></li>
-                        <li>/</li>
-                        <li>{{ $scategory->name }}</li>
+                        <li class="animate__animated animate__slideInLeft">/</li>
+                        <li class="animate__animated animate__slideInLeft">{{ $scategory->name }}</li>
                     </ul>
                 </div>
             </div>
@@ -22,10 +22,11 @@
                 </div>
             </div>
         </div>
-        <div class="content_info" style="margin-top: -70px; background:white !important; padding-bottom:0px !important;">
+        <div class="content_info"
+            style="margin-top: -70px; background:white !important; padding-bottom:0px !important;">
             <div>
-                <div class="container" >
-                    <div class="portfolioContainer" >
+                <div class="container">
+                    <div class="portfolioContainer">
                         <div class="col-md-12" style="padding-bottom:70px !important;">
                             <div class="row">
                                 <div class="products-tabs">
@@ -33,7 +34,7 @@
                                         <div class="products-slick" data-nav="#slick-nav-2">
                                             @if ($scategory->services->count() > 0)
                                                 @foreach ($scategory->services as $service)
-                                                    <div class="product">
+                                                    <div class="product" data-aos="fade-right">
                                                         <a
                                                             href="{{ route('home.service_details', ['service_slug' => $service->slug]) }}">
                                                             <div class="product-img tb">
@@ -41,8 +42,10 @@
                                                                     alt="{{ $service->name }}">
                                                             </div>
                                                             <div class="product-body">
-                                                                <p class="product-category">{{ $service->category->name }}</p>
-                                                                <h3 class="product-name"><a href="#">{{ $service->name }}</a>
+                                                                <p class="product-category">
+                                                                    {{ $service->category->name }}</p>
+                                                                <h3 class="product-name"><a
+                                                                        href="#">{{ $service->name }}</a>
                                                                 </h3>
                                                                 <h4 class="product-price">₹{{ $service->price }}
                                                                     <div class="product-rating">
@@ -57,11 +60,12 @@
                                                                 <button class="add-to-cart-btn">
                                                                     <a
                                                                         href="{{ route('home.service_details', ['service_slug' => $service->slug]) }}"><i
-                                                                            class="fa fa-shopping-cart"></i> Book Now</a></button>
+                                                                            class="fa fa-shopping-cart"></i> Book
+                                                                        Now</a></button>
                                                             </div>
                                                         </a>
                                                     </div>
-            
+
                                                 @endforeach
                                             @else
                                                 <h2>Services will be available soon.</h2>
@@ -75,7 +79,7 @@
                     </div>
                 </div>
             </div>
-           
+
         </div>
     </section>
 </div>

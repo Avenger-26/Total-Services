@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     <meta charset="utf-8">
@@ -10,7 +10,10 @@
     <meta name="author" content="">
     <meta name="viewport" content="width-device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="assets/img/favicon.png">
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link href="{{ url('assets/css/style.css') }}" rel="stylesheet" media="screen">
     <link href="{{ url('assets/css/chblue.css') }}" rel="stylesheet" media="screen">
 
@@ -21,9 +24,7 @@
 
     <link href="{{ url('assets/css/theme-responsive.css') }}" rel="stylesheet" media="screen">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    {{-- <link href="{{ url('assets/css/dtb/jquery.dataTables.min.css') }}" rel="stylesheet" media="screen">
-    <link href="{{ url('assets/css/select2.min.css') }}" rel="stylesheet" media="screen">
-    <link href="{{ url('assets/css/toastr.min.css') }}" rel="stylesheet" media="screen"> --}}
+
     <link href="{{ url('assets/css/custom_css.css') }}" rel="stylesheet" media="screen">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
@@ -38,35 +39,37 @@
     {{-- <script type="text/javascript" src="{{ url('assets/js/toastr.min.js') }}"></script>
     <script type="text/javascript" src="{{ url('assets/js/modernizr.js') }}"></script> --}}
 
-    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
-    <df-messenger intent="WELCOME" chat-title="TS~Bot🤖" agent-id="b2e19dfa-a91a-41a6-b95c-df77b673663c"
-        language-code="en" chat-icon="{{ asset('images\chatbot.gif') }}"></df-messenger>
+    {{-- <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script> --}}
+    {{-- <df-messenger intent="WELCOME" chat-title="TS~Bot🤖" agent-id="b2e19dfa-a91a-41a6-b95c-df77b673663c"
+        language-code="en" chat-icon="{{ asset('images\chatbot.gif') }}"></df-messenger> --}}
 </head>
 
 <body>
-        <div class="info-head">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <ul class="visible-md visible-lg text-left">
-                            <li><a href="tel:+911234567890"><i class="fa fa-phone"></i> +91-1234567890</a></li>
-                            <li><a href="mailto:contact@surfsidemedia.in"><i class="fa fa-envelope"></i>
-                                    contact@totalservices.in</a></li>
-                        </ul>
-                        <ul class="visible-xs visible-sm">
-                            <li class="text-left"><a href="tel:+911234567890"><i class="fa fa-phone"></i>
-                                    +91-1234567890</a></li>
-                            <li class="text-right"><a href="index.php/changelocation.html"><i
-                                        class="fa fa-map-marker"></i> Uttar Pradesh, Lucknow</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6">
-                        <ul class="visible-md visible-lg text-right">
-                            <li><i class="fa fa-comment"></i> Live Chat</li>
-                            <li><a href="index.php/changelocation.html"><i class="fa fa-map-marker"></i> Uttar Pradesh,
-                                    Lucknow</a></li>
-                        </ul>
-                    </div>
+    <div class="info-head">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <ul class="visible-md visible-lg text-left">
+                        <li class="animate__animated animate__heartBeat animate__infinite"><a href="tel:+917071967998">
+                                <i class="fa fa-phone"></i> Call Us: 7071967998 </a></li>
+                        <li><a href="mailto:contact@surfsidemedia.in"><i class="fa fa-envelope"></i>
+                                contact@totalservices.in</a></li>
+                    </ul>
+                    <ul class="visible-xs visible-sm">
+                        <li class="text-left"><a href="tel:+911234567890"><i class="fa fa-phone"></i>
+                                +91-1234567890</a></li>
+                        <li class="text-right"><a href="index.php/changelocation.html"><i
+                                    class="fa fa-map-marker"></i> Uttar Pradesh, Lucknow</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <ul class="visible-md visible-lg text-right">
+                        <li class="animate__animated animate__pulse animate__infinite"><i class="fa fa-comment"></i>
+                            Live Chat</li>
+
+                        <li><a href="index.php/changelocation.html"><i class="fa fa-map-marker"></i> Uttar Pradesh,
+                                Lucknow</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -366,24 +369,57 @@
                                 @csrf
                             </form>
                         @else
-                            <li class="login-form"> <a href="{{ route('register') }}" title="Register">Register</a>
+                            <li class=""> <i class="fa fa-user-circle" aria-hidden="true">
+                                    <strong> {{ Auth::user()->name }} (Customer) </strong></i>
+                                <ul class="drop-down one-column hover-fade">
+                                    <li><a href="{{ route('customer.dashboard') }}">Dashboard</a></li>
+                                    <li><a href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                                                                                                                                                                                document.getElementById('logout-form').submit();">Logout</a>
+                                    </li>
+                                </ul>
                             </li>
                             <li class="login-form "> <a href="{{ route('login') }}" class=""
                                     title="Login">Login</a></li>
                         @endif
                         @endif
+                        <form action="{{ route('logout') }}" method="POST" id="logout-form" style="display: none">
+                            @csrf
+                        </form>
+                    @else
+                        <li class="login-form"> <a href="{{ route('register') }}" title="Register">Register</a>
+                        </li>
+                        <li class="login-form "> <a href="{{ route('login') }}" class=""
+                                title="Login">Login</a></li>
+                    @endif
+                    @endif
                     <li class="search-bar">
                     </li>
-                    </ul>
-                </nav>
-            </header>
-            {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> --}}
-            {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
-            <script>
-                $('.gallery-card').tilt({
-                    glare: true,
-                    maxGlare: .3,
-                    maxTilt: 7,
-                    speed: 520,
-                })
-            </script> --}}
+                </ul>
+            </nav>
+        </header>
+        <!--
+                                                                                                                                                                                         Start Preloader
+                                                                                                                                                                                         ==================================== -->
+        <div class="preloader">
+            <div class="sk-cube-grid">
+            </div>
+            <img src="https://icon-library.com/images/waiting-icon-gif/waiting-icon-gif-29.jpg" alt=""
+                style="width:100px;height:100px;filter:drop-shadow(0 0 2px black) ">
+            <br>
+            <h5> Please wait Loading...</h5>
+
+        </div>
+        <!-- End Preloader
+                                                                                                                                                                                                ==================================== -->
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+
+        <script>
+            AOS.init({
+                offset: 200,
+                duration: 600,
+                easing: 'ease-in-sine',
+                delay: 100,
+            });
+        </script>

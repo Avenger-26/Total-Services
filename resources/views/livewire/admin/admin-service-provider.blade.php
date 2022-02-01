@@ -7,8 +7,8 @@
             <div class="content-wrapper">
                 <section id="extended">
                     <div class="row justify-content-md-center">
-                        <div class="col-md-11">
-                            <div class="card shadow">
+                        <div class="col-md-11 col-sm-11 mx-auto ">
+                            <div class="card shadow" style="overflow-x: auto">
                                 <div class="card-header py-3">
                                     <div class="d-flex align-items-center justify-content-between">
                                         <div class=" ">
@@ -47,51 +47,51 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @if ($sproviders === null)
+                                                {{-- @if ($sproviders === null)
                                                     <td colspan="7" class="text-center">
                                                         <h4 class="text-danger font-weight-bolder">No Service Provider
                                                             Found</h4>
                                                     </td>
-                                                @else
-                                                    @foreach ($sproviders as $sprovider)
-                                                        <tr>
-                                                            <td><span
-                                                                    class="badge badge-success mt-3">#SP0{{ $sprovider->id }}</span>
-                                                            </td>
-                                                            <td><img class="rounded-circle img-border gradient-summer  "
-                                                                    src="{{ asset('images/sproviders') }}/{{ $sprovider->image }}"
-                                                                    width="80" height="80" alt=""></td>
-                                                            <td>{{ $sprovider->name }}</td>
-                                                            <td>
-                                                                @if ($sprovider->service_category_id)
-                                                                    {{ $sprovider->category->name }}
-                                                                @endif
+                                                @else --}}
+                                                @foreach ($sproviders as $sprovider)
+                                                    <tr>
+                                                        <td><span
+                                                                class="badge badge-success mt-3">#SP0{{ $sprovider->id }}</span>
+                                                        </td>
+                                                        <td><img class="rounded-circle img-border gradient-summer  "
+                                                                src="{{ asset('images/sproviders') }}/{{ $sprovider->image }}"
+                                                                width="80" height="80" alt=""></td>
+                                                        <td>{{ $sprovider->name }}</td>
+                                                        <td>
+                                                            @if ($sprovider->service_category_id)
+                                                                {{ $sprovider->category->name }}
+                                                            @endif
 
-                                                            </td>
-                                                            <td>{{ $sprovider->phone }}</td>
-                                                            <td>{{ $sprovider->address }}</td>
-                                                            <td>
+                                                        </td>
+                                                        <td>{{ $sprovider->phone }}</td>
+                                                        <td>{{ $sprovider->address }}</td>
+                                                        <td>
 
-                                                                {{-- <a href="{{ route('admin.edit_service_categories', ['category_id' => $sprovider->id]) }}"><i class="ft-edit font-medium-5 mr-2"></i></a> --}}
-                                                                {{-- <a href="#"
+                                                            {{-- <a href="{{ route('admin.edit_service_categories', ['category_id' => $sprovider->id]) }}"><i class="ft-edit font-medium-5 mr-2"></i></a> --}}
+                                                            {{-- <a href="#"
                                                                     onclick="confirm('Are you sure, you want to delete this service Provider!')||event.stopImmediatePropagation()"
                                                                     wire:click.prevent="deleteServiceProvider({{ $sprovider->id }})"
                                                                     style="margin-left:10px"><i
                                                                         class="fa fa-trash fa fa-trash  text-danger  fa-2x   mr-4"></i></a> --}}
-                                                                <a type="button" title="Delete" class=""
-                                                                    wire:click="deleteConfirm({{ $sprovider->id }})"><i
-                                                                        class="ft-trash-2 fa-2x mr-2  text-danger"></i></a>
-                                                            </td>
-                                                        </tr>
-                                                    @endforeach
-                                                </tbody>
-                                            </table>
+                                                            <a type="button" title="Delete" class=""
+                                                                wire:click="deleteConfirm({{ $sprovider->id }})"><i
+                                                                    class="ft-trash-2 fa-2x mr-2  text-danger"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
 
-                                            <div class="Export-btn">
-                                                <a href="{{ route('admin.export_service_provider') }}"
-                                                    class="btn btn-info pull-right mx-3">Export Data</a>
-                                            </div>
-                                            {{-- {{ $sprovider->links() }} --}}
+                                        <div class="Export-btn">
+                                            <a href="{{ route('admin.export_service_provider') }}"
+                                                class="btn btn-info pull-right mx-3">Export Data</a>
+                                        </div>
+                                        {{-- {{ $sprovider->links() }} --}}
 
 
                                     </div>

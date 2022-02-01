@@ -20,7 +20,7 @@ class SproviderDashboardComponent extends Component
     // }
     public function render()
     {
-        $paytms = Paytm::all();
+        $paytms = Paytm::paginate(5);
         $totalService = User::where('id', Auth::user()->id)->count();
         $totalUser = Paytm::where('sprovider_id', Auth::user()->id)->count();
         $totalServe = Paytm::Where('slug_id', Auth::user()->slug_id)->count();

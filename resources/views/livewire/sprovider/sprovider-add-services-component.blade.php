@@ -189,8 +189,8 @@
                                                     @endif
                                                 </div>
                                             </div>
-                                            <button type="submit" class="btn btn-success mx-auto d-flex">Add
-                                                Service</button>
+                                            <button type="submit" class="btn-hover color-hover mx-auto d-flex"><i class="fa fa-plus-circle ">Add
+                                                Service</i></button>
                                         </form>
                                     </div>
                                 </div>

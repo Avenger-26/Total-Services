@@ -15,9 +15,9 @@
                                         <div class=" ">
                                             <h4 class="font-weight-bolder text-info">Add New Service Category</h4>
                                         </div>
-                                        <div class="">
+                                        <div class="marge" >
                                             <a href="{{ route('admin.service_categories') }}"
-                                                class="btn-hover color-hover">All Categories</a>
+                                                class="btn-hover color-hover ">All Categories</a>
                                         </div>
                                     </div>
                                 </div>

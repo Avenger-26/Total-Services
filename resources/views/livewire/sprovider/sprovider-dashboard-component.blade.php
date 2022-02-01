@@ -135,7 +135,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @if (!$paytms === null)
+                                                @if (!$paytms == null)
                                                     @foreach ($paytms as $paytm)
                                                         @if ($paytm->sprovider_id === Auth::user()->id)
                                                             <tr>
@@ -154,10 +154,9 @@
                                                                         <i
                                                                             class="ft-trash-2 text-danger font-medium-3"></i>
                                                                     </a> --}}
-                                                                    <button type="button" title="Delete"
-                                                                        class="btn btn-danger"
-                                                                        wire:click="deleteConfirm({{ $paytm->id }})"><i
-                                                                            class="ft-trash-2 fa-1x mr-2  text-danger"></i></button>
+                                                                    <a type="button" title="Delete" class=""
+                                                                    wire:click="deleteConfirm({{ $paytm->id }})"><i
+                                                                        class="ft-trash-2 fa-2x mr-2  text-danger"></i></a>
                                                                 </td>
                                                             </tr>
                                                         @endif
@@ -174,9 +173,10 @@
 
                                             </tbody>
                                         </table>
+                                        {{$paytms->links('pagination.custom') }}
                                         <div class="Export-btn">
                                             <a href="{{ route('sprovicer.export_work_history') }}"
-                                                class="btn btn-info pull-right mx-3">Export Data</a>
+                                                class="btn btn-success pull-left ml-2">Export Data</a>
                                         </div>
                                     </div>
                                 </div>

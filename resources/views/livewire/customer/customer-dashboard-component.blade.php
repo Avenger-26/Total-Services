@@ -77,7 +77,6 @@
                                     <thead>
                                         <tr>
                                             <th>ID</th>
-                                            <th>Service Image</th>
                                             <th>Service Name</th>
                                             <th>Order Id</th>
                                             <th>Service Provider</th>
@@ -88,17 +87,14 @@
                                     </thead>
                                     <tbody>
 
-                                        @if (!$paytms === null)
+                                     
                                             @foreach ($paytms as $paytm)
-                                                @if ($paytm->sprovider_id === Auth::user()->id)
+                                                @if ($paytm->user_id === Auth::user()->id)
                                                     <tr>
                                                         <td><span
                                                                 class="badge badge-success mt-2 ">#BH0{{ $paytm->id }}</span>
                                                         </td>
-                                                        <td><img class="media-object round-media height-50" width="100"
-                                                                height="100"
-                                                                src="{{ asset('images/services') }}/{{ $paytm->slug_image }}"
-                                                                alt="" /></td>
+            
                                                         <td>{{ $paytm->slug_name }}</td>
                                                         <td>{{ $paytm->order_id }}</td>
                                                         <td>{{ $paytm->sprovider_name }}</td>
@@ -115,16 +111,9 @@
                                                 @endif
 
                                             @endforeach
-                                        @else
-                                            <tr>
-                                                <td colspan="8" class="text-center">
-                                                    <h4 class="text-danger font-weight-bolder">No Booking
-                                                        History Found</h4>
-                                                </td>
-                                            </tr>
-                                        @endif
                                     </tbody>
                                 </table>
+                                {{$paytms->links('pagination.custom') }}
                             </div>
                         </div>
                     </div>

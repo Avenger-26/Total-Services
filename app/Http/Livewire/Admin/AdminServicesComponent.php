@@ -35,7 +35,7 @@ class AdminServicesComponent extends Component
     }
     public function render()
     {
-        $services = Service::paginate(10);
-        return view('livewire.admin.admin-services-component', ['services' => $services])->layout('frontend.layouts.guest')->with('no', 1);
+        $services = Service::paginate(5);
+        return view('livewire.admin.admin-services-component', ['services' => $services])->layout('frontend.layouts.guest');
     }
 }

@@ -78,6 +78,12 @@ $(document).ready(function ($) {
     $('#product-main-img .product-preview').zoom();
   }
 
+  
+
+  $(window).on('load', function () {
+		$('.preloader').fadeOut(700);
+	});
+
 
   // Header carousel
   $(".header-carousel").owlCarousel({

@@ -13,11 +13,11 @@
                                 <div class="card-header py-3">
                                     <div class=" d-flex align-items-center justify-content-between">
                                         <div class="">
-                                            <h4 class="font-weight-bolder text-info">Edit Service Category</h4>
+                                            <h4 class="font-weight-bolder text-info">Edit Service</h4>
                                         </div>
-                                        <div class="">
+                                        <div class="marge">
                                             <a href="{{ route('sprovider.all_services') }}"
-                                                class="btn-hover color-hover mx-3">All Services</a>
+                                                class="btn-hover color-hover ">All Services</a>
                                         </div>
                                     </div>
                                 </div>
@@ -206,8 +206,8 @@
                                                     @endif
                                                 </div>
                                             </div>
-                                            <button type="submit" class="btn-hover color-hover">Updated
-                                                Service</button>
+                                            <button type="submit" class="btn-hover color-hover d-flex mx-auto">Update
+                                                </button>
                                         </form>
                                     </div>
                                 </div>

@@ -1,4 +1,10 @@
 <div>
+    <style>
+        .w-5 {
+            display: none;
+        }
+    
+    </style>
     @include('../../layouts/admin/header')
     <div class="main-panel">
         <!-- BEGIN : Main Content-->
@@ -13,7 +19,7 @@
                                         <div class="">
                                             <h4 class="font-weight-bolder text-info">All Service</h4>
                                         </div>
-                                        <div class="">
+                                        <div class="marge">
                                             <a href="{{ route('admin.add_service') }}"
                                                 class="btn-hover color-hover  mx-3 "><i class="fa fa-plus-circle"></i>
                                                 Add New</a>
@@ -33,7 +39,7 @@
                                                 });
                                             </script>
                                         @endif
-                                        <table class="table text-center table-striped table-hover shadow">
+                                        <table class="table text-center table-responsive table-striped table-hover shadow">
                                             <thead>
                                                 <tr>
                                                     <th>ID</th>
@@ -51,7 +57,7 @@
                                                 @foreach ($services as $service)
                                                     <tr>
                                                         <td><span
-                                                                class="badge badge-success ">#SER0{{ $no++ }}</span>
+                                                                class=" my-2 badge badge-success ">#SER0{{ $service->id }}</span>
                                                         </td>
                                                         <td><img src="{{ asset('images/services/thumbnails') }}/{{ $service->thumbnail }}"
                                                                 width="80" alt=""></td>
@@ -85,11 +91,12 @@
                                                 @endforeach
                                             </tbody>
                                         </table>
-                                        <center>
-                                            <div class="mx-auto px-4 py-4 my-3">
-                                                {{ $services->links() }}
-                                            </div>
-                                        </center>
+                                        {{ $services->links('pagination.custom') }}
+                                        <div class="Export-btn">
+                                            <a href="{{ route('admin.export_all_services') }}"
+                                                class="btn btn-success pull-left ml-2">Export Data</a>
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -112,12 +119,7 @@
 
     </div>
 </div>
-<style>
-    .w-5 {
-        display: none;
-    }
 
-</style>
 </div>
 <script>
     window.addEventListener('Swal.fire:confirm', event => {

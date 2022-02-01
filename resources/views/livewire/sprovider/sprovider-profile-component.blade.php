@@ -29,7 +29,7 @@
                                                         class="rounded-circle img-border gradient-summer">
 
                                                 @else
-                                                    <img src="{{ asset('images/sproviders/default.png') }}" alt=""
+                                                    <img src="{{ asset('images/sproviders/default.jpg') }}" alt=""
                                                         class="rounded-circle img-border gradient-summer width-100">
                                                 @endif
                                             </a>

@@ -59,7 +59,7 @@
         transition: all 0.5s ease;
 
         transform-style: preserve-3d;
-        border-radius: 32px;
+        /* border-radius: 32px; */
         box-shadow:
             1px 1px 0 1px #f9f9fb,
             -1px 0 28px 0 rgba(34, 33, 81, 0.01),
@@ -85,7 +85,8 @@
     <!-- Sidebar Header starts-->
     <div class="sidebar-header">
         <div class="logo clearfix"><a href="/" class="logo-text float-left">
-                <span class="text align-left">Total Service</span>
+                <div class="logo-img ">TS</div> 
+                {{-- <span class="text align-left">Total Services</span> --}}
             </a>
             <a id="sidebarToggle" href="javascript:;" class="nav-toggle d-none d-sm-none d-md-none d-lg-block"><i
                     data-toggle="expanded" class="toggle-icon ft-toggle-right"></i></a><a id="sidebarClose"

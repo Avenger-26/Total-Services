@@ -15,7 +15,7 @@
                                         <div class=" ">
                                             <h4 class="font-weight-bolder text-info">Add New Service</h4>
                                         </div>
-                                        <div class="">
+                                        <div class="marge">
                                             <a href="{{ route('admin.all_services') }}"
                                                 class="btn-hover color-hover">All Services</a>
                                         </div>

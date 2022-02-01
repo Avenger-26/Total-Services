@@ -1,11 +1,5 @@
 @charset "UTF-8";
 
-/*!
- * Bootstrap v4.3.1 (https://getbootstrap.com/)
- * Copyright 2011-2019 The Bootstrap Authors
- * Copyright 2011-2019 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- */
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -42007,12 +42001,17 @@ a.text-info:hover, a.text-info:focus {
 p {
   font-size: 1rem;
   letter-spacing: 0.3px;
+  margin:10px;
 }
 
 @media (max-width: 576px) {
   .main-panel .main-content .content-wrapper {
     padding: 0 15px;
   }
+  .d-flex{
+    flex-direction: column;
+  }
+
 }
 
 .collapse-icon .card-header {
@@ -47863,6 +47862,9 @@ datetime .form-group {
 }
 
 @media (max-width: 550px) {
+  .marge{
+    margin-top:10px;
+  }
   #user-profile .profile-section .profile-menu {
     top: 0px;
   }
@@ -49052,7 +49054,9 @@ datetime .form-group {
   .navbar-header {
     float: left;
   }
-
+  .marge{
+    margin-top:10px;
+  }
   .navbar-right {
     float: right !important;
   }

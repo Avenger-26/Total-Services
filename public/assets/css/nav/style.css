@@ -180,13 +180,13 @@
 	padding: 15px 15px 10px;
 }
 .flat-mega-menu .login-form:hover{
-	background-color: #FFFFFF;
+	/* background-color: #FFFFFF; */
 	/* animation */
-	transition: background 0.3s linear 0s, color 0.3s linear 0s;
+	/* transition: background 0.3s linear 0s, color 0.3s linear 0s;
 	-moz-transition: background 0.3s linear 0s, color 0.3s linear 0s;
 	-ms-transition: background 0.3s linear 0s, color 0.3s linear 0s;
 	-o-transition: background 0.3s linear 0s, color 0.3s linear 0s;
-	-webkit-transition: background 0.3s linear 0s, color 0.3s linear 0s;
+	-webkit-transition: background 0.3s linear 0s, color 0.3s linear 0s; */
 }
 
 /* .search-bar class */
@@ -201,13 +201,13 @@
 	border-left: 1px solid #dedede;
 }
 .flat-mega-menu .search-bar:hover{
-	background-color: #FFFFFF;
+	/* background-color: #FFFFFF; */
 	/* animation */
-	transition: background 0.3s linear 0s, color 0.3s linear 0s;
+	/* transition: background 0.3s linear 0s, color 0.3s linear 0s;
 	-moz-transition: background 0.3s linear 0s, color 0.3s linear 0s;
 	-ms-transition: background 0.3s linear 0s, color 0.3s linear 0s;
 	-o-transition: background 0.3s linear 0s, color 0.3s linear 0s;
-	-webkit-transition: background 0.3s linear 0s, color 0.3s linear 0s;
+	-webkit-transition: background 0.3s linear 0s, color 0.3s linear 0s; */
 }
 .flat-mega-menu .search-bar ul {
 	position: absolute;
@@ -258,13 +258,13 @@
 
 /* hover animation */
 .flat-mega-menu > ul > li:hover > a {
-	background: #FFFFFF;
+	/* background: #FFFFFF; */
 	/* animation */
-	transition: background 0.3s linear 0s, color 0.3s linear 0s;
+	/* transition: background 0.3s linear 0s, color 0.3s linear 0s;
 	-moz-transition: background 0.3s linear 0s, color 0.3s linear 0s;
 	-ms-transition: background 0.3s linear 0s, color 0.3s linear 0s;
 	-o-transition: background 0.3s linear 0s, color 0.3s linear 0s;
-	-webkit-transition: background 0.3s linear 0s, color 0.3s linear 0s;
+	-webkit-transition: background 0.3s linear 0s, color 0.3s linear 0s; */
 }
 
 .flat-mega-menu > ul > .title:hover > a {
@@ -297,23 +297,23 @@
 	position: relative;
 }
 .flat-mega-menu .drop-down li a {
-	color: #555658;
+	color: grey;
 	font-size: 0.8rem;
 	line-height: 1.2rem;
 	text-align: left;
 	padding: 10px 20px;
-	background-color: #FFFFFF;
+	/* background-color: #FFFFFF; */
 	/* animation */
-	transition: color 0.2s linear 0s, padding-left 0.2s linear 0s;
+	/* transition: color 0.2s linear 0s, padding-left 0.2s linear 0s;
 	-moz-transition: color 0.2s linear 0s, padding-left 0.2s linear 0s;
 	-ms-transition: color 0.2s linear 0s, padding-left 0.2s linear 0s;
 	-o-transition: color 0.2s linear 0s, padding-left 0.2s linear 0s;
-	-webkit-transition: color 0.2s linear 0s, padding-left 0.2s linear 0s;
+	-webkit-transition: color 0.2s linear 0s, padding-left 0.2s linear 0s; */
 }
 
 /* drop down hover animation */
 .flat-mega-menu .drop-down li:hover > a {
-	color: #000000;
+	color: #1597e5;
 	padding-left: 30px;
 }
 
@@ -613,7 +613,7 @@
 .flat-mega-menu > ul > li:hover > a,
 .flat-mega-menu > ul > .login-form:hover,
 .flat-mega-menu > ul > .search-bar:hover{
-    color: #ffffff !important;
+    /* color: #ffffff !important; */
 }
 
 /* .title class layout */
@@ -780,7 +780,7 @@
 }
 
 .header-v3 .flat-mega-menu > label {
-  color: #272727;
+	color:#1597e5;
 }
 .flat-mega-menu > label i{
 	-ms-user-select:none;

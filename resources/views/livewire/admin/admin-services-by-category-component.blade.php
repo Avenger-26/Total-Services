@@ -22,7 +22,7 @@
                                     </div>
                                 </div>
 
-                                <div class="card-content">
+                                <div class="card-content table-responsive">
                                     <div>
                                         @if (Session::has('message'))
                                             <script>
@@ -33,7 +33,7 @@
                                                 });
                                             </script>
                                         @endif
-                                        <table class="table table-striped">
+                                        <table class="table text-center table-responsive table-striped table-hover shadow">
                                             <thead>
                                                 <tr>
                                                     <th>#</th>
@@ -47,7 +47,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @if ($services === null)
+                                                @if ($services == null)
                                                     <tr>
                                                         <td colspan="7" class="text-center">
                                                             <h3 class="text-danger font-weight-bolder">No Service Found
@@ -90,9 +90,9 @@
                                                 @endif
                                             </tbody>
                                         </table>
-                                        <center>
-                                            {{ $services->links() }}
-                                        </center>
+                                       
+                                            {{ $services->links('pagination.custom') }}
+                                
 
 
                                     </div>

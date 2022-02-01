@@ -44,24 +44,15 @@ use App\Http\Livewire\Customer\CustomerFeedbackComponent;
 
 Route::get('/', HomeComponent::class)->name('home'); //->middleware('verified');
 Route::get('/service-categories', ServiceCategoriesComponent::class)->name('home.service_categories');
-
 Route::get('/{category_slug}/services',ServicesByCategoryComponent::class)->name('home.services_by_category');
-
-Route::get('/{category_slug}/services', ServicesByCategoryComponent::class)->name('home.services_by_category');
-
 Route::get('/autocomplete', [SearchController::class, 'autocomplete'])->name('autocomplete');
 Route::post('/search', [SearchController::class, 'searchService'])->name('searchService');
-
 Route::get('/contact-us', ContactComponenet::class)->name('home.contact');
-Route::get('/about-us', AboutUsComponent::class)->name('home.about-us');
 
-//paytm
-Route::get('/payment', [PaytmController::class, 'index'])->name('payment');
-Route::post('/paytm-store', [PaytmController::class, 'store'])->name('paytm-store');
-Route::post('/paytm-callback', [PaytmController::class, 'paytmCallback'])->name('paytm-callback');
-// Route::get('/payment-success',[PaytmController::class,'paymentSuccess'])->name('payment-success');
-//paytm End
+
+
 // Excel
+Route::middleware(['auth:sanctum','verified'])->group(function () {
 Route::get('/admin/service-provider/export-csv', [ExportDataController::class,'export'])->name('admin.export_service_provider');
 Route::get('/admin/user/export-csv', [ExportDataController::class,'export_customer'])->name('admin.export_customer');
 Route::get('/admin/service-categories/export-csv', [ExportDataController::class,'export_scategories'])->name('admin.export_service_categories');
@@ -70,9 +61,17 @@ Route::get('/admin/contacts/export-csv', [ExportDataController::class,'export_co
 Route::get('/sprovider/all-services/export-csv', [ExportDataController::class,'export_sprovider_services'])->name('sprovicer.export_all_services');
 Route::get('/sprovider/dashboard/export-csv', [ExportDataController::class,'export_work_history'])->name('sprovicer.export_work_history');
 // Excel End
+//paytm
+Route::get('/payment', [PaytmController::class, 'index'])->name('payment');
+Route::post('/paytm-store', [PaytmController::class, 'store'])->name('paytm-store');
+Route::post('/paytm-callback', [PaytmController::class, 'paytmCallback'])->name('paytm-callback');
+// Route::get('/payment-success',[PaytmController::class,'paymentSuccess'])->name('payment-success');
+//paytm End
+});
+
 
 //customer
-Route::middleware(['auth:sanctum'])->group(function () {
+Route::middleware(['auth:sanctum','verified'])->group(function () {
     Route::get('/service/{service_slug}', ServiceDetailsComponent::class)->name('home.service_details');
     Route::get('/customer/dashboard', CustomerDashboardComponent::class)->name('customer.dashboard');
     Route::get('/customer/feedback', CustomerFeedbackComponent::class)->name('customer.feedback');
@@ -82,7 +81,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
 });
 
 //For S Provider
-Route::middleware(['auth:sanctum', 'authsprovider'])->group(function () {
+Route::middleware(['auth:sanctum', 'authsprovider','verified'])->group(function () {
     Route::get('/sprovider/dashboard', SproviderDashboardComponent::class)->name('sprovider.dashboard');
     Route::get('/sprovider/profile', SproviderProfileComponent::class)->name('sprovider.profile');
     Route::get('/sprovider/profile/edit', EditSproviderProfileComponent::class)->name('sprovider.edit_profile');
@@ -93,7 +92,7 @@ Route::middleware(['auth:sanctum', 'authsprovider'])->group(function () {
 });
 
 // For Admin
-Route::middleware(['auth:sanctum', 'authadmin'])->group(function () {
+Route::middleware(['auth:sanctum', 'authadmin','verified'])->group(function () {
     Route::get('/admin/dashboard', AdminDashboardComponent::class)->name('admin.dashboard');
     Route::get('/admin/admin_Profile', AdminProfileComponent::class)->name('admin.profile');
     Route::get('/admin/Update_Profile', AdminUpdateProfileComponent::class)->name('admin.update_profile');

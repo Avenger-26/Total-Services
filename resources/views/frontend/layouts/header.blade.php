@@ -13,7 +13,6 @@
     <link rel="shortcut icon" href="assets/img/favicon.png">
     <link href="{{ url('assets/css/style.css') }}" rel="stylesheet" media="screen">
     <link href="{{ url('assets/css/chblue.css') }}" rel="stylesheet" media="screen">
-
     <!-- Slick -->
     <link type="text/css" rel="stylesheet" href="{{ asset('assets/css/slick.css') }}" />
     <link type="text/css" rel="stylesheet" href="{{ asset('assets/css/slick-theme.css') }}" />
@@ -21,9 +20,9 @@
 
     <link href="{{ url('assets/css/theme-responsive.css') }}" rel="stylesheet" media="screen">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    {{-- <link href="{{ url('assets/css/dtb/jquery.dataTables.min.css') }}" rel="stylesheet" media="screen">
+    {{-- <link href="{{ url('assets/css/dtb/jquery.dataTables.min.css') }}" rel="stylesheet" media="screen"> --}}
     <link href="{{ url('assets/css/select2.min.css') }}" rel="stylesheet" media="screen">
-    <link href="{{ url('assets/css/toastr.min.css') }}" rel="stylesheet" media="screen"> --}}
+    {{-- <link href="{{ url('assets/css/toastr.min.css') }}" rel="stylesheet" media="screen"> --}}
     <link href="{{ url('assets/css/custom_css.css') }}" rel="stylesheet" media="screen">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
@@ -40,10 +39,13 @@
 
     <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
     <df-messenger intent="WELCOME" chat-title="TS~Bot🤖" agent-id="b2e19dfa-a91a-41a6-b95c-df77b673663c"
-        language-code="en" chat-icon="{{ asset('images\chatbot.gif') }}"></df-messenger>
+        language-code="en"></df-messenger>
+    
 </head>
 
 <body>
+    
+    <header id="header" class="header-v3">
         <div class="info-head">
             <div class="container">
                 <div class="row">
@@ -70,26 +72,43 @@
                 </div>
             </div>
         </div>
-        <header id="header" class="header-v3 ">
-            <nav class="flat-mega-menu ">
-                <label for="mobile-button"> <i class="fa fa-bars"></i></label>
-                <input id="mobile-button" type="checkbox">
+        <nav class="flat-mega-menu ">
+            <label for="mobile-button"> <i class="fa fa-bars"></i></label>
+            <input id="mobile-button" type="checkbox">
 
-                <ul class="collapse">
-                    <li class="title">
-                        <a href="/"><img style="width:146px" src="{{ asset('assets\img\Total Services-1.png') }}"
-                                alt="logo"></a>
-                        {{-- <a href="/">On~Demand Services</a> --}}
-                    </li>
-                    <li> <a href="{{ route('home') }}">Home</a> </li>
+            <ul class="collapse">
+                <li class="title">
+                    <a href="/"><img style="width:146px" src="{{ asset('assets\img\Total Services-1.png') }}"
+                            alt="logo"></a>
+                    {{-- <a href="/">On~Demand Services</a> --}}
+                </li>
+                <li> <a href="{{ route('home') }}">Home</a> </li>
 
-                    <li> <a href="{{ route('home.service_categories') }}">Service Category</a> </li>
-                    <li> <a href="http://localhost:8000/disinfection/services">Disinfection<sup class="badge badge-danger" style="margin-left:2px"><small>New</small></sup></a></li>
+                <li> <a href="{{ route('home.service_categories') }}">Service Category</a>
+                    <ul class="drop-down one-column hover-fade">
+                        <li><a href="http://localhost:8000/disinfection/services">Disinfection</a></li>
+                        <li><a href="http://localhost:8000/Electrician/services">Electrician</a></li>
+                        <li><a href="http://localhost:8000/Electronic/services">Electronic</a></li>
+                        <li><a href="http://localhost:8000/Carpenter/services">Carpenter</a></li>
+                        <li><a href="http://localhost:8000/service-categories">More Categories</a></li>
+                    </ul>
+                </li>
+                <li> <a href="http://localhost:8000/disinfection/services">Disinfection<sup class="badge badge-danger"
+                            style="margin-left:2px"><small>New</small></sup></a>
+                    <ul class="drop-down one-column hover-fade">
+                        <li><a href="http://localhost:8000/service/small-offices-businesses-shops-disinfection">Small
+                                Offices</a></li>
+                        <li><a href="http://localhost:8000/service/disinfection-service-for-large-offices5000sqft">Large
+                                Offices</a></li>
+                        <li><a href="http://localhost:8000/service/home-and-vehicle-disinfection-service">Home&
+                                Vehical</a></li>
+                        <li><a href="http://localhost:8000/disinfection/services">More Services</a></li>
+                    </ul>
 
-                    {{-- <li> <a href="#">Our Team</a></li> --}}
-
-                    <li><a href="{{ route('home.contact') }}">Contact Us</a></li>
-                    <li>
+                </li>
+                <li><a href="{{ route('home.contact') }}">Contact Us</a></li>
+                <li>
+                    <center>
                         <div class="trans-section">
                             <div id="google_translate_element" style="display: none;"></div>
                             <select class="selectpicker" data-width="fit" onchange="translateLanguage(this.value);">
@@ -109,7 +128,8 @@
                                 <option data-content='<span class="flag-icon flag-icon-in"></span> Tamil' value="Tamil">
                                     Tamil</option>
                                 <option data-content='<span class="flag-icon flag-icon-in"></span> Telugu'
-                                    value="Telugu">Telugu</option>
+                                    value="Telugu">
+                                    Telugu</option>
                                 <option data-content='<span class="flag-icon flag-icon-in"></span> Gujarati'
                                     value="Gujarati">Gujarati</option>
                                 <option data-content='<span class="flag-icon flag-icon-ne"></span> Nepali'
@@ -322,68 +342,81 @@
                                     Xhosa</option>
                             </select>
                         </div>
-                    </li>
-                    @if (Route::has('login'))
-                        @auth
-                            @if (Auth::user()->u_type === 'ADM')
-                                <li class="login-form"><a href="#" title="Register"> <i class="fa fa-user"
-                                            aria-hidden="true">
-                                            {{ Auth::user()->name }}(Admin)</i></a>
-                                    <ul class="drop-down one-column hover-fade">
+                    </center>  
+                </li>
+                @if (Route::has('login'))
+                    @auth
+                        @if (Auth::user()->u_type === 'ADM')
+                            <li class="login-form"><a href="#" title="Register"> <i class="fa fa-user"
+                                        aria-hidden="true">
+                                        {{ Auth::user()->name }}(Admin)</i></a>
+                                <ul class="drop-down one-column hover-fade">
 
-                                        <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-                                        <li><a href="{{ route('logout') }}"
-                                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            @elseif(Auth::user()->u_type === 'SPV')
-                                <li class="login-form"><a href="#" title="Register"><i class="fa fa-user"
-                                            aria-hidden="true">
-                                            {{ Auth::user()->name }} ( @if (Auth::user()->service_category_id)
-                                                {{ Auth::user()->category->name }}
-                                            @endif
-                                            )</i></a>
-                                    <ul class="drop-down one-column hover-fade">
-                                        <li><a href="{{ route('sprovider.dashboard') }}"><strong>Dashboard</strong></a></li>
-                                        <li><a href="{{ route('logout') }}"
-                                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            @else
-                                <li class=""> <i class="fa fa-user-circle" aria-hidden="true">
-                                        <strong> {{ Auth::user()->name }} (Customer) </strong></i>
-                                    <ul class="drop-down one-column hover-fade">
-                                        <li><a href="{{ route('customer.dashboard') }}">Dashboard</a></li>
-                                        <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                        document.getElementById('logout-form').submit();">Logout</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            @endif
-                            <form action="{{ route('logout') }}" method="POST" id="logout-form" style="display: none">
-                                @csrf
-                            </form>
-                        @else
-                            <li class="login-form"> <a href="{{ route('register') }}" title="Register">Register</a>
+                                    <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
+                                    <li><a href="{{ route('logout') }}"
+                                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                                    </li>
+                                </ul>
                             </li>
-                            <li class="login-form "> <a href="{{ route('login') }}" class=""
-                                    title="Login">Login</a></li>
+                        @elseif(Auth::user()->u_type === 'SPV')
+                            <li class="login-form"><a href="#" title="Register"><i class="fa fa-user"
+                                        aria-hidden="true">
+                                        {{ Auth::user()->name }} ( @if (Auth::user()->service_category_id)
+                                            {{ Auth::user()->category->name }}
+                                        @endif
+                                        )</i></a>
+                                <ul class="drop-down one-column hover-fade">
+                                    <li><a href="{{ route('sprovider.dashboard') }}"><strong>Dashboard</strong></a></li>
+                                    <li><a href="{{ route('logout') }}"
+                                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        @else
+                            <li class="login-form"><a href="#" title="Register"> <i class="fa fa-user"
+                                        aria-hidden="true">
+                                        {{ Auth::user()->name }}(Customer)</i></a>
+                                <ul class="drop-down one-column hover-fade">
+                                    <li><a href="{{ route('customer.dashboard') }}">Dashboard</a></li>
+                                    <li><a href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                                    document.getElementById('logout-form').submit();">Logout</a>
+                                    </li>
+                                </ul>
+                            </li>
                         @endif
-                        @endif
+                        <form action="{{ route('logout') }}" method="POST" id="logout-form" style="display: none">
+                            @csrf
+                        </form>
+                    @else
+                        <li class="login-form"> <a href="{{ route('register') }}" title="Register">Register</a>
+                        </li>
+                        <li class="login-form "> <a href="{{ route('login') }}" class=""
+                                title="Login">Login</a></li>
+                    @endif
+                    @endif
                     <li class="search-bar">
                     </li>
-                    </ul>
-                </nav>
-            </header>
-            {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> --}}
-            {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
-            <script>
-                $('.gallery-card').tilt({
-                    glare: true,
-                    maxGlare: .3,
-                    maxTilt: 7,
-                    speed: 520,
-                })
-            </script> --}}
+                </ul>
+            </nav>
+        </header>
+        {{-- <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div> --}}
+
+        <!--
+         Start Preloader
+         ==================================== -->
+        <div class="preloader">
+            <div class="sk-cube-grid">
+                <div class="sk-cube sk-cube1"></div>
+                <div class="sk-cube sk-cube2"></div>
+                <div class="sk-cube sk-cube3"></div>
+                <div class="sk-cube sk-cube4"></div>
+                <div class="sk-cube sk-cube5"></div>
+                <div class="sk-cube sk-cube6"></div>
+                <div class="sk-cube sk-cube7"></div>
+                <div class="sk-cube sk-cube8"></div>
+                <div class="sk-cube sk-cube9"></div>
+            </div>
+        </div>
+        <!-- End Preloader
+                ==================================== -->

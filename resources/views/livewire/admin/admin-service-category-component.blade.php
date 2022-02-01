@@ -1,5 +1,4 @@
 <div>
-    <!--.main-menu(class="#{menuColor} #{menuOpenType}", class=(menuShadow == true ? 'menu-shadow' : ''))-->
     @include('../../layouts/admin/header')
 
     <div class="main-panel">
@@ -9,7 +8,7 @@
                 <section id="extended">
                     <div class="row justify-content-md-center">
                         <div class="col-md-11 ">
-                            <div class="card shadow ">
+                            <div class="card shadow " style="overflow-x: auto">
                                 <div class="card-header py-3 ">
                                     <div class="d-flex align-items-center justify-content-between ">
                                         <div class=" ">
@@ -67,14 +66,6 @@
                                                         <a href="{{ route('admin.services_by_category', ['category_slug' => $scategory->slug]) }}"
                                                             style="margin-left:15px"><i
                                                                 class="fa fa-list-alt text-warning  fa-2x mr-2 text-light"></i></a>
-
-                                                        <a
-                                                            href="{{ route('admin.edit_service_categories', ['category_id' => $scategory->id]) }}"><i
-                                                                class="fa fa-pencil-square-o text-info fa-2x   mr-2"></i></a>
-                                                        {{-- <a href="#"
-                                                            onclick="confirm('Are you sure, you want to delete this service category!')||event.stopImmediatePropagation()"
-                                                            wire:click.prevent="deleteServiceCategory({{ $scategory->id }})"><i
-                                                                class="fa fa-trash  text-danger  fa-2x   mr-2"></i></a> --}}
 
                                                         <a
                                                             href="{{ route('admin.edit_service_categories', ['category_id' => $scategory->id]) }}"><i

@@ -113,4 +113,4 @@ Route::middleware(['auth:sanctum', 'authadmin'])->group(function () {
 });
 
 
-Route::get('/chart', [ChartController::class, 'barchart'])->name('admin.chart');
+

@@ -3,8 +3,9 @@
     style="margin-top:5rem; padding-top:3rem;">
     <div class="container" style="padding-top: 3rem; paddin-bottom:3rem;">
         <div class="row g-5">
-            <div class="col-lg-3 col-md-6">
-                <h4 class="footer-title ff-secondary text-start footer-primary " style="margin-bottom: 1.5rem;">Home
+            <div class="col-lg-3 col-md-6" data-aos="fade-down">
+                <h4 class="footer-title ff-secondary text-start footer-primary " style="margin-bottom: 1.5rem;"
+                    data-aos="fade-down">Home
                     Needs</h4>
                 <a class="btn btn-link" href="">Electrical</a>
                 <a class="btn btn-link" href="">Electrician</a>
@@ -12,8 +13,9 @@
                 <a class="btn btn-link" href="">Plumbing</a>
                 <a class="btn btn-link" href="">Laundry</a>
             </div>
-            <div class="col-lg-3 col-md-6">
-                <h4 class="footer-title ff-secondary text-start footer-primary " style="margin-bottom: 1.5rem;">
+            <div class="col-lg-3 col-md-6" data-aos="fade-down">
+                <h4 class="footer-title ff-secondary text-start footer-primary " style="margin-bottom: 1.5rem;"
+                    data-aos="fade-down">
                     Appliance</h4>
                 <a class="btn btn-link" href="">TV Services</a>
                 <a class="btn btn-link" href="">Refrigerator</a>
@@ -21,8 +23,9 @@
                 <a class="btn btn-link" href="">Water Purifier</a>
                 <a class="btn btn-link" href="">Microwave Oven</a>
             </div>
-            <div class="col-lg-3 col-md-6">
-                <h4 class="footer-title ff-secondary text-start footer-primary " style="margin-bottom: 1.5rem;">
+            <div class="col-lg-3 col-md-6" data-aos="fade-down">
+                <h4 class="footer-title ff-secondary text-start footer-primary " style="margin-bottom: 1.5rem;"
+                    data-aos="fade-down">
                     Ac-Services</h4>
                 <a class="btn btn-link" href="">Iinstallation</a>
                 <a class="btn btn-link" href="">Uninstallation</a>
@@ -30,8 +33,9 @@
                 <a class="btn btn-link" href="">Wet Servicing</a>
                 <a class="btn btn-link" href="">Dry Service</a>
             </div>
-            <div class="col-lg-3 col-md-6">
-                <h4 class="footer-title ff-secondary text-start footer-primary fw-normal">Contact</h4>
+            <div class="col-lg-3 col-md-6" data-aos="fade-down">
+                <h4 class="footer-title ff-secondary text-start footer-primary fw-normal" data-aos="fade-down">Contact
+                </h4>
                 <p class="mb-2" style="color:#fff;"><i class="fa fa-map-marker-alt "
                         style="margin-right:1rem;"></i>Lucknow , Uttar Pradesh, India</p>
                 <p class="mb-2" style="color:#fff;"><i class="fa fa-phone-alt "
